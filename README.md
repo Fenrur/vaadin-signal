@@ -32,7 +32,7 @@ val count = mutableSignalOf(0)
 
 button("Count: 0") {
     text(count.map { "Count: $it" })
-    onClick { count.value++ }
+    onClick { count.update { it + 1 } }
 }
 span {
     text(count.map { if (it > 5) "High!" else "" })
