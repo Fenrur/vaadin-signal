@@ -14,6 +14,7 @@ import com.vaadin.flow.component.popover.PopoverVariant
  * Reactive opened state for Popover.
  * Note: This is a one-way binding (signal to component).
  */
+@JvmName("popoverOpenedSignal")
 fun Popover.opened(signal: Signal<Boolean>) {
     fun apply(opened: Boolean) {
         isOpened = opened
@@ -26,7 +27,7 @@ fun Popover.opened(signal: Signal<Boolean>) {
 /**
  * Two-way binding for Popover opened state.
  */
-@JvmName("popoverOpenedTwoWay")
+@JvmName("popoverOpenedMutableSignal")
 fun Popover.opened(signal: MutableSignal<Boolean>) {
     isOpened = signal.value
 
@@ -42,6 +43,7 @@ fun Popover.opened(signal: MutableSignal<Boolean>) {
 /**
  * Reactive position for Popover.
  */
+@JvmName("popoverPositionSignal")
 fun Popover.position(signal: Signal<PopoverPosition>) {
     fun apply(position: PopoverPosition) {
         setPosition(position)
@@ -54,6 +56,7 @@ fun Popover.position(signal: Signal<PopoverPosition>) {
 /**
  * Reactive modal state for Popover.
  */
+@JvmName("popoverModalSignal")
 fun Popover.modal(signal: Signal<Boolean>) {
     fun apply(modal: Boolean) {
         isModal = modal
@@ -66,6 +69,7 @@ fun Popover.modal(signal: Signal<Boolean>) {
 /**
  * Reactive backdrop visible for Popover.
  */
+@JvmName("popoverBackdropVisibleSignal")
 fun Popover.backdropVisible(signal: Signal<Boolean>) {
     fun apply(visible: Boolean) {
         isBackdropVisible = visible
@@ -78,6 +82,7 @@ fun Popover.backdropVisible(signal: Signal<Boolean>) {
 /**
  * Reactive autofocus for Popover.
  */
+@JvmName("popoverAutofocusSignal")
 fun Popover.autofocus(signal: Signal<Boolean>) {
     fun apply(autofocus: Boolean) {
         isAutofocus = autofocus
@@ -90,6 +95,7 @@ fun Popover.autofocus(signal: Signal<Boolean>) {
 /**
  * Reactive close on outside click for Popover.
  */
+@JvmName("popoverCloseOnOutsideClickSignal")
 fun Popover.closeOnOutsideClick(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         isCloseOnOutsideClick = enabled
@@ -102,6 +108,7 @@ fun Popover.closeOnOutsideClick(signal: Signal<Boolean>) {
 /**
  * Reactive close on Esc for Popover.
  */
+@JvmName("popoverCloseOnEscSignal")
 fun Popover.closeOnEsc(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         isCloseOnEsc = enabled
@@ -114,6 +121,7 @@ fun Popover.closeOnEsc(signal: Signal<Boolean>) {
 /**
  * Reactive width for Popover.
  */
+@JvmName("popoverWidthSignal")
 fun Popover.popoverWidth(signal: Signal<String?>) {
     fun apply(width: String?) {
         setWidth(width)
@@ -126,6 +134,7 @@ fun Popover.popoverWidth(signal: Signal<String?>) {
 /**
  * Reactive height for Popover.
  */
+@JvmName("popoverHeightSignal")
 fun Popover.popoverHeight(signal: Signal<String?>) {
     fun apply(height: String?) {
         setHeight(height)
@@ -138,6 +147,7 @@ fun Popover.popoverHeight(signal: Signal<String?>) {
 /**
  * Reactive theme variants for Popover.
  */
+@JvmName("popoverThemeVariantsSignal")
 fun Popover.themeVariants(signal: Signal<Set<PopoverVariant>>) {
     var previousVariants = emptySet<PopoverVariant>()
 
@@ -154,6 +164,7 @@ fun Popover.themeVariants(signal: Signal<Set<PopoverVariant>>) {
 /**
  * Reactive single theme variant for Popover.
  */
+@JvmName("popoverThemeVariantSignal")
 fun Popover.themeVariant(signal: Signal<PopoverVariant?>) {
     var previousVariant: PopoverVariant? = null
 
@@ -170,6 +181,7 @@ fun Popover.themeVariant(signal: Signal<PopoverVariant?>) {
 /**
  * Reactive arrow theme for Popover.
  */
+@JvmName("popoverArrowSignal")
 fun Popover.arrow(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         if (enabled) {
@@ -186,6 +198,7 @@ fun Popover.arrow(signal: Signal<Boolean>) {
 /**
  * Reactive no-padding theme for Popover.
  */
+@JvmName("popoverNoPaddingSignal")
 fun Popover.noPadding(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         if (enabled) {

@@ -12,6 +12,7 @@ import com.vaadin.flow.component.button.ButtonVariant
 /**
  * Reactive icon for Button.
  */
+@JvmName("buttonIconSignal")
 fun Button.icon(signal: Signal<Component?>) {
     fun apply(icon: Component?) {
         setIcon(icon)
@@ -24,6 +25,7 @@ fun Button.icon(signal: Signal<Component?>) {
 /**
  * Reactive icon position (after text or before).
  */
+@JvmName("buttonIconAfterTextSignal")
 fun Button.iconAfterText(signal: Signal<Boolean>) {
     fun apply(after: Boolean) {
         setIconAfterText(after)
@@ -36,6 +38,7 @@ fun Button.iconAfterText(signal: Signal<Boolean>) {
 /**
  * Reactive disableOnClick for Button.
  */
+@JvmName("buttonDisableOnClickSignal")
 fun Button.disableOnClick(signal: Signal<Boolean>) {
     fun apply(disable: Boolean) {
         setDisableOnClick(disable)
@@ -48,6 +51,7 @@ fun Button.disableOnClick(signal: Signal<Boolean>) {
 /**
  * Reactive theme variants for Button.
  */
+@JvmName("buttonThemeVariantsSignal")
 fun Button.themeVariants(signal: Signal<Set<ButtonVariant>>) {
     var previousVariants = emptySet<ButtonVariant>()
 
@@ -64,6 +68,7 @@ fun Button.themeVariants(signal: Signal<Set<ButtonVariant>>) {
 /**
  * Reactive single theme variant for Button.
  */
+@JvmName("buttonThemeVariantSignal")
 fun Button.themeVariant(signal: Signal<ButtonVariant?>) {
     var previousVariant: ButtonVariant? = null
 
@@ -80,6 +85,7 @@ fun Button.themeVariant(signal: Signal<ButtonVariant?>) {
 /**
  * Reactive primary theme for Button.
  */
+@JvmName("buttonPrimarySignal")
 fun Button.primary(signal: Signal<Boolean>) {
     fun apply(isPrimary: Boolean) {
         if (isPrimary) {
@@ -96,6 +102,7 @@ fun Button.primary(signal: Signal<Boolean>) {
 /**
  * Reactive tertiary theme for Button.
  */
+@JvmName("buttonTertiarySignal")
 fun Button.tertiary(signal: Signal<Boolean>) {
     fun apply(isTertiary: Boolean) {
         if (isTertiary) {
@@ -112,6 +119,7 @@ fun Button.tertiary(signal: Signal<Boolean>) {
 /**
  * Reactive tertiary-inline theme for Button.
  */
+@JvmName("buttonTertiaryInlineSignal")
 fun Button.tertiaryInline(signal: Signal<Boolean>) {
     fun apply(isTertiaryInline: Boolean) {
         if (isTertiaryInline) {
@@ -128,6 +136,7 @@ fun Button.tertiaryInline(signal: Signal<Boolean>) {
 /**
  * Reactive small size for Button.
  */
+@JvmName("buttonSmallSignal")
 fun Button.small(signal: Signal<Boolean>) {
     fun apply(isSmall: Boolean) {
         if (isSmall) {
@@ -144,6 +153,7 @@ fun Button.small(signal: Signal<Boolean>) {
 /**
  * Reactive large size for Button.
  */
+@JvmName("buttonLargeSignal")
 fun Button.large(signal: Signal<Boolean>) {
     fun apply(isLarge: Boolean) {
         if (isLarge) {
@@ -160,6 +170,7 @@ fun Button.large(signal: Signal<Boolean>) {
 /**
  * Reactive error theme for Button.
  */
+@JvmName("buttonErrorSignal")
 fun Button.error(signal: Signal<Boolean>) {
     fun apply(isError: Boolean) {
         if (isError) {
@@ -176,6 +187,7 @@ fun Button.error(signal: Signal<Boolean>) {
 /**
  * Reactive success theme for Button.
  */
+@JvmName("buttonSuccessSignal")
 fun Button.success(signal: Signal<Boolean>) {
     fun apply(isSuccess: Boolean) {
         if (isSuccess) {
@@ -192,6 +204,7 @@ fun Button.success(signal: Signal<Boolean>) {
 /**
  * Reactive contrast theme for Button.
  */
+@JvmName("buttonContrastSignal")
 fun Button.contrast(signal: Signal<Boolean>) {
     fun apply(isContrast: Boolean) {
         if (isContrast) {

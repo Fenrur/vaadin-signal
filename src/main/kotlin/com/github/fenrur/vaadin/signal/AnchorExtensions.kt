@@ -13,6 +13,7 @@ import com.vaadin.flow.server.AbstractStreamResource
 /**
  * Reactive stream resource href for Anchor.
  */
+@JvmName("anchorHrefResourceSignal")
 fun Anchor.hrefResource(signal: Signal<AbstractStreamResource>) {
     fun apply(resource: AbstractStreamResource) {
         setHref(resource)
@@ -25,6 +26,7 @@ fun Anchor.hrefResource(signal: Signal<AbstractStreamResource>) {
 /**
  * Reactive target for Anchor.
  */
+@JvmName("anchorTargetSignal")
 fun Anchor.target(signal: Signal<AnchorTarget>) {
     fun apply(target: AnchorTarget) {
         setTarget(target)
@@ -37,7 +39,7 @@ fun Anchor.target(signal: Signal<AnchorTarget>) {
 /**
  * Reactive target string for Anchor.
  */
-@JvmName("anchorTargetString")
+@JvmName("anchorTargetStringSignal")
 fun Anchor.target(signal: Signal<String>) {
     fun apply(target: String) {
         setTarget(target)
@@ -50,6 +52,7 @@ fun Anchor.target(signal: Signal<String>) {
 /**
  * Reactive router ignore for Anchor.
  */
+@JvmName("anchorRouterIgnoreSignal")
 fun Anchor.routerIgnore(signal: Signal<Boolean>) {
     fun apply(ignore: Boolean) {
         isRouterIgnore = ignore

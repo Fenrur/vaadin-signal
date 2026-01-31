@@ -11,6 +11,7 @@ import com.vaadin.flow.component.menubar.MenuBarVariant
 /**
  * Reactive open on hover for MenuBar.
  */
+@JvmName("menuBarOpenOnHoverSignal")
 fun MenuBar.openOnHover(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         isOpenOnHover = enabled
@@ -23,6 +24,7 @@ fun MenuBar.openOnHover(signal: Signal<Boolean>) {
 /**
  * Reactive theme variants for MenuBar.
  */
+@JvmName("menuBarThemeVariantsSignal")
 fun MenuBar.themeVariants(signal: Signal<Set<MenuBarVariant>>) {
     var previousVariants = emptySet<MenuBarVariant>()
 
@@ -39,6 +41,7 @@ fun MenuBar.themeVariants(signal: Signal<Set<MenuBarVariant>>) {
 /**
  * Reactive single theme variant for MenuBar.
  */
+@JvmName("menuBarThemeVariantSignal")
 fun MenuBar.themeVariant(signal: Signal<MenuBarVariant?>) {
     var previousVariant: MenuBarVariant? = null
 
@@ -55,6 +58,7 @@ fun MenuBar.themeVariant(signal: Signal<MenuBarVariant?>) {
 /**
  * Reactive tertiary theme for MenuBar.
  */
+@JvmName("menuBarTertiarySignal")
 fun MenuBar.tertiary(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         if (enabled) {
@@ -71,6 +75,7 @@ fun MenuBar.tertiary(signal: Signal<Boolean>) {
 /**
  * Reactive tertiary-inline theme for MenuBar.
  */
+@JvmName("menuBarTertiaryInlineSignal")
 fun MenuBar.tertiaryInline(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         if (enabled) {
@@ -87,6 +92,7 @@ fun MenuBar.tertiaryInline(signal: Signal<Boolean>) {
 /**
  * Reactive primary theme for MenuBar.
  */
+@JvmName("menuBarPrimarySignal")
 fun MenuBar.primary(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         if (enabled) {
@@ -103,6 +109,7 @@ fun MenuBar.primary(signal: Signal<Boolean>) {
 /**
  * Reactive small theme for MenuBar.
  */
+@JvmName("menuBarSmallSignal")
 fun MenuBar.small(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         if (enabled) {
@@ -119,6 +126,7 @@ fun MenuBar.small(signal: Signal<Boolean>) {
 /**
  * Reactive icon theme for MenuBar.
  */
+@JvmName("menuBarIconSignal")
 fun MenuBar.icon(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         if (enabled) {

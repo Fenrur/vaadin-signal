@@ -14,6 +14,7 @@ import com.vaadin.flow.component.tabs.TabsVariant
  * Reactive selected index for Tabs.
  * Note: This is a one-way binding (signal to component).
  */
+@JvmName("tabsSelectedIndexSignal")
 fun Tabs.selectedIndex(signal: Signal<Int>) {
     fun apply(index: Int) {
         setSelectedIndex(index)
@@ -26,7 +27,7 @@ fun Tabs.selectedIndex(signal: Signal<Int>) {
 /**
  * Two-way binding for Tabs selected index.
  */
-@JvmName("tabsSelectedIndexTwoWay")
+@JvmName("tabsSelectedIndexMutableSignal")
 fun Tabs.selectedIndex(signal: MutableSignal<Int>) {
     selectedIndex = signal.value
 
@@ -42,6 +43,7 @@ fun Tabs.selectedIndex(signal: MutableSignal<Int>) {
 /**
  * Two-way binding for Tabs selected tab.
  */
+@JvmName("tabsSelectedTabMutableSignal")
 fun Tabs.selectedTab(signal: MutableSignal<Tab?>) {
     selectedTab = signal.value
 
@@ -57,6 +59,7 @@ fun Tabs.selectedTab(signal: MutableSignal<Tab?>) {
 /**
  * Reactive orientation for Tabs.
  */
+@JvmName("tabsOrientationSignal")
 fun Tabs.orientation(signal: Signal<Tabs.Orientation>) {
     fun apply(orientation: Tabs.Orientation) {
         setOrientation(orientation)
@@ -69,6 +72,7 @@ fun Tabs.orientation(signal: Signal<Tabs.Orientation>) {
 /**
  * Reactive autoselect for Tabs.
  */
+@JvmName("tabsAutoselectSignal")
 fun Tabs.autoselect(signal: Signal<Boolean>) {
     fun apply(autoselect: Boolean) {
         isAutoselect = autoselect
@@ -81,6 +85,7 @@ fun Tabs.autoselect(signal: Signal<Boolean>) {
 /**
  * Reactive theme variants for Tabs.
  */
+@JvmName("tabsThemeVariantsSignal")
 fun Tabs.themeVariants(signal: Signal<Set<TabsVariant>>) {
     var previousVariants = emptySet<TabsVariant>()
 
@@ -97,6 +102,7 @@ fun Tabs.themeVariants(signal: Signal<Set<TabsVariant>>) {
 /**
  * Reactive single theme variant for Tabs.
  */
+@JvmName("tabsThemeVariantSignal")
 fun Tabs.themeVariant(signal: Signal<TabsVariant?>) {
     var previousVariant: TabsVariant? = null
 
@@ -113,6 +119,7 @@ fun Tabs.themeVariant(signal: Signal<TabsVariant?>) {
 /**
  * Reactive centered theme for Tabs.
  */
+@JvmName("tabsCenteredSignal")
 fun Tabs.centered(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         if (enabled) {
@@ -129,6 +136,7 @@ fun Tabs.centered(signal: Signal<Boolean>) {
 /**
  * Reactive small theme for Tabs.
  */
+@JvmName("tabsSmallSignal")
 fun Tabs.small(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         if (enabled) {
@@ -145,6 +153,7 @@ fun Tabs.small(signal: Signal<Boolean>) {
 /**
  * Reactive minimal theme for Tabs.
  */
+@JvmName("tabsMinimalSignal")
 fun Tabs.minimal(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         if (enabled) {
@@ -161,6 +170,7 @@ fun Tabs.minimal(signal: Signal<Boolean>) {
 /**
  * Reactive equal width tabs theme for Tabs.
  */
+@JvmName("tabsEqualWidthTabsSignal")
 fun Tabs.equalWidthTabs(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         if (enabled) {
@@ -177,6 +187,7 @@ fun Tabs.equalWidthTabs(signal: Signal<Boolean>) {
 /**
  * Reactive hide scroll buttons theme for Tabs.
  */
+@JvmName("tabsHideScrollButtonsSignal")
 fun Tabs.hideScrollButtons(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         if (enabled) {

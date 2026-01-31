@@ -10,6 +10,7 @@ import com.vaadin.flow.component.upload.Upload
 /**
  * Reactive auto upload for Upload component.
  */
+@JvmName("uploadAutoUploadSignal")
 fun Upload.autoUpload(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         isAutoUpload = enabled
@@ -22,6 +23,7 @@ fun Upload.autoUpload(signal: Signal<Boolean>) {
 /**
  * Reactive max files for Upload component.
  */
+@JvmName("uploadMaxFilesSignal")
 fun Upload.maxFiles(signal: Signal<Int>) {
     fun apply(max: Int) {
         setMaxFiles(max)
@@ -34,6 +36,7 @@ fun Upload.maxFiles(signal: Signal<Int>) {
 /**
  * Reactive max file size for Upload component.
  */
+@JvmName("uploadMaxFileSizeSignal")
 fun Upload.maxFileSize(signal: Signal<Int>) {
     fun apply(size: Int) {
         setMaxFileSize(size)
@@ -46,6 +49,7 @@ fun Upload.maxFileSize(signal: Signal<Int>) {
 /**
  * Reactive accepted file types for Upload component.
  */
+@JvmName("uploadAcceptedFileTypesSignal")
 fun Upload.acceptedFileTypes(signal: Signal<List<String>>) {
     fun apply(types: List<String>) {
         setAcceptedFileTypes(*types.toTypedArray())
@@ -58,6 +62,7 @@ fun Upload.acceptedFileTypes(signal: Signal<List<String>>) {
 /**
  * Reactive drop allowed for Upload component.
  */
+@JvmName("uploadDropAllowedSignal")
 fun Upload.dropAllowed(signal: Signal<Boolean>) {
     fun apply(allowed: Boolean) {
         setDropAllowed(allowed)

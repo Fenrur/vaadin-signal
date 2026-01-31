@@ -13,6 +13,7 @@ import com.vaadin.flow.component.details.DetailsVariant
  * Reactive opened state for Details.
  * Note: This is a one-way binding (signal to component).
  */
+@JvmName("detailsOpenedSignal")
 fun Details.opened(signal: Signal<Boolean>) {
     fun apply(opened: Boolean) {
         isOpened = opened
@@ -25,7 +26,7 @@ fun Details.opened(signal: Signal<Boolean>) {
 /**
  * Two-way binding for Details opened state.
  */
-@JvmName("detailsOpenedTwoWay")
+@JvmName("detailsOpenedMutableSignal")
 fun Details.opened(signal: MutableSignal<Boolean>) {
     isOpened = signal.value
 
@@ -41,6 +42,7 @@ fun Details.opened(signal: MutableSignal<Boolean>) {
 /**
  * Reactive summary text for Details.
  */
+@JvmName("detailsSummaryTextSignal")
 fun Details.summaryText(signal: Signal<String>) {
     fun apply(text: String) {
         setSummaryText(text)
@@ -53,6 +55,7 @@ fun Details.summaryText(signal: Signal<String>) {
 /**
  * Reactive theme variants for Details.
  */
+@JvmName("detailsThemeVariantsSignal")
 fun Details.themeVariants(signal: Signal<Set<DetailsVariant>>) {
     var previousVariants = emptySet<DetailsVariant>()
 
@@ -69,6 +72,7 @@ fun Details.themeVariants(signal: Signal<Set<DetailsVariant>>) {
 /**
  * Reactive single theme variant for Details.
  */
+@JvmName("detailsThemeVariantSignal")
 fun Details.themeVariant(signal: Signal<DetailsVariant?>) {
     var previousVariant: DetailsVariant? = null
 
@@ -85,6 +89,7 @@ fun Details.themeVariant(signal: Signal<DetailsVariant?>) {
 /**
  * Reactive filled theme for Details.
  */
+@JvmName("detailsFilledSignal")
 fun Details.filled(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         if (enabled) {
@@ -101,6 +106,7 @@ fun Details.filled(signal: Signal<Boolean>) {
 /**
  * Reactive reverse theme for Details.
  */
+@JvmName("detailsReverseSignal")
 fun Details.reverse(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         if (enabled) {
@@ -117,6 +123,7 @@ fun Details.reverse(signal: Signal<Boolean>) {
 /**
  * Reactive small theme for Details.
  */
+@JvmName("detailsSmallSignal")
 fun Details.small(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         if (enabled) {

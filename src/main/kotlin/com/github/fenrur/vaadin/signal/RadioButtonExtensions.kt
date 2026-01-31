@@ -13,6 +13,7 @@ import com.vaadin.flow.component.radiobutton.RadioGroupVariant
  * Reactive value for RadioButtonGroup.
  * Note: This is a one-way binding (signal to component).
  */
+@JvmName("radioButtonGroupValueSignal")
 fun <TItem> RadioButtonGroup<TItem>.value(signal: Signal<TItem?>) {
     fun apply(value: TItem?) {
         setValue(value)
@@ -25,7 +26,7 @@ fun <TItem> RadioButtonGroup<TItem>.value(signal: Signal<TItem?>) {
 /**
  * Two-way binding for RadioButtonGroup selected item.
  */
-@JvmName("radioButtonGroupValueTwoWay")
+@JvmName("radioButtonGroupValueMutableSignal")
 fun <TItem> RadioButtonGroup<TItem>.value(signal: MutableSignal<TItem?>) {
     value = signal.value
 
@@ -41,6 +42,7 @@ fun <TItem> RadioButtonGroup<TItem>.value(signal: MutableSignal<TItem?>) {
 /**
  * Reactive label for RadioButtonGroup.
  */
+@JvmName("radioButtonGroupLabelSignal")
 fun <TItem> RadioButtonGroup<TItem>.label(signal: Signal<String>) {
     fun apply(label: String) {
         setLabel(label)
@@ -53,6 +55,7 @@ fun <TItem> RadioButtonGroup<TItem>.label(signal: Signal<String>) {
 /**
  * Reactive required indicator for RadioButtonGroup.
  */
+@JvmName("radioButtonGroupRequiredSignal")
 fun <TItem> RadioButtonGroup<TItem>.required(signal: Signal<Boolean>) {
     fun apply(required: Boolean) {
         isRequiredIndicatorVisible = required
@@ -65,6 +68,7 @@ fun <TItem> RadioButtonGroup<TItem>.required(signal: Signal<Boolean>) {
 /**
  * Reactive invalid state for RadioButtonGroup.
  */
+@JvmName("radioButtonGroupInvalidSignal")
 fun <TItem> RadioButtonGroup<TItem>.invalid(signal: Signal<Boolean>) {
     fun apply(invalid: Boolean) {
         isInvalid = invalid
@@ -77,6 +81,7 @@ fun <TItem> RadioButtonGroup<TItem>.invalid(signal: Signal<Boolean>) {
 /**
  * Reactive error message for RadioButtonGroup.
  */
+@JvmName("radioButtonGroupErrorMessageSignal")
 fun <TItem> RadioButtonGroup<TItem>.errorMessage(signal: Signal<String>) {
     fun apply(message: String) {
         setErrorMessage(message)
@@ -89,6 +94,7 @@ fun <TItem> RadioButtonGroup<TItem>.errorMessage(signal: Signal<String>) {
 /**
  * Reactive aria label for RadioButtonGroup.
  */
+@JvmName("radioButtonGroupAriaLabelSignal")
 fun <TItem> RadioButtonGroup<TItem>.ariaLabel(signal: Signal<String?>) {
     fun apply(ariaLabel: String?) {
         setAriaLabel(ariaLabel)
@@ -101,6 +107,7 @@ fun <TItem> RadioButtonGroup<TItem>.ariaLabel(signal: Signal<String?>) {
 /**
  * Reactive aria labelled by for RadioButtonGroup.
  */
+@JvmName("radioButtonGroupAriaLabelledBySignal")
 fun <TItem> RadioButtonGroup<TItem>.ariaLabelledBy(signal: Signal<String?>) {
     fun apply(labelledBy: String?) {
         setAriaLabelledBy(labelledBy)
@@ -113,6 +120,7 @@ fun <TItem> RadioButtonGroup<TItem>.ariaLabelledBy(signal: Signal<String?>) {
 /**
  * Reactive theme variants for RadioButtonGroup.
  */
+@JvmName("radioButtonGroupThemeVariantsSignal")
 fun <TItem> RadioButtonGroup<TItem>.themeVariants(signal: Signal<Set<RadioGroupVariant>>) {
     var previousVariants = emptySet<RadioGroupVariant>()
 
@@ -129,6 +137,7 @@ fun <TItem> RadioButtonGroup<TItem>.themeVariants(signal: Signal<Set<RadioGroupV
 /**
  * Reactive single theme variant for RadioButtonGroup.
  */
+@JvmName("radioButtonGroupThemeVariantSignal")
 fun <TItem> RadioButtonGroup<TItem>.themeVariant(signal: Signal<RadioGroupVariant?>) {
     var previousVariant: RadioGroupVariant? = null
 
@@ -145,6 +154,7 @@ fun <TItem> RadioButtonGroup<TItem>.themeVariant(signal: Signal<RadioGroupVarian
 /**
  * Reactive vertical orientation for RadioButtonGroup.
  */
+@JvmName("radioButtonGroupVerticalSignal")
 fun <TItem> RadioButtonGroup<TItem>.vertical(signal: Signal<Boolean>) {
     fun apply(isVertical: Boolean) {
         if (isVertical) {
@@ -161,6 +171,7 @@ fun <TItem> RadioButtonGroup<TItem>.vertical(signal: Signal<Boolean>) {
 /**
  * Reactive helper above field for RadioButtonGroup.
  */
+@JvmName("radioButtonGroupHelperAboveFieldSignal")
 fun <TItem> RadioButtonGroup<TItem>.helperAboveField(signal: Signal<Boolean>) {
     fun apply(isAbove: Boolean) {
         if (isAbove) {
@@ -177,6 +188,7 @@ fun <TItem> RadioButtonGroup<TItem>.helperAboveField(signal: Signal<Boolean>) {
 /**
  * Reactive readonly state for RadioButtonGroup.
  */
+@JvmName("radioButtonGroupReadonlySignal")
 fun <TItem> RadioButtonGroup<TItem>.readonly(signal: Signal<Boolean>) {
     fun apply(readonly: Boolean) {
         isReadOnly = readonly

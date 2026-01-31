@@ -12,6 +12,7 @@ import com.vaadin.flow.server.AbstractStreamResource
 /**
  * Reactive name for Avatar.
  */
+@JvmName("avatarNameSignal")
 fun Avatar.name(signal: Signal<String?>) {
     fun apply(name: String?) {
         setName(name)
@@ -24,6 +25,7 @@ fun Avatar.name(signal: Signal<String?>) {
 /**
  * Reactive abbreviation for Avatar.
  */
+@JvmName("avatarAbbreviationSignal")
 fun Avatar.abbreviation(signal: Signal<String?>) {
     fun apply(abbreviation: String?) {
         setAbbreviation(abbreviation)
@@ -36,6 +38,7 @@ fun Avatar.abbreviation(signal: Signal<String?>) {
 /**
  * Reactive image URL for Avatar.
  */
+@JvmName("avatarImageSignal")
 fun Avatar.image(signal: Signal<String?>) {
     fun apply(image: String?) {
         setImage(image)
@@ -48,6 +51,7 @@ fun Avatar.image(signal: Signal<String?>) {
 /**
  * Reactive image resource for Avatar.
  */
+@JvmName("avatarImageResourceSignal")
 fun Avatar.imageResource(signal: Signal<AbstractStreamResource?>) {
     fun apply(resource: AbstractStreamResource?) {
         setImageResource(resource)
@@ -60,6 +64,7 @@ fun Avatar.imageResource(signal: Signal<AbstractStreamResource?>) {
 /**
  * Reactive color index for Avatar.
  */
+@JvmName("avatarColorIndexSignal")
 fun Avatar.colorIndex(signal: Signal<Int?>) {
     fun apply(index: Int?) {
         setColorIndex(index)
@@ -72,6 +77,7 @@ fun Avatar.colorIndex(signal: Signal<Int?>) {
 /**
  * Reactive theme variants for Avatar.
  */
+@JvmName("avatarThemeVariantsSignal")
 fun Avatar.themeVariants(signal: Signal<Set<AvatarVariant>>) {
     var previousVariants = emptySet<AvatarVariant>()
 
@@ -88,6 +94,7 @@ fun Avatar.themeVariants(signal: Signal<Set<AvatarVariant>>) {
 /**
  * Reactive single theme variant for Avatar.
  */
+@JvmName("avatarThemeVariantSignal")
 fun Avatar.themeVariant(signal: Signal<AvatarVariant?>) {
     var previousVariant: AvatarVariant? = null
 
@@ -104,6 +111,7 @@ fun Avatar.themeVariant(signal: Signal<AvatarVariant?>) {
 /**
  * Reactive extra large theme for Avatar.
  */
+@JvmName("avatarExtraLargeSignal")
 fun Avatar.extraLarge(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         if (enabled) {
@@ -120,6 +128,7 @@ fun Avatar.extraLarge(signal: Signal<Boolean>) {
 /**
  * Reactive large theme for Avatar.
  */
+@JvmName("avatarLargeSignal")
 fun Avatar.large(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         if (enabled) {
@@ -136,6 +145,7 @@ fun Avatar.large(signal: Signal<Boolean>) {
 /**
  * Reactive small theme for Avatar.
  */
+@JvmName("avatarSmallSignal")
 fun Avatar.small(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         if (enabled) {
@@ -152,6 +162,7 @@ fun Avatar.small(signal: Signal<Boolean>) {
 /**
  * Reactive extra small theme for Avatar.
  */
+@JvmName("avatarExtraSmallSignal")
 fun Avatar.extraSmall(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         if (enabled) {

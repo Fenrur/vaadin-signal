@@ -11,6 +11,7 @@ import com.vaadin.flow.component.orderedlayout.FlexLayout
 /**
  * Reactive flex direction for FlexLayout.
  */
+@JvmName("flexLayoutFlexDirectionSignal")
 fun FlexLayout.flexDirection(signal: Signal<FlexLayout.FlexDirection>) {
     fun apply(direction: FlexLayout.FlexDirection) {
         setFlexDirection(direction)
@@ -23,6 +24,7 @@ fun FlexLayout.flexDirection(signal: Signal<FlexLayout.FlexDirection>) {
 /**
  * Reactive flex wrap for FlexLayout.
  */
+@JvmName("flexLayoutFlexWrapSignal")
 fun FlexLayout.flexWrap(signal: Signal<FlexLayout.FlexWrap>) {
     fun apply(wrap: FlexLayout.FlexWrap) {
         setFlexWrap(wrap)
@@ -35,6 +37,7 @@ fun FlexLayout.flexWrap(signal: Signal<FlexLayout.FlexWrap>) {
 /**
  * Reactive align content for FlexLayout.
  */
+@JvmName("flexLayoutAlignContentSignal")
 fun FlexLayout.alignContent(signal: Signal<FlexLayout.ContentAlignment>) {
     fun apply(alignment: FlexLayout.ContentAlignment) {
         setAlignContent(alignment)
@@ -47,6 +50,7 @@ fun FlexLayout.alignContent(signal: Signal<FlexLayout.ContentAlignment>) {
 /**
  * Reactive align items for FlexLayout.
  */
+@JvmName("flexLayoutAlignItemsSignal")
 fun FlexLayout.alignItems(signal: Signal<FlexComponent.Alignment?>) {
     fun apply(alignment: FlexComponent.Alignment?) {
         setAlignItems(alignment)
@@ -59,6 +63,7 @@ fun FlexLayout.alignItems(signal: Signal<FlexComponent.Alignment?>) {
 /**
  * Reactive justify content mode for FlexLayout.
  */
+@JvmName("flexLayoutJustifyContentModeSignal")
 fun FlexLayout.justifyContentMode(signal: Signal<FlexComponent.JustifyContentMode>) {
     fun apply(mode: FlexComponent.JustifyContentMode) {
         setJustifyContentMode(mode)

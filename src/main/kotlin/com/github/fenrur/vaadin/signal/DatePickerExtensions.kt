@@ -14,6 +14,7 @@ import java.time.LocalDate
  * Reactive value for DatePicker.
  * Note: This is a one-way binding (signal to component).
  */
+@JvmName("datePickerValueSignal")
 fun DatePicker.value(signal: Signal<LocalDate?>) {
     fun apply(value: LocalDate?) {
         setValue(value)
@@ -26,7 +27,7 @@ fun DatePicker.value(signal: Signal<LocalDate?>) {
 /**
  * Two-way binding for DatePicker value.
  */
-@JvmName("datePickerValueTwoWay")
+@JvmName("datePickerValueMutableSignal")
 fun DatePicker.value(signal: MutableSignal<LocalDate?>) {
     value = signal.value
 
@@ -42,6 +43,7 @@ fun DatePicker.value(signal: MutableSignal<LocalDate?>) {
 /**
  * Reactive label for DatePicker.
  */
+@JvmName("datePickerLabelSignal")
 fun DatePicker.label(signal: Signal<String>) {
     fun apply(label: String) {
         setLabel(label)
@@ -54,6 +56,7 @@ fun DatePicker.label(signal: Signal<String>) {
 /**
  * Reactive placeholder for DatePicker.
  */
+@JvmName("datePickerPlaceholderSignal")
 fun DatePicker.placeholder(signal: Signal<String>) {
     fun apply(placeholder: String) {
         setPlaceholder(placeholder)
@@ -66,6 +69,7 @@ fun DatePicker.placeholder(signal: Signal<String>) {
 /**
  * Reactive min date for DatePicker.
  */
+@JvmName("datePickerMinSignal")
 fun DatePicker.min(signal: Signal<LocalDate?>) {
     fun apply(min: LocalDate?) {
         setMin(min)
@@ -78,6 +82,7 @@ fun DatePicker.min(signal: Signal<LocalDate?>) {
 /**
  * Reactive max date for DatePicker.
  */
+@JvmName("datePickerMaxSignal")
 fun DatePicker.max(signal: Signal<LocalDate?>) {
     fun apply(max: LocalDate?) {
         setMax(max)
@@ -90,6 +95,7 @@ fun DatePicker.max(signal: Signal<LocalDate?>) {
 /**
  * Reactive required indicator for DatePicker.
  */
+@JvmName("datePickerRequiredSignal")
 fun DatePicker.required(signal: Signal<Boolean>) {
     fun apply(required: Boolean) {
         isRequired = required
@@ -102,6 +108,7 @@ fun DatePicker.required(signal: Signal<Boolean>) {
 /**
  * Reactive invalid state for DatePicker.
  */
+@JvmName("datePickerInvalidSignal")
 fun DatePicker.invalid(signal: Signal<Boolean>) {
     fun apply(invalid: Boolean) {
         isInvalid = invalid
@@ -114,6 +121,7 @@ fun DatePicker.invalid(signal: Signal<Boolean>) {
 /**
  * Reactive error message for DatePicker.
  */
+@JvmName("datePickerErrorMessageSignal")
 fun DatePicker.errorMessage(signal: Signal<String>) {
     fun apply(message: String) {
         setErrorMessage(message)
@@ -126,6 +134,7 @@ fun DatePicker.errorMessage(signal: Signal<String>) {
 /**
  * Reactive clear button visibility for DatePicker.
  */
+@JvmName("datePickerClearButtonVisibleSignal")
 fun DatePicker.clearButtonVisible(signal: Signal<Boolean>) {
     fun apply(visible: Boolean) {
         isClearButtonVisible = visible
@@ -138,6 +147,7 @@ fun DatePicker.clearButtonVisible(signal: Signal<Boolean>) {
 /**
  * Reactive auto open for DatePicker.
  */
+@JvmName("datePickerAutoOpenSignal")
 fun DatePicker.autoOpen(signal: Signal<Boolean>) {
     fun apply(autoOpen: Boolean) {
         isAutoOpen = autoOpen
@@ -150,6 +160,7 @@ fun DatePicker.autoOpen(signal: Signal<Boolean>) {
 /**
  * Reactive opened state for DatePicker.
  */
+@JvmName("datePickerOpenedSignal")
 fun DatePicker.opened(signal: Signal<Boolean>) {
     fun apply(opened: Boolean) {
         setOpened(opened)
@@ -162,6 +173,7 @@ fun DatePicker.opened(signal: Signal<Boolean>) {
 /**
  * Reactive overlay class name for DatePicker.
  */
+@JvmName("datePickerOverlayClassNameSignal")
 fun DatePicker.overlayClassName(signal: Signal<String>) {
     fun apply(className: String) {
         overlayClassName = className
@@ -174,6 +186,7 @@ fun DatePicker.overlayClassName(signal: Signal<String>) {
 /**
  * Reactive aria label for DatePicker.
  */
+@JvmName("datePickerAriaLabelSignal")
 fun DatePicker.ariaLabel(signal: Signal<String?>) {
     fun apply(ariaLabel: String?) {
         setAriaLabel(ariaLabel)
@@ -186,6 +199,7 @@ fun DatePicker.ariaLabel(signal: Signal<String?>) {
 /**
  * Reactive aria labelled by for DatePicker.
  */
+@JvmName("datePickerAriaLabelledBySignal")
 fun DatePicker.ariaLabelledBy(signal: Signal<String?>) {
     fun apply(labelledBy: String?) {
         setAriaLabelledBy(labelledBy)
@@ -198,6 +212,7 @@ fun DatePicker.ariaLabelledBy(signal: Signal<String?>) {
 /**
  * Reactive theme variants for DatePicker.
  */
+@JvmName("datePickerThemeVariantsSignal")
 fun DatePicker.themeVariants(signal: Signal<Set<DatePickerVariant>>) {
     var previousVariants = emptySet<DatePickerVariant>()
 
@@ -214,6 +229,7 @@ fun DatePicker.themeVariants(signal: Signal<Set<DatePickerVariant>>) {
 /**
  * Reactive single theme variant for DatePicker.
  */
+@JvmName("datePickerThemeVariantSignal")
 fun DatePicker.themeVariant(signal: Signal<DatePickerVariant?>) {
     var previousVariant: DatePickerVariant? = null
 
@@ -230,6 +246,7 @@ fun DatePicker.themeVariant(signal: Signal<DatePickerVariant?>) {
 /**
  * Reactive small size for DatePicker.
  */
+@JvmName("datePickerSmallSignal")
 fun DatePicker.small(signal: Signal<Boolean>) {
     fun apply(isSmall: Boolean) {
         if (isSmall) {
@@ -246,6 +263,7 @@ fun DatePicker.small(signal: Signal<Boolean>) {
 /**
  * Reactive helper above field for DatePicker.
  */
+@JvmName("datePickerHelperAboveFieldSignal")
 fun DatePicker.helperAboveField(signal: Signal<Boolean>) {
     fun apply(isAbove: Boolean) {
         if (isAbove) {
@@ -262,6 +280,7 @@ fun DatePicker.helperAboveField(signal: Signal<Boolean>) {
 /**
  * Reactive align left for DatePicker.
  */
+@JvmName("datePickerAlignLeftSignal")
 fun DatePicker.alignLeft(signal: Signal<Boolean>) {
     fun apply(alignLeft: Boolean) {
         if (alignLeft) {
@@ -278,6 +297,7 @@ fun DatePicker.alignLeft(signal: Signal<Boolean>) {
 /**
  * Reactive align center for DatePicker.
  */
+@JvmName("datePickerAlignCenterSignal")
 fun DatePicker.alignCenter(signal: Signal<Boolean>) {
     fun apply(alignCenter: Boolean) {
         if (alignCenter) {
@@ -294,6 +314,7 @@ fun DatePicker.alignCenter(signal: Signal<Boolean>) {
 /**
  * Reactive align right for DatePicker.
  */
+@JvmName("datePickerAlignRightSignal")
 fun DatePicker.alignRight(signal: Signal<Boolean>) {
     fun apply(alignRight: Boolean) {
         if (alignRight) {
@@ -310,6 +331,7 @@ fun DatePicker.alignRight(signal: Signal<Boolean>) {
 /**
  * Reactive readonly state for DatePicker.
  */
+@JvmName("datePickerReadonlySignal")
 fun DatePicker.readonly(signal: Signal<Boolean>) {
     fun apply(readonly: Boolean) {
         isReadOnly = readonly
@@ -322,6 +344,7 @@ fun DatePicker.readonly(signal: Signal<Boolean>) {
 /**
  * Reactive name for DatePicker.
  */
+@JvmName("datePickerNameSignal")
 fun DatePicker.name(signal: Signal<String>) {
     fun apply(name: String) {
         setName(name)
@@ -334,6 +357,7 @@ fun DatePicker.name(signal: Signal<String>) {
 /**
  * Reactive week numbers visible for DatePicker.
  */
+@JvmName("datePickerWeekNumbersVisibleSignal")
 fun DatePicker.weekNumbersVisible(signal: Signal<Boolean>) {
     fun apply(visible: Boolean) {
         isWeekNumbersVisible = visible
@@ -346,6 +370,7 @@ fun DatePicker.weekNumbersVisible(signal: Signal<Boolean>) {
 /**
  * Reactive initial position for DatePicker.
  */
+@JvmName("datePickerInitialPositionSignal")
 fun DatePicker.initialPosition(signal: Signal<LocalDate?>) {
     fun apply(position: LocalDate?) {
         setInitialPosition(position)

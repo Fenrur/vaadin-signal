@@ -10,6 +10,7 @@ import com.vaadin.flow.component.sidenav.SideNav
 /**
  * Reactive label for SideNav.
  */
+@JvmName("sideNavLabelSignal")
 fun SideNav.label(signal: Signal<String?>) {
     fun apply(label: String?) {
         setLabel(label)
@@ -22,6 +23,7 @@ fun SideNav.label(signal: Signal<String?>) {
 /**
  * Reactive collapsible state for SideNav.
  */
+@JvmName("sideNavCollapsibleSignal")
 fun SideNav.collapsible(signal: Signal<Boolean>) {
     fun apply(collapsible: Boolean) {
         isCollapsible = collapsible
@@ -34,6 +36,7 @@ fun SideNav.collapsible(signal: Signal<Boolean>) {
 /**
  * Reactive expanded state for SideNav.
  */
+@JvmName("sideNavExpandedSignal")
 fun SideNav.expanded(signal: Signal<Boolean>) {
     fun apply(expanded: Boolean) {
         isExpanded = expanded

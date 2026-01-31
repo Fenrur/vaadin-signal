@@ -12,6 +12,7 @@ import com.vaadin.flow.data.provider.DataProvider
 /**
  * Two-way binding for MultiSelectListBox value.
  */
+@JvmName("multiSelectListBoxValueMutableSignal")
 fun <T> MultiSelectListBox<T>.value(signal: MutableSignal<Set<T>>) {
     value = signal.value
 
@@ -27,6 +28,7 @@ fun <T> MultiSelectListBox<T>.value(signal: MutableSignal<Set<T>>) {
 /**
  * Reactive items for MultiSelectListBox.
  */
+@JvmName("multiSelectListBoxItemsSignal")
 fun <T> MultiSelectListBox<T>.items(signal: Signal<List<T>>) {
     fun apply(items: List<T>) {
         setItems(items)
@@ -39,6 +41,7 @@ fun <T> MultiSelectListBox<T>.items(signal: Signal<List<T>>) {
 /**
  * Reactive DataProvider for MultiSelectListBox.
  */
+@JvmName("multiSelectListBoxDataProviderSignal")
 fun <T> MultiSelectListBox<T>.dataProvider(signal: Signal<DataProvider<T, *>>) {
     fun apply(provider: DataProvider<T, *>) {
         setDataProvider(provider)

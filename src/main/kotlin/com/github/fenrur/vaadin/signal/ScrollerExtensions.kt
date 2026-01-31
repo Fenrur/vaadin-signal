@@ -11,6 +11,7 @@ import com.vaadin.flow.component.orderedlayout.ScrollerVariant
 /**
  * Reactive scroll direction for Scroller.
  */
+@JvmName("scrollerScrollDirectionSignal")
 fun Scroller.scrollDirection(signal: Signal<Scroller.ScrollDirection>) {
     fun apply(direction: Scroller.ScrollDirection) {
         setScrollDirection(direction)
@@ -23,6 +24,7 @@ fun Scroller.scrollDirection(signal: Signal<Scroller.ScrollDirection>) {
 /**
  * Reactive theme variants for Scroller.
  */
+@JvmName("scrollerThemeVariantsSignal")
 fun Scroller.themeVariants(signal: Signal<Set<ScrollerVariant>>) {
     var previousVariants = emptySet<ScrollerVariant>()
 
@@ -39,6 +41,7 @@ fun Scroller.themeVariants(signal: Signal<Set<ScrollerVariant>>) {
 /**
  * Reactive single theme variant for Scroller.
  */
+@JvmName("scrollerThemeVariantSignal")
 fun Scroller.themeVariant(signal: Signal<ScrollerVariant?>) {
     var previousVariant: ScrollerVariant? = null
 
@@ -55,6 +58,7 @@ fun Scroller.themeVariant(signal: Signal<ScrollerVariant?>) {
 /**
  * Reactive overflow indicators for Scroller.
  */
+@JvmName("scrollerOverflowIndicatorsSignal")
 fun Scroller.overflowIndicators(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         if (enabled) {

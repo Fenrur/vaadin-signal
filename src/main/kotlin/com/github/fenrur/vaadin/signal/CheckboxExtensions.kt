@@ -11,7 +11,7 @@ import com.vaadin.flow.component.checkbox.Checkbox
 /**
  * Two-way binding for Checkbox value (checked state).
  */
-@JvmName("checkboxValueTwoWay")
+@JvmName("checkboxValueMutableSignal")
 fun Checkbox.value(signal: MutableSignal<Boolean>) {
     value = signal.value
 
@@ -27,6 +27,7 @@ fun Checkbox.value(signal: MutableSignal<Boolean>) {
 /**
  * Reactive checked state for Checkbox (one-way).
  */
+@JvmName("checkboxCheckedSignal")
 fun Checkbox.checked(signal: Signal<Boolean>) {
     fun apply(checked: Boolean) {
         value = checked
@@ -39,6 +40,7 @@ fun Checkbox.checked(signal: Signal<Boolean>) {
 /**
  * Reactive label for Checkbox.
  */
+@JvmName("checkboxLabelSignal")
 fun Checkbox.label(signal: Signal<String>) {
     fun apply(label: String) {
         setLabel(label)
@@ -51,6 +53,7 @@ fun Checkbox.label(signal: Signal<String>) {
 /**
  * Reactive autofocus for Checkbox.
  */
+@JvmName("checkboxAutofocusSignal")
 fun Checkbox.autofocus(signal: Signal<Boolean>) {
     fun apply(autofocus: Boolean) {
         isAutofocus = autofocus
@@ -63,6 +66,7 @@ fun Checkbox.autofocus(signal: Signal<Boolean>) {
 /**
  * Reactive indeterminate state for Checkbox.
  */
+@JvmName("checkboxIndeterminateSignal")
 fun Checkbox.indeterminate(signal: Signal<Boolean>) {
     fun apply(indeterminate: Boolean) {
         isIndeterminate = indeterminate
@@ -75,6 +79,7 @@ fun Checkbox.indeterminate(signal: Signal<Boolean>) {
 /**
  * Reactive required indicator for Checkbox.
  */
+@JvmName("checkboxRequiredSignal")
 fun Checkbox.required(signal: Signal<Boolean>) {
     fun apply(required: Boolean) {
         isRequiredIndicatorVisible = required
@@ -87,6 +92,7 @@ fun Checkbox.required(signal: Signal<Boolean>) {
 /**
  * Reactive invalid state for Checkbox.
  */
+@JvmName("checkboxInvalidSignal")
 fun Checkbox.invalid(signal: Signal<Boolean>) {
     fun apply(invalid: Boolean) {
         isInvalid = invalid
@@ -99,6 +105,7 @@ fun Checkbox.invalid(signal: Signal<Boolean>) {
 /**
  * Reactive error message for Checkbox.
  */
+@JvmName("checkboxErrorMessageSignal")
 fun Checkbox.errorMessage(signal: Signal<String>) {
     fun apply(message: String) {
         setErrorMessage(message)
@@ -111,6 +118,7 @@ fun Checkbox.errorMessage(signal: Signal<String>) {
 /**
  * Reactive aria label for Checkbox.
  */
+@JvmName("checkboxAriaLabelSignal")
 fun Checkbox.ariaLabel(signal: Signal<String?>) {
     fun apply(ariaLabel: String?) {
         setAriaLabel(ariaLabel)
@@ -123,6 +131,7 @@ fun Checkbox.ariaLabel(signal: Signal<String?>) {
 /**
  * Reactive aria labelled by for Checkbox.
  */
+@JvmName("checkboxAriaLabelledBySignal")
 fun Checkbox.ariaLabelledBy(signal: Signal<String?>) {
     fun apply(labelledBy: String?) {
         setAriaLabelledBy(labelledBy)

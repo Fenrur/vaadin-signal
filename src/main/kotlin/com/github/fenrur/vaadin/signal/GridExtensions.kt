@@ -14,6 +14,7 @@ import com.vaadin.flow.data.provider.DataProvider
 /**
  * Reactive items for Grid.
  */
+@JvmName("gridItemsSignal")
 fun <T> Grid<T>.items(signal: Signal<List<T>>) {
     fun apply(items: List<T>) {
         setItems(items)
@@ -26,6 +27,7 @@ fun <T> Grid<T>.items(signal: Signal<List<T>>) {
 /**
  * Reactive DataProvider for Grid.
  */
+@JvmName("gridDataProviderSignal")
 fun <T> Grid<T>.dataProvider(signal: Signal<DataProvider<T, *>>) {
     fun apply(provider: DataProvider<T, *>) {
         setDataProvider(provider)
@@ -38,6 +40,7 @@ fun <T> Grid<T>.dataProvider(signal: Signal<DataProvider<T, *>>) {
 /**
  * Two-way binding for Grid single selection.
  */
+@JvmName("gridSelectedItemMutableSignal")
 fun <T> Grid<T>.selectedItem(signal: MutableSignal<T?>) {
     val singleSelect = asSingleSelect()
     singleSelect.value = signal.value
@@ -54,6 +57,7 @@ fun <T> Grid<T>.selectedItem(signal: MutableSignal<T?>) {
 /**
  * Two-way binding for Grid multi selection.
  */
+@JvmName("gridSelectedItemsMutableSignal")
 fun <T> Grid<T>.selectedItems(signal: MutableSignal<Set<T>>) {
     setSelectionMode(Grid.SelectionMode.MULTI)
     val multiSelect = selectionModel as GridMultiSelectionModel<T>
@@ -73,6 +77,7 @@ fun <T> Grid<T>.selectedItems(signal: MutableSignal<Set<T>>) {
 /**
  * Reactive selection mode for Grid.
  */
+@JvmName("gridSelectionModeSignal")
 fun <T> Grid<T>.selectionMode(signal: Signal<Grid.SelectionMode>) {
     fun apply(mode: Grid.SelectionMode) {
         setSelectionMode(mode)
@@ -85,6 +90,7 @@ fun <T> Grid<T>.selectionMode(signal: Signal<Grid.SelectionMode>) {
 /**
  * Reactive alternating rows theme for Grid.
  */
+@JvmName("gridAlternatingRowsSignal")
 fun <T> Grid<T>.alternatingRows(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         if (enabled) {
@@ -101,6 +107,7 @@ fun <T> Grid<T>.alternatingRows(signal: Signal<Boolean>) {
 /**
  * Reactive compact theme for Grid.
  */
+@JvmName("gridCompactSignal")
 fun <T> Grid<T>.compact(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         if (enabled) {
@@ -117,6 +124,7 @@ fun <T> Grid<T>.compact(signal: Signal<Boolean>) {
 /**
  * Reactive column borders for Grid.
  */
+@JvmName("gridColumnBordersSignal")
 fun <T> Grid<T>.columnBorders(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         if (enabled) {
@@ -133,6 +141,7 @@ fun <T> Grid<T>.columnBorders(signal: Signal<Boolean>) {
 /**
  * Reactive column reordering for Grid.
  */
+@JvmName("gridColumnReorderingSignal")
 fun <T> Grid<T>.columnReordering(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         isColumnReorderingAllowed = enabled
@@ -145,6 +154,7 @@ fun <T> Grid<T>.columnReordering(signal: Signal<Boolean>) {
 /**
  * Reactive loading state for Grid.
  */
+@JvmName("gridLoadingSignal")
 fun <T> Grid<T>.loading(signal: Signal<Boolean>) {
     fun apply(isLoading: Boolean) {
         element.setProperty("loading", isLoading)

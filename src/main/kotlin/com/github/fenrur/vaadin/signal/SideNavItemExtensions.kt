@@ -10,6 +10,7 @@ import com.vaadin.flow.component.sidenav.SideNavItem
 /**
  * Reactive label for SideNavItem.
  */
+@JvmName("sideNavItemLabelSignal")
 fun SideNavItem.label(signal: Signal<String>) {
     fun apply(label: String) {
         setLabel(label)
@@ -22,6 +23,7 @@ fun SideNavItem.label(signal: Signal<String>) {
 /**
  * Reactive path for SideNavItem.
  */
+@JvmName("sideNavItemPathSignal")
 fun SideNavItem.path(signal: Signal<String?>) {
     fun apply(path: String?) {
         setPath(path)
@@ -34,6 +36,7 @@ fun SideNavItem.path(signal: Signal<String?>) {
 /**
  * Reactive expanded state for SideNavItem.
  */
+@JvmName("sideNavItemExpandedSignal")
 fun SideNavItem.expanded(signal: Signal<Boolean>) {
     fun apply(expanded: Boolean) {
         isExpanded = expanded

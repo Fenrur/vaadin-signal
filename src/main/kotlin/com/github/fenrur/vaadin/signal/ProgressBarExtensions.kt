@@ -11,6 +11,7 @@ import com.vaadin.flow.component.progressbar.ProgressBarVariant
 /**
  * Reactive value for ProgressBar.
  */
+@JvmName("progressBarValueSignal")
 fun ProgressBar.value(signal: Signal<Double>) {
     fun apply(value: Double) {
         setValue(value)
@@ -23,6 +24,7 @@ fun ProgressBar.value(signal: Signal<Double>) {
 /**
  * Reactive min for ProgressBar.
  */
+@JvmName("progressBarMinSignal")
 fun ProgressBar.min(signal: Signal<Double>) {
     fun apply(min: Double) {
         setMin(min)
@@ -35,6 +37,7 @@ fun ProgressBar.min(signal: Signal<Double>) {
 /**
  * Reactive max for ProgressBar.
  */
+@JvmName("progressBarMaxSignal")
 fun ProgressBar.max(signal: Signal<Double>) {
     fun apply(max: Double) {
         setMax(max)
@@ -47,6 +50,7 @@ fun ProgressBar.max(signal: Signal<Double>) {
 /**
  * Reactive indeterminate state for ProgressBar.
  */
+@JvmName("progressBarIndeterminateSignal")
 fun ProgressBar.indeterminate(signal: Signal<Boolean>) {
     fun apply(indeterminate: Boolean) {
         isIndeterminate = indeterminate
@@ -59,6 +63,7 @@ fun ProgressBar.indeterminate(signal: Signal<Boolean>) {
 /**
  * Reactive theme variants for ProgressBar.
  */
+@JvmName("progressBarThemeVariantsSignal")
 fun ProgressBar.themeVariants(signal: Signal<Set<ProgressBarVariant>>) {
     var previousVariants = emptySet<ProgressBarVariant>()
 
@@ -75,6 +80,7 @@ fun ProgressBar.themeVariants(signal: Signal<Set<ProgressBarVariant>>) {
 /**
  * Reactive single theme variant for ProgressBar.
  */
+@JvmName("progressBarThemeVariantSignal")
 fun ProgressBar.themeVariant(signal: Signal<ProgressBarVariant?>) {
     var previousVariant: ProgressBarVariant? = null
 
@@ -91,6 +97,7 @@ fun ProgressBar.themeVariant(signal: Signal<ProgressBarVariant?>) {
 /**
  * Reactive contrast theme for ProgressBar.
  */
+@JvmName("progressBarContrastSignal")
 fun ProgressBar.contrast(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         if (enabled) {
@@ -107,6 +114,7 @@ fun ProgressBar.contrast(signal: Signal<Boolean>) {
 /**
  * Reactive error theme for ProgressBar.
  */
+@JvmName("progressBarErrorSignal")
 fun ProgressBar.error(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         if (enabled) {
@@ -123,6 +131,7 @@ fun ProgressBar.error(signal: Signal<Boolean>) {
 /**
  * Reactive success theme for ProgressBar.
  */
+@JvmName("progressBarSuccessSignal")
 fun ProgressBar.success(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         if (enabled) {

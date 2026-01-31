@@ -10,6 +10,7 @@ import com.vaadin.flow.component.virtuallist.VirtualList
 /**
  * Reactive items for VirtualList.
  */
+@JvmName("virtualListItemsSignal")
 fun <T> VirtualList<T>.items(signal: Signal<List<T>>) {
     fun apply(items: List<T>) {
         setItems(items)

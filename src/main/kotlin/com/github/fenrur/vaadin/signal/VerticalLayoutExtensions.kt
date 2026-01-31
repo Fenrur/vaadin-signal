@@ -12,6 +12,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout
 /**
  * Reactive spacing for VerticalLayout.
  */
+@JvmName("verticalLayoutSpacingSignal")
 fun VerticalLayout.spacing(signal: Signal<Boolean>): VerticalLayout {
     fun apply(hasSpacing: Boolean) {
         isSpacing = hasSpacing
@@ -25,6 +26,7 @@ fun VerticalLayout.spacing(signal: Signal<Boolean>): VerticalLayout {
 /**
  * Reactive padding for VerticalLayout.
  */
+@JvmName("verticalLayoutPaddingSignal")
 fun VerticalLayout.padding(signal: Signal<Boolean>): VerticalLayout {
     fun apply(hasPadding: Boolean) {
         isPadding = hasPadding
@@ -38,6 +40,7 @@ fun VerticalLayout.padding(signal: Signal<Boolean>): VerticalLayout {
 /**
  * Reactive margin for VerticalLayout.
  */
+@JvmName("verticalLayoutMarginSignal")
 fun VerticalLayout.margin(signal: Signal<Boolean>): VerticalLayout {
     fun apply(hasMargin: Boolean) {
         isMargin = hasMargin
@@ -51,6 +54,7 @@ fun VerticalLayout.margin(signal: Signal<Boolean>): VerticalLayout {
 /**
  * Reactive justify content for VerticalLayout.
  */
+@JvmName("verticalLayoutJustifyContentSignal")
 fun VerticalLayout.justifyContent(signal: Signal<FlexComponent.JustifyContentMode>) {
     fun apply(mode: FlexComponent.JustifyContentMode) {
         justifyContentMode = mode
@@ -63,6 +67,7 @@ fun VerticalLayout.justifyContent(signal: Signal<FlexComponent.JustifyContentMod
 /**
  * Reactive align items for VerticalLayout.
  */
+@JvmName("verticalLayoutAlignItemsSignal")
 fun VerticalLayout.alignItems(signal: Signal<FlexComponent.Alignment>) {
     fun apply(alignment: FlexComponent.Alignment) {
         defaultHorizontalComponentAlignment = alignment
@@ -75,6 +80,7 @@ fun VerticalLayout.alignItems(signal: Signal<FlexComponent.Alignment>) {
 /**
  * Reactive wrap for VerticalLayout.
  */
+@JvmName("verticalLayoutWrapSignal")
 fun VerticalLayout.wrap(signal: Signal<Boolean>): VerticalLayout {
     fun apply(wrap: Boolean) {
         setWrap(wrap)
@@ -88,6 +94,7 @@ fun VerticalLayout.wrap(signal: Signal<Boolean>): VerticalLayout {
 /**
  * Reactive box sizing for VerticalLayout.
  */
+@JvmName("verticalLayoutBoxSizingSignal")
 fun VerticalLayout.boxSizing(signal: Signal<BoxSizing?>): VerticalLayout {
     fun apply(boxSizing: BoxSizing?) {
         setBoxSizing(boxSizing)

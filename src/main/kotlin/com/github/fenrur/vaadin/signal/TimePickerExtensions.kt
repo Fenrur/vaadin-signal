@@ -15,6 +15,7 @@ import java.time.LocalTime
  * Reactive value for TimePicker.
  * Note: This is a one-way binding (signal to component).
  */
+@JvmName("timePickerValueSignal")
 fun TimePicker.value(signal: Signal<LocalTime?>) {
     fun apply(value: LocalTime?) {
         setValue(value)
@@ -27,7 +28,7 @@ fun TimePicker.value(signal: Signal<LocalTime?>) {
 /**
  * Two-way binding for TimePicker value.
  */
-@JvmName("timePickerValueTwoWay")
+@JvmName("timePickerValueMutableSignal")
 fun TimePicker.value(signal: MutableSignal<LocalTime?>) {
     value = signal.value
 
@@ -43,6 +44,7 @@ fun TimePicker.value(signal: MutableSignal<LocalTime?>) {
 /**
  * Reactive label for TimePicker.
  */
+@JvmName("timePickerLabelSignal")
 fun TimePicker.label(signal: Signal<String>) {
     fun apply(label: String) {
         setLabel(label)
@@ -55,6 +57,7 @@ fun TimePicker.label(signal: Signal<String>) {
 /**
  * Reactive placeholder for TimePicker.
  */
+@JvmName("timePickerPlaceholderSignal")
 fun TimePicker.placeholder(signal: Signal<String>) {
     fun apply(placeholder: String) {
         setPlaceholder(placeholder)
@@ -67,6 +70,7 @@ fun TimePicker.placeholder(signal: Signal<String>) {
 /**
  * Reactive min time for TimePicker.
  */
+@JvmName("timePickerMinSignal")
 fun TimePicker.min(signal: Signal<LocalTime?>) {
     fun apply(min: LocalTime?) {
         setMin(min)
@@ -79,6 +83,7 @@ fun TimePicker.min(signal: Signal<LocalTime?>) {
 /**
  * Reactive max time for TimePicker.
  */
+@JvmName("timePickerMaxSignal")
 fun TimePicker.max(signal: Signal<LocalTime?>) {
     fun apply(max: LocalTime?) {
         setMax(max)
@@ -91,6 +96,7 @@ fun TimePicker.max(signal: Signal<LocalTime?>) {
 /**
  * Reactive step for TimePicker.
  */
+@JvmName("timePickerStepSignal")
 fun TimePicker.step(signal: Signal<Duration?>) {
     fun apply(step: Duration?) {
         setStep(step)
@@ -103,6 +109,7 @@ fun TimePicker.step(signal: Signal<Duration?>) {
 /**
  * Reactive required indicator for TimePicker.
  */
+@JvmName("timePickerRequiredSignal")
 fun TimePicker.required(signal: Signal<Boolean>) {
     fun apply(required: Boolean) {
         isRequiredIndicatorVisible = required
@@ -115,6 +122,7 @@ fun TimePicker.required(signal: Signal<Boolean>) {
 /**
  * Reactive invalid state for TimePicker.
  */
+@JvmName("timePickerInvalidSignal")
 fun TimePicker.invalid(signal: Signal<Boolean>) {
     fun apply(invalid: Boolean) {
         isInvalid = invalid
@@ -127,6 +135,7 @@ fun TimePicker.invalid(signal: Signal<Boolean>) {
 /**
  * Reactive error message for TimePicker.
  */
+@JvmName("timePickerErrorMessageSignal")
 fun TimePicker.errorMessage(signal: Signal<String>) {
     fun apply(message: String) {
         setErrorMessage(message)
@@ -139,6 +148,7 @@ fun TimePicker.errorMessage(signal: Signal<String>) {
 /**
  * Reactive clear button visibility for TimePicker.
  */
+@JvmName("timePickerClearButtonVisibleSignal")
 fun TimePicker.clearButtonVisible(signal: Signal<Boolean>) {
     fun apply(visible: Boolean) {
         isClearButtonVisible = visible
@@ -151,6 +161,7 @@ fun TimePicker.clearButtonVisible(signal: Signal<Boolean>) {
 /**
  * Reactive auto open for TimePicker.
  */
+@JvmName("timePickerAutoOpenSignal")
 fun TimePicker.autoOpen(signal: Signal<Boolean>) {
     fun apply(autoOpen: Boolean) {
         isAutoOpen = autoOpen
@@ -163,6 +174,7 @@ fun TimePicker.autoOpen(signal: Signal<Boolean>) {
 /**
  * Reactive overlay class name for TimePicker.
  */
+@JvmName("timePickerOverlayClassNameSignal")
 fun TimePicker.overlayClassName(signal: Signal<String>) {
     fun apply(className: String) {
         overlayClassName = className
@@ -175,6 +187,7 @@ fun TimePicker.overlayClassName(signal: Signal<String>) {
 /**
  * Reactive aria label for TimePicker.
  */
+@JvmName("timePickerAriaLabelSignal")
 fun TimePicker.ariaLabel(signal: Signal<String?>) {
     fun apply(ariaLabel: String?) {
         setAriaLabel(ariaLabel)
@@ -187,6 +200,7 @@ fun TimePicker.ariaLabel(signal: Signal<String?>) {
 /**
  * Reactive aria labelled by for TimePicker.
  */
+@JvmName("timePickerAriaLabelledBySignal")
 fun TimePicker.ariaLabelledBy(signal: Signal<String?>) {
     fun apply(labelledBy: String?) {
         setAriaLabelledBy(labelledBy)
@@ -199,6 +213,7 @@ fun TimePicker.ariaLabelledBy(signal: Signal<String?>) {
 /**
  * Reactive theme variants for TimePicker.
  */
+@JvmName("timePickerThemeVariantsSignal")
 fun TimePicker.themeVariants(signal: Signal<Set<TimePickerVariant>>) {
     var previousVariants = emptySet<TimePickerVariant>()
 
@@ -215,6 +230,7 @@ fun TimePicker.themeVariants(signal: Signal<Set<TimePickerVariant>>) {
 /**
  * Reactive single theme variant for TimePicker.
  */
+@JvmName("timePickerThemeVariantSignal")
 fun TimePicker.themeVariant(signal: Signal<TimePickerVariant?>) {
     var previousVariant: TimePickerVariant? = null
 
@@ -231,6 +247,7 @@ fun TimePicker.themeVariant(signal: Signal<TimePickerVariant?>) {
 /**
  * Reactive small size for TimePicker.
  */
+@JvmName("timePickerSmallSignal")
 fun TimePicker.small(signal: Signal<Boolean>) {
     fun apply(isSmall: Boolean) {
         if (isSmall) {
@@ -247,6 +264,7 @@ fun TimePicker.small(signal: Signal<Boolean>) {
 /**
  * Reactive helper above field for TimePicker.
  */
+@JvmName("timePickerHelperAboveFieldSignal")
 fun TimePicker.helperAboveField(signal: Signal<Boolean>) {
     fun apply(isAbove: Boolean) {
         if (isAbove) {
@@ -263,6 +281,7 @@ fun TimePicker.helperAboveField(signal: Signal<Boolean>) {
 /**
  * Reactive align left for TimePicker.
  */
+@JvmName("timePickerAlignLeftSignal")
 fun TimePicker.alignLeft(signal: Signal<Boolean>) {
     fun apply(alignLeft: Boolean) {
         if (alignLeft) {
@@ -279,6 +298,7 @@ fun TimePicker.alignLeft(signal: Signal<Boolean>) {
 /**
  * Reactive align center for TimePicker.
  */
+@JvmName("timePickerAlignCenterSignal")
 fun TimePicker.alignCenter(signal: Signal<Boolean>) {
     fun apply(alignCenter: Boolean) {
         if (alignCenter) {
@@ -295,6 +315,7 @@ fun TimePicker.alignCenter(signal: Signal<Boolean>) {
 /**
  * Reactive align right for TimePicker.
  */
+@JvmName("timePickerAlignRightSignal")
 fun TimePicker.alignRight(signal: Signal<Boolean>) {
     fun apply(alignRight: Boolean) {
         if (alignRight) {
@@ -311,6 +332,7 @@ fun TimePicker.alignRight(signal: Signal<Boolean>) {
 /**
  * Reactive readonly state for TimePicker.
  */
+@JvmName("timePickerReadonlySignal")
 fun TimePicker.readonly(signal: Signal<Boolean>) {
     fun apply(readonly: Boolean) {
         isReadOnly = readonly

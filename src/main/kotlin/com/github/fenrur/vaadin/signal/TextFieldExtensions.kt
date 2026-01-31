@@ -12,7 +12,7 @@ import com.vaadin.flow.data.value.ValueChangeMode
 /**
  * Two-way binding for TextField value.
  */
-@JvmName("textFieldValueTwoWay")
+@JvmName("textFieldValueMutableSignal")
 fun TextField.value(signal: MutableSignal<String>) {
     value = signal.value
 
@@ -28,6 +28,7 @@ fun TextField.value(signal: MutableSignal<String>) {
 /**
  * Reactive label for TextField.
  */
+@JvmName("textFieldLabelSignal")
 fun TextField.label(signal: Signal<String>) {
     fun apply(label: String) {
         setLabel(label)
@@ -40,6 +41,7 @@ fun TextField.label(signal: Signal<String>) {
 /**
  * Reactive placeholder for TextField.
  */
+@JvmName("textFieldPlaceholderSignal")
 fun TextField.placeholder(signal: Signal<String>) {
     fun apply(placeholder: String) {
         setPlaceholder(placeholder)
@@ -52,6 +54,7 @@ fun TextField.placeholder(signal: Signal<String>) {
 /**
  * Reactive autofocus for TextField.
  */
+@JvmName("textFieldAutofocusSignal")
 fun TextField.autofocus(signal: Signal<Boolean>) {
     fun apply(autofocus: Boolean) {
         setAutofocus(autofocus)
@@ -64,6 +67,7 @@ fun TextField.autofocus(signal: Signal<Boolean>) {
 /**
  * Reactive autoselect for TextField.
  */
+@JvmName("textFieldAutoselectSignal")
 fun TextField.autoselect(signal: Signal<Boolean>) {
     fun apply(autoselect: Boolean) {
         setAutoselect(autoselect)
@@ -76,6 +80,7 @@ fun TextField.autoselect(signal: Signal<Boolean>) {
 /**
  * Reactive required for TextField.
  */
+@JvmName("textFieldRequiredSignal")
 fun TextField.required(signal: Signal<Boolean>) {
     fun apply(required: Boolean) {
         setRequired(required)
@@ -88,6 +93,7 @@ fun TextField.required(signal: Signal<Boolean>) {
 /**
  * Reactive clear button visible for TextField.
  */
+@JvmName("textFieldClearButtonVisibleSignal")
 fun TextField.clearButtonVisible(signal: Signal<Boolean>) {
     fun apply(visible: Boolean) {
         isClearButtonVisible = visible
@@ -100,6 +106,7 @@ fun TextField.clearButtonVisible(signal: Signal<Boolean>) {
 /**
  * Reactive minLength for TextField.
  */
+@JvmName("textFieldMinLengthSignal")
 fun TextField.minLength(signal: Signal<Int>) {
     fun apply(minLength: Int) {
         setMinLength(minLength)
@@ -112,6 +119,7 @@ fun TextField.minLength(signal: Signal<Int>) {
 /**
  * Reactive maxLength for TextField.
  */
+@JvmName("textFieldMaxLengthSignal")
 fun TextField.maxLength(signal: Signal<Int>) {
     fun apply(maxLength: Int) {
         setMaxLength(maxLength)
@@ -124,6 +132,7 @@ fun TextField.maxLength(signal: Signal<Int>) {
 /**
  * Reactive pattern for TextField.
  */
+@JvmName("textFieldPatternSignal")
 fun TextField.pattern(signal: Signal<String>) {
     fun apply(pattern: String) {
         setPattern(pattern)
@@ -136,6 +145,7 @@ fun TextField.pattern(signal: Signal<String>) {
 /**
  * Reactive invalid state for TextField.
  */
+@JvmName("textFieldInvalidSignal")
 fun TextField.invalid(signal: Signal<Boolean>) {
     fun apply(invalid: Boolean) {
         setInvalid(invalid)
@@ -148,6 +158,7 @@ fun TextField.invalid(signal: Signal<Boolean>) {
 /**
  * Reactive error message for TextField.
  */
+@JvmName("textFieldErrorMessageSignal")
 fun TextField.errorMessage(signal: Signal<String>) {
     fun apply(message: String) {
         setErrorMessage(message)
@@ -160,6 +171,7 @@ fun TextField.errorMessage(signal: Signal<String>) {
 /**
  * Reactive readonly for TextField.
  */
+@JvmName("textFieldReadonlySignal")
 fun TextField.readonly(signal: Signal<Boolean>) {
     fun apply(readonly: Boolean) {
         isReadOnly = readonly
@@ -172,6 +184,7 @@ fun TextField.readonly(signal: Signal<Boolean>) {
 /**
  * Reactive theme variants for TextField.
  */
+@JvmName("textFieldThemeVariantsSignal")
 fun TextField.themeVariants(signal: Signal<Set<TextFieldVariant>>) {
     var previousVariants = emptySet<TextFieldVariant>()
 
@@ -192,7 +205,7 @@ fun TextField.themeVariants(signal: Signal<Set<TextFieldVariant>>) {
 /**
  * Two-way binding for TextArea value.
  */
-@JvmName("textAreaValueTwoWay")
+@JvmName("textAreaValueMutableSignal")
 fun TextArea.value(signal: MutableSignal<String>) {
     value = signal.value
 
@@ -208,6 +221,7 @@ fun TextArea.value(signal: MutableSignal<String>) {
 /**
  * Reactive label for TextArea.
  */
+@JvmName("textAreaLabelSignal")
 fun TextArea.label(signal: Signal<String>) {
     fun apply(label: String) {
         setLabel(label)
@@ -220,6 +234,7 @@ fun TextArea.label(signal: Signal<String>) {
 /**
  * Reactive placeholder for TextArea.
  */
+@JvmName("textAreaPlaceholderSignal")
 fun TextArea.placeholder(signal: Signal<String>) {
     fun apply(placeholder: String) {
         setPlaceholder(placeholder)
@@ -232,6 +247,7 @@ fun TextArea.placeholder(signal: Signal<String>) {
 /**
  * Reactive required for TextArea.
  */
+@JvmName("textAreaRequiredSignal")
 fun TextArea.required(signal: Signal<Boolean>) {
     fun apply(required: Boolean) {
         setRequired(required)
@@ -244,6 +260,7 @@ fun TextArea.required(signal: Signal<Boolean>) {
 /**
  * Reactive clear button visible for TextArea.
  */
+@JvmName("textAreaClearButtonVisibleSignal")
 fun TextArea.clearButtonVisible(signal: Signal<Boolean>) {
     fun apply(visible: Boolean) {
         isClearButtonVisible = visible
@@ -256,6 +273,7 @@ fun TextArea.clearButtonVisible(signal: Signal<Boolean>) {
 /**
  * Reactive minLength for TextArea.
  */
+@JvmName("textAreaMinLengthSignal")
 fun TextArea.minLength(signal: Signal<Int>) {
     fun apply(minLength: Int) {
         setMinLength(minLength)
@@ -268,6 +286,7 @@ fun TextArea.minLength(signal: Signal<Int>) {
 /**
  * Reactive maxLength for TextArea.
  */
+@JvmName("textAreaMaxLengthSignal")
 fun TextArea.maxLength(signal: Signal<Int>) {
     fun apply(maxLength: Int) {
         setMaxLength(maxLength)
@@ -280,6 +299,7 @@ fun TextArea.maxLength(signal: Signal<Int>) {
 /**
  * Reactive invalid state for TextArea.
  */
+@JvmName("textAreaInvalidSignal")
 fun TextArea.invalid(signal: Signal<Boolean>) {
     fun apply(invalid: Boolean) {
         setInvalid(invalid)
@@ -292,6 +312,7 @@ fun TextArea.invalid(signal: Signal<Boolean>) {
 /**
  * Reactive error message for TextArea.
  */
+@JvmName("textAreaErrorMessageSignal")
 fun TextArea.errorMessage(signal: Signal<String>) {
     fun apply(message: String) {
         setErrorMessage(message)
@@ -304,6 +325,7 @@ fun TextArea.errorMessage(signal: Signal<String>) {
 /**
  * Reactive readonly for TextArea.
  */
+@JvmName("textAreaReadonlySignal")
 fun TextArea.readonly(signal: Signal<Boolean>) {
     fun apply(readonly: Boolean) {
         isReadOnly = readonly
@@ -316,6 +338,7 @@ fun TextArea.readonly(signal: Signal<Boolean>) {
 /**
  * Reactive theme variants for TextArea.
  */
+@JvmName("textAreaThemeVariantsSignal")
 fun TextArea.themeVariants(signal: Signal<Set<TextAreaVariant>>) {
     var previousVariants = emptySet<TextAreaVariant>()
 
@@ -336,7 +359,7 @@ fun TextArea.themeVariants(signal: Signal<Set<TextAreaVariant>>) {
 /**
  * Two-way binding for PasswordField value.
  */
-@JvmName("passwordFieldValueTwoWay")
+@JvmName("passwordFieldValueMutableSignal")
 fun PasswordField.value(signal: MutableSignal<String>) {
     value = signal.value
 
@@ -352,6 +375,7 @@ fun PasswordField.value(signal: MutableSignal<String>) {
 /**
  * Reactive label for PasswordField.
  */
+@JvmName("passwordFieldLabelSignal")
 fun PasswordField.label(signal: Signal<String>) {
     fun apply(label: String) {
         setLabel(label)
@@ -364,6 +388,7 @@ fun PasswordField.label(signal: Signal<String>) {
 /**
  * Reactive placeholder for PasswordField.
  */
+@JvmName("passwordFieldPlaceholderSignal")
 fun PasswordField.placeholder(signal: Signal<String>) {
     fun apply(placeholder: String) {
         setPlaceholder(placeholder)
@@ -376,6 +401,7 @@ fun PasswordField.placeholder(signal: Signal<String>) {
 /**
  * Reactive required for PasswordField.
  */
+@JvmName("passwordFieldRequiredSignal")
 fun PasswordField.required(signal: Signal<Boolean>) {
     fun apply(required: Boolean) {
         setRequired(required)
@@ -388,6 +414,7 @@ fun PasswordField.required(signal: Signal<Boolean>) {
 /**
  * Reactive clear button visible for PasswordField.
  */
+@JvmName("passwordFieldClearButtonVisibleSignal")
 fun PasswordField.clearButtonVisible(signal: Signal<Boolean>) {
     fun apply(visible: Boolean) {
         isClearButtonVisible = visible
@@ -400,6 +427,7 @@ fun PasswordField.clearButtonVisible(signal: Signal<Boolean>) {
 /**
  * Reactive reveal button visible for PasswordField.
  */
+@JvmName("passwordFieldRevealButtonVisibleSignal")
 fun PasswordField.revealButtonVisible(signal: Signal<Boolean>) {
     fun apply(visible: Boolean) {
         isRevealButtonVisible = visible
@@ -412,6 +440,7 @@ fun PasswordField.revealButtonVisible(signal: Signal<Boolean>) {
 /**
  * Reactive invalid state for PasswordField.
  */
+@JvmName("passwordFieldInvalidSignal")
 fun PasswordField.invalid(signal: Signal<Boolean>) {
     fun apply(invalid: Boolean) {
         setInvalid(invalid)
@@ -424,6 +453,7 @@ fun PasswordField.invalid(signal: Signal<Boolean>) {
 /**
  * Reactive error message for PasswordField.
  */
+@JvmName("passwordFieldErrorMessageSignal")
 fun PasswordField.errorMessage(signal: Signal<String>) {
     fun apply(message: String) {
         setErrorMessage(message)
@@ -436,6 +466,7 @@ fun PasswordField.errorMessage(signal: Signal<String>) {
 /**
  * Reactive readonly for PasswordField.
  */
+@JvmName("passwordFieldReadonlySignal")
 fun PasswordField.readonly(signal: Signal<Boolean>) {
     fun apply(readonly: Boolean) {
         isReadOnly = readonly
@@ -452,7 +483,7 @@ fun PasswordField.readonly(signal: Signal<Boolean>) {
 /**
  * Two-way binding for EmailField value.
  */
-@JvmName("emailFieldValueTwoWay")
+@JvmName("emailFieldValueMutableSignal")
 fun EmailField.value(signal: MutableSignal<String>) {
     value = signal.value
 
@@ -468,6 +499,7 @@ fun EmailField.value(signal: MutableSignal<String>) {
 /**
  * Reactive label for EmailField.
  */
+@JvmName("emailFieldLabelSignal")
 fun EmailField.label(signal: Signal<String>) {
     fun apply(label: String) {
         setLabel(label)
@@ -480,6 +512,7 @@ fun EmailField.label(signal: Signal<String>) {
 /**
  * Reactive placeholder for EmailField.
  */
+@JvmName("emailFieldPlaceholderSignal")
 fun EmailField.placeholder(signal: Signal<String>) {
     fun apply(placeholder: String) {
         setPlaceholder(placeholder)
@@ -492,6 +525,7 @@ fun EmailField.placeholder(signal: Signal<String>) {
 /**
  * Reactive required for EmailField.
  */
+@JvmName("emailFieldRequiredSignal")
 fun EmailField.required(signal: Signal<Boolean>) {
     fun apply(required: Boolean) {
         setRequired(required)
@@ -504,6 +538,7 @@ fun EmailField.required(signal: Signal<Boolean>) {
 /**
  * Reactive clear button visible for EmailField.
  */
+@JvmName("emailFieldClearButtonVisibleSignal")
 fun EmailField.clearButtonVisible(signal: Signal<Boolean>) {
     fun apply(visible: Boolean) {
         isClearButtonVisible = visible
@@ -516,6 +551,7 @@ fun EmailField.clearButtonVisible(signal: Signal<Boolean>) {
 /**
  * Reactive invalid state for EmailField.
  */
+@JvmName("emailFieldInvalidSignal")
 fun EmailField.invalid(signal: Signal<Boolean>) {
     fun apply(invalid: Boolean) {
         setInvalid(invalid)
@@ -528,6 +564,7 @@ fun EmailField.invalid(signal: Signal<Boolean>) {
 /**
  * Reactive error message for EmailField.
  */
+@JvmName("emailFieldErrorMessageSignal")
 fun EmailField.errorMessage(signal: Signal<String>) {
     fun apply(message: String) {
         setErrorMessage(message)
@@ -544,7 +581,7 @@ fun EmailField.errorMessage(signal: Signal<String>) {
 /**
  * Two-way binding for NumberField value.
  */
-@JvmName("numberFieldValueTwoWay")
+@JvmName("numberFieldValueMutableSignal")
 fun NumberField.value(signal: MutableSignal<Double?>) {
     value = signal.value
 
@@ -560,6 +597,7 @@ fun NumberField.value(signal: MutableSignal<Double?>) {
 /**
  * Reactive label for NumberField.
  */
+@JvmName("numberFieldLabelSignal")
 fun NumberField.label(signal: Signal<String>) {
     fun apply(label: String) {
         setLabel(label)
@@ -572,6 +610,7 @@ fun NumberField.label(signal: Signal<String>) {
 /**
  * Reactive placeholder for NumberField.
  */
+@JvmName("numberFieldPlaceholderSignal")
 fun NumberField.placeholder(signal: Signal<String>) {
     fun apply(placeholder: String) {
         setPlaceholder(placeholder)
@@ -584,6 +623,7 @@ fun NumberField.placeholder(signal: Signal<String>) {
 /**
  * Reactive required for NumberField.
  */
+@JvmName("numberFieldRequiredSignal")
 fun NumberField.required(signal: Signal<Boolean>) {
     fun apply(required: Boolean) {
         setRequiredIndicatorVisible(required)
@@ -596,6 +636,7 @@ fun NumberField.required(signal: Signal<Boolean>) {
 /**
  * Reactive min for NumberField.
  */
+@JvmName("numberFieldMinSignal")
 fun NumberField.min(signal: Signal<Double>) {
     fun apply(min: Double) {
         setMin(min)
@@ -608,6 +649,7 @@ fun NumberField.min(signal: Signal<Double>) {
 /**
  * Reactive max for NumberField.
  */
+@JvmName("numberFieldMaxSignal")
 fun NumberField.max(signal: Signal<Double>) {
     fun apply(max: Double) {
         setMax(max)
@@ -620,6 +662,7 @@ fun NumberField.max(signal: Signal<Double>) {
 /**
  * Reactive step for NumberField.
  */
+@JvmName("numberFieldStepSignal")
 fun NumberField.step(signal: Signal<Double>) {
     fun apply(step: Double) {
         setStep(step)
@@ -632,6 +675,7 @@ fun NumberField.step(signal: Signal<Double>) {
 /**
  * Reactive stepButtonsVisible for NumberField.
  */
+@JvmName("numberFieldStepButtonsVisibleSignal")
 fun NumberField.stepButtonsVisible(signal: Signal<Boolean>) {
     fun apply(visible: Boolean) {
         setStepButtonsVisible(visible)
@@ -644,6 +688,7 @@ fun NumberField.stepButtonsVisible(signal: Signal<Boolean>) {
 /**
  * Reactive invalid state for NumberField.
  */
+@JvmName("numberFieldInvalidSignal")
 fun NumberField.invalid(signal: Signal<Boolean>) {
     fun apply(invalid: Boolean) {
         setInvalid(invalid)
@@ -656,6 +701,7 @@ fun NumberField.invalid(signal: Signal<Boolean>) {
 /**
  * Reactive error message for NumberField.
  */
+@JvmName("numberFieldErrorMessageSignal")
 fun NumberField.errorMessage(signal: Signal<String>) {
     fun apply(message: String) {
         setErrorMessage(message)
@@ -672,7 +718,7 @@ fun NumberField.errorMessage(signal: Signal<String>) {
 /**
  * Two-way binding for IntegerField value.
  */
-@JvmName("integerFieldValueTwoWay")
+@JvmName("integerFieldValueMutableSignal")
 fun IntegerField.value(signal: MutableSignal<Int?>) {
     value = signal.value
 
@@ -688,6 +734,7 @@ fun IntegerField.value(signal: MutableSignal<Int?>) {
 /**
  * Reactive label for IntegerField.
  */
+@JvmName("integerFieldLabelSignal")
 fun IntegerField.label(signal: Signal<String>) {
     fun apply(label: String) {
         setLabel(label)
@@ -700,6 +747,7 @@ fun IntegerField.label(signal: Signal<String>) {
 /**
  * Reactive placeholder for IntegerField.
  */
+@JvmName("integerFieldPlaceholderSignal")
 fun IntegerField.placeholder(signal: Signal<String>) {
     fun apply(placeholder: String) {
         setPlaceholder(placeholder)
@@ -712,6 +760,7 @@ fun IntegerField.placeholder(signal: Signal<String>) {
 /**
  * Reactive min for IntegerField.
  */
+@JvmName("integerFieldMinSignal")
 fun IntegerField.min(signal: Signal<Int>) {
     fun apply(min: Int) {
         setMin(min)
@@ -724,6 +773,7 @@ fun IntegerField.min(signal: Signal<Int>) {
 /**
  * Reactive max for IntegerField.
  */
+@JvmName("integerFieldMaxSignal")
 fun IntegerField.max(signal: Signal<Int>) {
     fun apply(max: Int) {
         setMax(max)
@@ -736,6 +786,7 @@ fun IntegerField.max(signal: Signal<Int>) {
 /**
  * Reactive step for IntegerField.
  */
+@JvmName("integerFieldStepSignal")
 fun IntegerField.step(signal: Signal<Int>) {
     fun apply(step: Int) {
         setStep(step)
@@ -748,6 +799,7 @@ fun IntegerField.step(signal: Signal<Int>) {
 /**
  * Reactive stepButtonsVisible for IntegerField.
  */
+@JvmName("integerFieldStepButtonsVisibleSignal")
 fun IntegerField.stepButtonsVisible(signal: Signal<Boolean>) {
     fun apply(visible: Boolean) {
         setStepButtonsVisible(visible)
@@ -760,6 +812,7 @@ fun IntegerField.stepButtonsVisible(signal: Signal<Boolean>) {
 /**
  * Reactive invalid state for IntegerField.
  */
+@JvmName("integerFieldInvalidSignal")
 fun IntegerField.invalid(signal: Signal<Boolean>) {
     fun apply(invalid: Boolean) {
         setInvalid(invalid)
@@ -772,6 +825,7 @@ fun IntegerField.invalid(signal: Signal<Boolean>) {
 /**
  * Reactive error message for IntegerField.
  */
+@JvmName("integerFieldErrorMessageSignal")
 fun IntegerField.errorMessage(signal: Signal<String>) {
     fun apply(message: String) {
         setErrorMessage(message)
@@ -788,7 +842,7 @@ fun IntegerField.errorMessage(signal: Signal<String>) {
 /**
  * Two-way binding for BigDecimalField value.
  */
-@JvmName("bigDecimalFieldValueTwoWay")
+@JvmName("bigDecimalFieldValueMutableSignal")
 fun BigDecimalField.value(signal: MutableSignal<java.math.BigDecimal?>) {
     value = signal.value
 
@@ -804,6 +858,7 @@ fun BigDecimalField.value(signal: MutableSignal<java.math.BigDecimal?>) {
 /**
  * Reactive label for BigDecimalField.
  */
+@JvmName("bigDecimalFieldLabelSignal")
 fun BigDecimalField.label(signal: Signal<String>) {
     fun apply(label: String) {
         setLabel(label)
@@ -816,6 +871,7 @@ fun BigDecimalField.label(signal: Signal<String>) {
 /**
  * Reactive placeholder for BigDecimalField.
  */
+@JvmName("bigDecimalFieldPlaceholderSignal")
 fun BigDecimalField.placeholder(signal: Signal<String>) {
     fun apply(placeholder: String) {
         setPlaceholder(placeholder)
@@ -828,6 +884,7 @@ fun BigDecimalField.placeholder(signal: Signal<String>) {
 /**
  * Reactive invalid state for BigDecimalField.
  */
+@JvmName("bigDecimalFieldInvalidSignal")
 fun BigDecimalField.invalid(signal: Signal<Boolean>) {
     fun apply(invalid: Boolean) {
         setInvalid(invalid)
@@ -840,6 +897,7 @@ fun BigDecimalField.invalid(signal: Signal<Boolean>) {
 /**
  * Reactive error message for BigDecimalField.
  */
+@JvmName("bigDecimalFieldErrorMessageSignal")
 fun BigDecimalField.errorMessage(signal: Signal<String>) {
     fun apply(message: String) {
         setErrorMessage(message)

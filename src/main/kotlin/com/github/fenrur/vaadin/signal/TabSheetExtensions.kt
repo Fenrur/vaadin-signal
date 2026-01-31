@@ -13,6 +13,7 @@ import com.vaadin.flow.component.tabs.TabSheetVariant
  * Reactive selected index for TabSheet.
  * Note: This is a one-way binding (signal to component).
  */
+@JvmName("tabSheetSelectedIndexSignal")
 fun TabSheet.selectedIndex(signal: Signal<Int>) {
     fun apply(index: Int) {
         setSelectedIndex(index)
@@ -25,7 +26,7 @@ fun TabSheet.selectedIndex(signal: Signal<Int>) {
 /**
  * Two-way binding for TabSheet selected index.
  */
-@JvmName("tabSheetSelectedIndexTwoWay")
+@JvmName("tabSheetSelectedIndexMutableSignal")
 fun TabSheet.selectedIndex(signal: MutableSignal<Int>) {
     selectedIndex = signal.value
 
@@ -41,6 +42,7 @@ fun TabSheet.selectedIndex(signal: MutableSignal<Int>) {
 /**
  * Reactive theme variants for TabSheet.
  */
+@JvmName("tabSheetThemeVariantsSignal")
 fun TabSheet.themeVariants(signal: Signal<Set<TabSheetVariant>>) {
     var previousVariants = emptySet<TabSheetVariant>()
 
@@ -57,6 +59,7 @@ fun TabSheet.themeVariants(signal: Signal<Set<TabSheetVariant>>) {
 /**
  * Reactive single theme variant for TabSheet.
  */
+@JvmName("tabSheetThemeVariantSignal")
 fun TabSheet.themeVariant(signal: Signal<TabSheetVariant?>) {
     var previousVariant: TabSheetVariant? = null
 
@@ -73,6 +76,7 @@ fun TabSheet.themeVariant(signal: Signal<TabSheetVariant?>) {
 /**
  * Reactive bordered theme for TabSheet.
  */
+@JvmName("tabSheetBorderedSignal")
 fun TabSheet.bordered(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         if (enabled) {
@@ -89,6 +93,7 @@ fun TabSheet.bordered(signal: Signal<Boolean>) {
 /**
  * Reactive no padding theme for TabSheet.
  */
+@JvmName("tabSheetNoPaddingSignal")
 fun TabSheet.noPadding(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         if (enabled) {
@@ -105,6 +110,7 @@ fun TabSheet.noPadding(signal: Signal<Boolean>) {
 /**
  * Reactive tabs centered theme for TabSheet.
  */
+@JvmName("tabSheetTabsCenteredSignal")
 fun TabSheet.tabsCentered(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         if (enabled) {
@@ -121,6 +127,7 @@ fun TabSheet.tabsCentered(signal: Signal<Boolean>) {
 /**
  * Reactive tabs small theme for TabSheet.
  */
+@JvmName("tabSheetTabsSmallSignal")
 fun TabSheet.tabsSmall(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         if (enabled) {
@@ -137,6 +144,7 @@ fun TabSheet.tabsSmall(signal: Signal<Boolean>) {
 /**
  * Reactive tabs minimal theme for TabSheet.
  */
+@JvmName("tabSheetTabsMinimalSignal")
 fun TabSheet.tabsMinimal(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         if (enabled) {
@@ -153,6 +161,7 @@ fun TabSheet.tabsMinimal(signal: Signal<Boolean>) {
 /**
  * Reactive tabs equal width theme for TabSheet.
  */
+@JvmName("tabSheetTabsEqualWidthSignal")
 fun TabSheet.tabsEqualWidth(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         if (enabled) {

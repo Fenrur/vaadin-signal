@@ -13,6 +13,7 @@ import com.vaadin.flow.component.dialog.DialogVariant
  * Reactive opened state for Dialog.
  * Note: This is a one-way binding (signal to component).
  */
+@JvmName("dialogOpenedSignal")
 fun Dialog.opened(signal: Signal<Boolean>) {
     fun apply(opened: Boolean) {
         isOpened = opened
@@ -25,7 +26,7 @@ fun Dialog.opened(signal: Signal<Boolean>) {
 /**
  * Two-way binding for Dialog opened state.
  */
-@JvmName("dialogOpenedTwoWay")
+@JvmName("dialogOpenedMutableSignal")
 fun Dialog.opened(signal: MutableSignal<Boolean>) {
     isOpened = signal.value
 
@@ -41,6 +42,7 @@ fun Dialog.opened(signal: MutableSignal<Boolean>) {
 /**
  * Reactive modal state for Dialog.
  */
+@JvmName("dialogModalSignal")
 fun Dialog.modal(signal: Signal<Boolean>) {
     fun apply(isModal: Boolean) {
         setModal(isModal)
@@ -53,6 +55,7 @@ fun Dialog.modal(signal: Signal<Boolean>) {
 /**
  * Reactive resizable state for Dialog.
  */
+@JvmName("dialogResizableSignal")
 fun Dialog.resizable(signal: Signal<Boolean>) {
     fun apply(isResizable: Boolean) {
         setResizable(isResizable)
@@ -65,6 +68,7 @@ fun Dialog.resizable(signal: Signal<Boolean>) {
 /**
  * Reactive draggable state for Dialog.
  */
+@JvmName("dialogDraggableSignal")
 fun Dialog.draggable(signal: Signal<Boolean>) {
     fun apply(isDraggable: Boolean) {
         setDraggable(isDraggable)
@@ -77,6 +81,7 @@ fun Dialog.draggable(signal: Signal<Boolean>) {
 /**
  * Reactive width for Dialog.
  */
+@JvmName("dialogDialogWidthSignal")
 fun Dialog.dialogWidth(signal: Signal<String?>) {
     fun apply(width: String?) {
         setWidth(width)
@@ -89,6 +94,7 @@ fun Dialog.dialogWidth(signal: Signal<String?>) {
 /**
  * Reactive height for Dialog.
  */
+@JvmName("dialogDialogHeightSignal")
 fun Dialog.dialogHeight(signal: Signal<String?>) {
     fun apply(height: String?) {
         setHeight(height)
@@ -101,6 +107,7 @@ fun Dialog.dialogHeight(signal: Signal<String?>) {
 /**
  * Reactive min width for Dialog.
  */
+@JvmName("dialogMinWidthSignal")
 fun Dialog.minWidth(signal: Signal<String?>) {
     fun apply(minWidth: String?) {
         setMinWidth(minWidth)
@@ -113,6 +120,7 @@ fun Dialog.minWidth(signal: Signal<String?>) {
 /**
  * Reactive max width for Dialog.
  */
+@JvmName("dialogMaxWidthSignal")
 fun Dialog.maxWidth(signal: Signal<String?>) {
     fun apply(maxWidth: String?) {
         setMaxWidth(maxWidth)
@@ -125,6 +133,7 @@ fun Dialog.maxWidth(signal: Signal<String?>) {
 /**
  * Reactive min height for Dialog.
  */
+@JvmName("dialogMinHeightSignal")
 fun Dialog.minHeight(signal: Signal<String?>) {
     fun apply(minHeight: String?) {
         setMinHeight(minHeight)
@@ -137,6 +146,7 @@ fun Dialog.minHeight(signal: Signal<String?>) {
 /**
  * Reactive max height for Dialog.
  */
+@JvmName("dialogMaxHeightSignal")
 fun Dialog.maxHeight(signal: Signal<String?>) {
     fun apply(maxHeight: String?) {
         setMaxHeight(maxHeight)
@@ -149,6 +159,7 @@ fun Dialog.maxHeight(signal: Signal<String?>) {
 /**
  * Reactive top position for Dialog.
  */
+@JvmName("dialogTopSignal")
 fun Dialog.top(signal: Signal<String?>) {
     fun apply(top: String?) {
         setTop(top)
@@ -161,6 +172,7 @@ fun Dialog.top(signal: Signal<String?>) {
 /**
  * Reactive left position for Dialog.
  */
+@JvmName("dialogLeftSignal")
 fun Dialog.left(signal: Signal<String?>) {
     fun apply(left: String?) {
         setLeft(left)
@@ -173,6 +185,7 @@ fun Dialog.left(signal: Signal<String?>) {
 /**
  * Reactive header title for Dialog.
  */
+@JvmName("dialogHeaderTitleSignal")
 fun Dialog.headerTitle(signal: Signal<String>) {
     fun apply(title: String) {
         setHeaderTitle(title)
@@ -185,6 +198,7 @@ fun Dialog.headerTitle(signal: Signal<String>) {
 /**
  * Reactive close on outside click for Dialog.
  */
+@JvmName("dialogCloseOnOutsideClickSignal")
 fun Dialog.closeOnOutsideClick(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         setCloseOnOutsideClick(enabled)
@@ -197,6 +211,7 @@ fun Dialog.closeOnOutsideClick(signal: Signal<Boolean>) {
 /**
  * Reactive close on Escape for Dialog.
  */
+@JvmName("dialogCloseOnEscSignal")
 fun Dialog.closeOnEsc(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         setCloseOnEsc(enabled)
@@ -209,6 +224,7 @@ fun Dialog.closeOnEsc(signal: Signal<Boolean>) {
 /**
  * Reactive theme variants for Dialog.
  */
+@JvmName("dialogThemeVariantsSignal")
 fun Dialog.themeVariants(signal: Signal<Set<DialogVariant>>) {
     var previousVariants = emptySet<DialogVariant>()
 
@@ -225,6 +241,7 @@ fun Dialog.themeVariants(signal: Signal<Set<DialogVariant>>) {
 /**
  * Reactive single theme variant for Dialog.
  */
+@JvmName("dialogThemeVariantSignal")
 fun Dialog.themeVariant(signal: Signal<DialogVariant?>) {
     var previousVariant: DialogVariant? = null
 
@@ -241,6 +258,7 @@ fun Dialog.themeVariant(signal: Signal<DialogVariant?>) {
 /**
  * Reactive no-padding theme for Dialog.
  */
+@JvmName("dialogNoPaddingSignal")
 fun Dialog.noPadding(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         if (enabled) {

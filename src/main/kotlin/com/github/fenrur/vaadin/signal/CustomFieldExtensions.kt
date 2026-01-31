@@ -12,6 +12,7 @@ import com.vaadin.flow.component.customfield.CustomFieldVariant
 /**
  * Two-way binding for CustomField value.
  */
+@JvmName("customFieldValueMutableSignal")
 fun <T> CustomField<T>.value(signal: MutableSignal<T?>) {
     value = signal.value
 
@@ -27,6 +28,7 @@ fun <T> CustomField<T>.value(signal: MutableSignal<T?>) {
 /**
  * Reactive label for CustomField.
  */
+@JvmName("customFieldLabelSignal")
 fun <T> CustomField<T>.label(signal: Signal<String?>) {
     fun apply(label: String?) {
         setLabel(label)
@@ -39,6 +41,7 @@ fun <T> CustomField<T>.label(signal: Signal<String?>) {
 /**
  * Reactive invalid state for CustomField.
  */
+@JvmName("customFieldInvalidSignal")
 fun <T> CustomField<T>.invalid(signal: Signal<Boolean>) {
     fun apply(invalid: Boolean) {
         isInvalid = invalid
@@ -51,6 +54,7 @@ fun <T> CustomField<T>.invalid(signal: Signal<Boolean>) {
 /**
  * Reactive error message for CustomField.
  */
+@JvmName("customFieldErrorMessageSignal")
 fun <T> CustomField<T>.errorMessage(signal: Signal<String?>) {
     fun apply(message: String?) {
         setErrorMessage(message)
@@ -63,6 +67,7 @@ fun <T> CustomField<T>.errorMessage(signal: Signal<String?>) {
 /**
  * Reactive helper text for CustomField.
  */
+@JvmName("customFieldHelperTextSignal")
 fun <T> CustomField<T>.helperText(signal: Signal<String?>) {
     fun apply(text: String?) {
         setHelperText(text)
@@ -75,6 +80,7 @@ fun <T> CustomField<T>.helperText(signal: Signal<String?>) {
 /**
  * Reactive theme variants for CustomField.
  */
+@JvmName("customFieldThemeVariantsSignal")
 fun <T> CustomField<T>.themeVariants(signal: Signal<Set<CustomFieldVariant>>) {
     var previousVariants = emptySet<CustomFieldVariant>()
 
@@ -91,6 +97,7 @@ fun <T> CustomField<T>.themeVariants(signal: Signal<Set<CustomFieldVariant>>) {
 /**
  * Reactive single theme variant for CustomField.
  */
+@JvmName("customFieldThemeVariantSignal")
 fun <T> CustomField<T>.themeVariant(signal: Signal<CustomFieldVariant?>) {
     var previousVariant: CustomFieldVariant? = null
 
@@ -107,6 +114,7 @@ fun <T> CustomField<T>.themeVariant(signal: Signal<CustomFieldVariant?>) {
 /**
  * Reactive small theme for CustomField.
  */
+@JvmName("customFieldSmallSignal")
 fun <T> CustomField<T>.small(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         if (enabled) {
@@ -123,6 +131,7 @@ fun <T> CustomField<T>.small(signal: Signal<Boolean>) {
 /**
  * Reactive helper above field theme for CustomField.
  */
+@JvmName("customFieldHelperAboveFieldSignal")
 fun <T> CustomField<T>.helperAboveField(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         if (enabled) {
@@ -139,6 +148,7 @@ fun <T> CustomField<T>.helperAboveField(signal: Signal<Boolean>) {
 /**
  * Reactive whitespace theme for CustomField.
  */
+@JvmName("customFieldWhitespaceSignal")
 fun <T> CustomField<T>.whitespace(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         if (enabled) {

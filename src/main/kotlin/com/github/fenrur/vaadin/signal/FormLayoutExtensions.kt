@@ -10,6 +10,7 @@ import com.vaadin.flow.component.formlayout.FormLayout
 /**
  * Reactive responsive steps for FormLayout.
  */
+@JvmName("formLayoutResponsiveStepsSignal")
 fun FormLayout.responsiveSteps(signal: Signal<List<FormLayout.ResponsiveStep>>) {
     fun apply(steps: List<FormLayout.ResponsiveStep>) {
         setResponsiveSteps(steps)
@@ -22,6 +23,7 @@ fun FormLayout.responsiveSteps(signal: Signal<List<FormLayout.ResponsiveStep>>) 
 /**
  * Reactive colspan for a FormItem.
  */
+@JvmName("formItemColspanSignal")
 fun FormLayout.FormItem.colspan(signal: Signal<Int>) {
     fun apply(colspan: Int) {
         element.setAttribute("colspan", colspan.toString())
@@ -34,6 +36,7 @@ fun FormLayout.FormItem.colspan(signal: Signal<Int>) {
 /**
  * Reactive label width for FormLayout.
  */
+@JvmName("formLayoutLabelWidthSignal")
 fun FormLayout.labelWidth(signal: Signal<String?>) {
     fun apply(width: String?) {
         if (width != null) {

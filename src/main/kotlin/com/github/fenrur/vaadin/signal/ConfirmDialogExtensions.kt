@@ -10,6 +10,7 @@ import com.vaadin.flow.component.confirmdialog.ConfirmDialog
 /**
  * Reactive opened state for ConfirmDialog.
  */
+@JvmName("confirmDialogOpenedSignal")
 fun ConfirmDialog.opened(signal: Signal<Boolean>) {
     fun apply(opened: Boolean) {
         isOpened = opened
@@ -22,6 +23,7 @@ fun ConfirmDialog.opened(signal: Signal<Boolean>) {
 /**
  * Reactive header for ConfirmDialog.
  */
+@JvmName("confirmDialogHeaderSignal")
 fun ConfirmDialog.header(signal: Signal<String>) {
     fun apply(header: String) {
         setHeader(header)
@@ -34,6 +36,7 @@ fun ConfirmDialog.header(signal: Signal<String>) {
 /**
  * Reactive confirm text for ConfirmDialog.
  */
+@JvmName("confirmDialogConfirmTextSignal")
 fun ConfirmDialog.confirmText(signal: Signal<String>) {
     fun apply(text: String) {
         setConfirmText(text)
@@ -46,6 +49,7 @@ fun ConfirmDialog.confirmText(signal: Signal<String>) {
 /**
  * Reactive confirm button theme for ConfirmDialog.
  */
+@JvmName("confirmDialogConfirmButtonThemeSignal")
 fun ConfirmDialog.confirmButtonTheme(signal: Signal<String>) {
     fun apply(theme: String) {
         setConfirmButtonTheme(theme)
@@ -58,6 +62,7 @@ fun ConfirmDialog.confirmButtonTheme(signal: Signal<String>) {
 /**
  * Reactive cancel text for ConfirmDialog.
  */
+@JvmName("confirmDialogCancelTextSignal")
 fun ConfirmDialog.cancelText(signal: Signal<String>) {
     fun apply(text: String) {
         setCancelText(text)
@@ -70,6 +75,7 @@ fun ConfirmDialog.cancelText(signal: Signal<String>) {
 /**
  * Reactive cancel button theme for ConfirmDialog.
  */
+@JvmName("confirmDialogCancelButtonThemeSignal")
 fun ConfirmDialog.cancelButtonTheme(signal: Signal<String>) {
     fun apply(theme: String) {
         setCancelButtonTheme(theme)
@@ -82,6 +88,7 @@ fun ConfirmDialog.cancelButtonTheme(signal: Signal<String>) {
 /**
  * Reactive reject text for ConfirmDialog.
  */
+@JvmName("confirmDialogRejectTextSignal")
 fun ConfirmDialog.rejectText(signal: Signal<String>) {
     fun apply(text: String) {
         setRejectText(text)
@@ -94,6 +101,7 @@ fun ConfirmDialog.rejectText(signal: Signal<String>) {
 /**
  * Reactive reject button theme for ConfirmDialog.
  */
+@JvmName("confirmDialogRejectButtonThemeSignal")
 fun ConfirmDialog.rejectButtonTheme(signal: Signal<String>) {
     fun apply(theme: String) {
         setRejectButtonTheme(theme)
@@ -106,6 +114,7 @@ fun ConfirmDialog.rejectButtonTheme(signal: Signal<String>) {
 /**
  * Reactive close on Esc for ConfirmDialog.
  */
+@JvmName("confirmDialogCloseOnEscSignal")
 fun ConfirmDialog.closeOnEsc(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         isCloseOnEsc = enabled

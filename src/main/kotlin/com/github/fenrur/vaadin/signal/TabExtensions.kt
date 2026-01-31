@@ -11,6 +11,7 @@ import com.vaadin.flow.component.tabs.TabVariant
 /**
  * Reactive label for Tab.
  */
+@JvmName("tabLabelSignal")
 fun Tab.label(signal: Signal<String>) {
     fun apply(label: String) {
         setLabel(label)
@@ -23,6 +24,7 @@ fun Tab.label(signal: Signal<String>) {
 /**
  * Reactive selected state for Tab.
  */
+@JvmName("tabSelectedSignal")
 fun Tab.selected(signal: Signal<Boolean>) {
     fun apply(selected: Boolean) {
         isSelected = selected
@@ -35,6 +37,7 @@ fun Tab.selected(signal: Signal<Boolean>) {
 /**
  * Reactive flex grow for Tab.
  */
+@JvmName("tabFlexGrowSignal")
 fun Tab.flexGrow(signal: Signal<Double>) {
     fun apply(flexGrow: Double) {
         setFlexGrow(flexGrow)
@@ -47,6 +50,7 @@ fun Tab.flexGrow(signal: Signal<Double>) {
 /**
  * Reactive theme variants for Tab.
  */
+@JvmName("tabThemeVariantsSignal")
 fun Tab.themeVariants(signal: Signal<Set<TabVariant>>) {
     var previousVariants = emptySet<TabVariant>()
 
@@ -63,6 +67,7 @@ fun Tab.themeVariants(signal: Signal<Set<TabVariant>>) {
 /**
  * Reactive single theme variant for Tab.
  */
+@JvmName("tabThemeVariantSignal")
 fun Tab.themeVariant(signal: Signal<TabVariant?>) {
     var previousVariant: TabVariant? = null
 
@@ -79,6 +84,7 @@ fun Tab.themeVariant(signal: Signal<TabVariant?>) {
 /**
  * Reactive icon on top theme for Tab.
  */
+@JvmName("tabIconOnTopSignal")
 fun Tab.iconOnTop(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         if (enabled) {

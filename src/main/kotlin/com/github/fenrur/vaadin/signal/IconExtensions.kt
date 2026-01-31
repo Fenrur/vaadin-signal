@@ -11,6 +11,7 @@ import com.vaadin.flow.component.icon.VaadinIcon
 /**
  * Reactive icon for Icon component.
  */
+@JvmName("iconIconSignal")
 fun Icon.icon(signal: Signal<VaadinIcon>) {
     fun apply(icon: VaadinIcon) {
         setIcon(icon)
@@ -23,6 +24,7 @@ fun Icon.icon(signal: Signal<VaadinIcon>) {
 /**
  * Reactive color for Icon.
  */
+@JvmName("iconColorSignal")
 fun Icon.color(signal: Signal<String?>) {
     fun apply(color: String?) {
         setColor(color)
@@ -35,6 +37,7 @@ fun Icon.color(signal: Signal<String?>) {
 /**
  * Reactive size for Icon.
  */
+@JvmName("iconSizeSignal")
 fun Icon.size(signal: Signal<String?>) {
     fun apply(size: String?) {
         setSize(size)

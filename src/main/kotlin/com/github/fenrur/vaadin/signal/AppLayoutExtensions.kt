@@ -12,6 +12,7 @@ import com.vaadin.flow.component.applayout.DrawerToggle
 /**
  * Reactive drawer opened state for AppLayout.
  */
+@JvmName("appLayoutDrawerOpenedSignal")
 fun AppLayout.drawerOpened(signal: Signal<Boolean>) {
     fun apply(opened: Boolean) {
         isDrawerOpened = opened
@@ -24,6 +25,7 @@ fun AppLayout.drawerOpened(signal: Signal<Boolean>) {
 /**
  * Reactive primary section for AppLayout.
  */
+@JvmName("appLayoutPrimarySectionSignal")
 fun AppLayout.primarySection(signal: Signal<AppLayout.Section>) {
     fun apply(section: AppLayout.Section) {
         setPrimarySection(section)
@@ -36,6 +38,7 @@ fun AppLayout.primarySection(signal: Signal<AppLayout.Section>) {
 /**
  * Reactive navbar content for AppLayout.
  */
+@JvmName("appLayoutNavbarContentSignal")
 fun AppLayout.navbarContent(signal: Signal<Component?>) {
     fun apply(component: Component?) {
         // Remove existing navbar content first
@@ -53,6 +56,7 @@ fun AppLayout.navbarContent(signal: Signal<Component?>) {
 /**
  * Reactive drawer content for AppLayout.
  */
+@JvmName("appLayoutDrawerContentSignal")
 fun AppLayout.drawerContent(signal: Signal<Component?>) {
     fun apply(component: Component?) {
         // Remove existing drawer content first
@@ -74,6 +78,7 @@ fun AppLayout.drawerContent(signal: Signal<Component?>) {
 /**
  * Reactive aria label for DrawerToggle.
  */
+@JvmName("drawerToggleAriaLabelSignal")
 fun DrawerToggle.ariaLabel(signal: Signal<String?>) {
     fun apply(label: String?) {
         element.setAttribute("aria-label", label ?: "")

@@ -10,6 +10,7 @@ import com.vaadin.flow.component.contextmenu.MenuItem
 /**
  * Reactive checked state for MenuItem.
  */
+@JvmName("menuItemCheckedSignal")
 fun MenuItem.checked(signal: Signal<Boolean>) {
     fun apply(checked: Boolean) {
         isChecked = checked
@@ -22,6 +23,7 @@ fun MenuItem.checked(signal: Signal<Boolean>) {
 /**
  * Reactive checkable state for MenuItem.
  */
+@JvmName("menuItemCheckableSignal")
 fun MenuItem.checkable(signal: Signal<Boolean>) {
     fun apply(checkable: Boolean) {
         isCheckable = checkable

@@ -2,18 +2,21 @@ package com.github.fenrur.vaadin.signal
 
 import com.github.fenrur.signal.Signal
 import com.vaadin.flow.component.Component
+import com.vaadin.flow.component.HasEnabled
 
 // ============================================
-// Component extensions
+// HasEnabled extensions
 // ============================================
 
 /**
- * Reactively controls the visibility of a component.
+ * Reactively controls the enabled state of a component.
  */
-@JvmName("componentVisibleSignal")
-fun <C : Component> C.visible(signal: Signal<Boolean>): C {
+@JvmName("hasEnabledEnabledSignal")
+fun <C> C.enabled(signal: Signal<Boolean>): C
+        where C : Component, C : HasEnabled {
+
     fun apply(v: Boolean) {
-        isVisible = v
+        isEnabled = v
     }
 
     apply(signal.value)

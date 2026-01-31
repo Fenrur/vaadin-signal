@@ -14,6 +14,7 @@ import com.vaadin.flow.component.html.Image
 /**
  * Creates a reactive Text component.
  */
+@JvmName("hasComponentsTextSignal")
 fun <T> HasComponents.text(
     signal: Signal<T>,
     block: Text.() -> Unit = {},
@@ -33,6 +34,7 @@ fun <T> HasComponents.text(
 /**
  * Reactive src for Image.
  */
+@JvmName("imageSrcSignal")
 fun Image.src(signal: Signal<String>) {
     fun apply(src: String) {
         setSrc(src)
@@ -45,6 +47,7 @@ fun Image.src(signal: Signal<String>) {
 /**
  * Reactive alt text for Image.
  */
+@JvmName("imageAltSignal")
 fun Image.alt(signal: Signal<String>) {
     fun apply(alt: String) {
         setAlt(alt)
@@ -57,6 +60,7 @@ fun Image.alt(signal: Signal<String>) {
 /**
  * Reactive href for Anchor.
  */
+@JvmName("anchorHrefSignal")
 fun Anchor.href(signal: Signal<String>) {
     fun apply(href: String) {
         setHref(href)

@@ -12,6 +12,7 @@ import com.vaadin.flow.component.select.SelectVariant
  * Reactive value for Select.
  * Note: This is a one-way binding (signal to component).
  */
+@JvmName("selectValueSignal")
 fun <TItem> Select<TItem>.value(signal: Signal<TItem?>) {
     fun apply(value: TItem?) {
         setValue(value)
@@ -24,6 +25,7 @@ fun <TItem> Select<TItem>.value(signal: Signal<TItem?>) {
 /**
  * Reactive label for Select.
  */
+@JvmName("selectLabelSignal")
 fun <TItem> Select<TItem>.label(signal: Signal<String>) {
     fun apply(label: String) {
         setLabel(label)
@@ -36,6 +38,7 @@ fun <TItem> Select<TItem>.label(signal: Signal<String>) {
 /**
  * Reactive placeholder for Select.
  */
+@JvmName("selectPlaceholderSignal")
 fun <TItem> Select<TItem>.placeholder(signal: Signal<String>) {
     fun apply(placeholder: String) {
         setPlaceholder(placeholder)
@@ -48,6 +51,7 @@ fun <TItem> Select<TItem>.placeholder(signal: Signal<String>) {
 /**
  * Reactive autofocus for Select.
  */
+@JvmName("selectAutofocusSignal")
 fun <TItem> Select<TItem>.autofocus(signal: Signal<Boolean>) {
     fun apply(autofocus: Boolean) {
         isAutofocus = autofocus
@@ -60,6 +64,7 @@ fun <TItem> Select<TItem>.autofocus(signal: Signal<Boolean>) {
 /**
  * Reactive required indicator for Select.
  */
+@JvmName("selectRequiredSignal")
 fun <TItem> Select<TItem>.required(signal: Signal<Boolean>) {
     fun apply(required: Boolean) {
         isRequiredIndicatorVisible = required
@@ -72,6 +77,7 @@ fun <TItem> Select<TItem>.required(signal: Signal<Boolean>) {
 /**
  * Reactive invalid state for Select.
  */
+@JvmName("selectInvalidSignal")
 fun <TItem> Select<TItem>.invalid(signal: Signal<Boolean>) {
     fun apply(invalid: Boolean) {
         isInvalid = invalid
@@ -84,6 +90,7 @@ fun <TItem> Select<TItem>.invalid(signal: Signal<Boolean>) {
 /**
  * Reactive error message for Select.
  */
+@JvmName("selectErrorMessageSignal")
 fun <TItem> Select<TItem>.errorMessage(signal: Signal<String>) {
     fun apply(message: String) {
         setErrorMessage(message)
@@ -96,6 +103,7 @@ fun <TItem> Select<TItem>.errorMessage(signal: Signal<String>) {
 /**
  * Reactive empty selection allowed for Select.
  */
+@JvmName("selectEmptySelectionAllowedSignal")
 fun <TItem> Select<TItem>.emptySelectionAllowed(signal: Signal<Boolean>) {
     fun apply(allowed: Boolean) {
         isEmptySelectionAllowed = allowed
@@ -108,6 +116,7 @@ fun <TItem> Select<TItem>.emptySelectionAllowed(signal: Signal<Boolean>) {
 /**
  * Reactive empty selection caption for Select.
  */
+@JvmName("selectEmptySelectionCaptionSignal")
 fun <TItem> Select<TItem>.emptySelectionCaption(signal: Signal<String>) {
     fun apply(caption: String) {
         setEmptySelectionCaption(caption)
@@ -120,6 +129,7 @@ fun <TItem> Select<TItem>.emptySelectionCaption(signal: Signal<String>) {
 /**
  * Reactive no vertical overlap for Select overlay.
  */
+@JvmName("selectNoVerticalOverlapSignal")
 fun <TItem> Select<TItem>.noVerticalOverlap(signal: Signal<Boolean>) {
     fun apply(noOverlap: Boolean) {
         isNoVerticalOverlap = noOverlap
@@ -132,6 +142,7 @@ fun <TItem> Select<TItem>.noVerticalOverlap(signal: Signal<Boolean>) {
 /**
  * Reactive overlay width for Select.
  */
+@JvmName("selectOverlayWidthSignal")
 fun <TItem> Select<TItem>.overlayWidth(signal: Signal<String?>) {
     fun apply(width: String?) {
         setOverlayWidth(width)
@@ -144,6 +155,7 @@ fun <TItem> Select<TItem>.overlayWidth(signal: Signal<String?>) {
 /**
  * Reactive overlay class name for Select.
  */
+@JvmName("selectOverlayClassNameSignal")
 fun <TItem> Select<TItem>.overlayClassName(signal: Signal<String>) {
     fun apply(className: String) {
         overlayClassName = className
@@ -156,6 +168,7 @@ fun <TItem> Select<TItem>.overlayClassName(signal: Signal<String>) {
 /**
  * Reactive aria label for Select.
  */
+@JvmName("selectAriaLabelSignal")
 fun <TItem> Select<TItem>.ariaLabel(signal: Signal<String?>) {
     fun apply(ariaLabel: String?) {
         setAriaLabel(ariaLabel)
@@ -168,6 +181,7 @@ fun <TItem> Select<TItem>.ariaLabel(signal: Signal<String?>) {
 /**
  * Reactive aria labelled by for Select.
  */
+@JvmName("selectAriaLabelledBySignal")
 fun <TItem> Select<TItem>.ariaLabelledBy(signal: Signal<String?>) {
     fun apply(labelledBy: String?) {
         setAriaLabelledBy(labelledBy)
@@ -180,6 +194,7 @@ fun <TItem> Select<TItem>.ariaLabelledBy(signal: Signal<String?>) {
 /**
  * Reactive theme variants for Select.
  */
+@JvmName("selectThemeVariantsSignal")
 fun <TItem> Select<TItem>.themeVariants(signal: Signal<Set<SelectVariant>>) {
     var previousVariants = emptySet<SelectVariant>()
 
@@ -196,6 +211,7 @@ fun <TItem> Select<TItem>.themeVariants(signal: Signal<Set<SelectVariant>>) {
 /**
  * Reactive single theme variant for Select.
  */
+@JvmName("selectThemeVariantSignal")
 fun <TItem> Select<TItem>.themeVariant(signal: Signal<SelectVariant?>) {
     var previousVariant: SelectVariant? = null
 
@@ -212,6 +228,7 @@ fun <TItem> Select<TItem>.themeVariant(signal: Signal<SelectVariant?>) {
 /**
  * Reactive small size for Select.
  */
+@JvmName("selectSmallSignal")
 fun <TItem> Select<TItem>.small(signal: Signal<Boolean>) {
     fun apply(isSmall: Boolean) {
         if (isSmall) {
@@ -228,6 +245,7 @@ fun <TItem> Select<TItem>.small(signal: Signal<Boolean>) {
 /**
  * Reactive helper above field for Select.
  */
+@JvmName("selectHelperAboveFieldSignal")
 fun <TItem> Select<TItem>.helperAboveField(signal: Signal<Boolean>) {
     fun apply(isAbove: Boolean) {
         if (isAbove) {

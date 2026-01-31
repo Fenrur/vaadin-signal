@@ -11,6 +11,7 @@ import com.vaadin.flow.component.avatar.AvatarGroupVariant
 /**
  * Reactive items for AvatarGroup.
  */
+@JvmName("avatarGroupItemsSignal")
 fun AvatarGroup.items(signal: Signal<List<AvatarGroup.AvatarGroupItem>>) {
     fun apply(items: List<AvatarGroup.AvatarGroupItem>) {
         setItems(items)
@@ -23,6 +24,7 @@ fun AvatarGroup.items(signal: Signal<List<AvatarGroup.AvatarGroupItem>>) {
 /**
  * Reactive max items visible for AvatarGroup.
  */
+@JvmName("avatarGroupMaxItemsVisibleSignal")
 fun AvatarGroup.maxItemsVisible(signal: Signal<Int?>) {
     fun apply(max: Int?) {
         setMaxItemsVisible(max)
@@ -35,6 +37,7 @@ fun AvatarGroup.maxItemsVisible(signal: Signal<Int?>) {
 /**
  * Reactive theme variants for AvatarGroup.
  */
+@JvmName("avatarGroupThemeVariantsSignal")
 fun AvatarGroup.themeVariants(signal: Signal<Set<AvatarGroupVariant>>) {
     var previousVariants = emptySet<AvatarGroupVariant>()
 
@@ -51,6 +54,7 @@ fun AvatarGroup.themeVariants(signal: Signal<Set<AvatarGroupVariant>>) {
 /**
  * Reactive single theme variant for AvatarGroup.
  */
+@JvmName("avatarGroupThemeVariantSignal")
 fun AvatarGroup.themeVariant(signal: Signal<AvatarGroupVariant?>) {
     var previousVariant: AvatarGroupVariant? = null
 
@@ -67,6 +71,7 @@ fun AvatarGroup.themeVariant(signal: Signal<AvatarGroupVariant?>) {
 /**
  * Reactive extra large theme for AvatarGroup.
  */
+@JvmName("avatarGroupExtraLargeSignal")
 fun AvatarGroup.extraLarge(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         if (enabled) {
@@ -83,6 +88,7 @@ fun AvatarGroup.extraLarge(signal: Signal<Boolean>) {
 /**
  * Reactive large theme for AvatarGroup.
  */
+@JvmName("avatarGroupLargeSignal")
 fun AvatarGroup.large(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         if (enabled) {
@@ -99,6 +105,7 @@ fun AvatarGroup.large(signal: Signal<Boolean>) {
 /**
  * Reactive small theme for AvatarGroup.
  */
+@JvmName("avatarGroupSmallSignal")
 fun AvatarGroup.small(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         if (enabled) {
@@ -115,6 +122,7 @@ fun AvatarGroup.small(signal: Signal<Boolean>) {
 /**
  * Reactive extra small theme for AvatarGroup.
  */
+@JvmName("avatarGroupExtraSmallSignal")
 fun AvatarGroup.extraSmall(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         if (enabled) {

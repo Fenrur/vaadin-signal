@@ -25,6 +25,7 @@ import java.time.LocalTime
 /**
  * Two-way binding for Checkbox checked state.
  */
+@JvmName("checkboxCheckedMutableSignal")
 fun Checkbox.checked(signal: MutableSignal<Boolean>) {
     value = signal.value
 
@@ -40,6 +41,7 @@ fun Checkbox.checked(signal: MutableSignal<Boolean>) {
 /**
  * Two-way binding for Select selected item.
  */
+@JvmName("selectSelectedItemMutableSignal")
 fun <T> Select<T>.selectedItem(signal: MutableSignal<T?>) {
     value = signal.value
 
@@ -55,6 +57,7 @@ fun <T> Select<T>.selectedItem(signal: MutableSignal<T?>) {
 /**
  * Two-way binding for ComboBox selected item.
  */
+@JvmName("comboBoxSelectedItemMutableSignal")
 fun <T> ComboBox<T>.selectedItem(signal: MutableSignal<T?>) {
     value = signal.value
 
@@ -70,6 +73,7 @@ fun <T> ComboBox<T>.selectedItem(signal: MutableSignal<T?>) {
 /**
  * Reactive items for Select.
  */
+@JvmName("selectItemsSignal")
 fun <T> Select<T>.items(signal: Signal<List<T>>) {
     fun apply(items: List<T>) {
         setItems(items)
@@ -82,6 +86,7 @@ fun <T> Select<T>.items(signal: Signal<List<T>>) {
 /**
  * Reactive items for ComboBox.
  */
+@JvmName("comboBoxItemsSignal")
 fun <T> ComboBox<T>.items(signal: Signal<List<T>>) {
     fun apply(items: List<T>) {
         setItems(items)
@@ -94,6 +99,7 @@ fun <T> ComboBox<T>.items(signal: Signal<List<T>>) {
 /**
  * Reactive items for MultiSelectComboBox.
  */
+@JvmName("multiSelectComboBoxItemsSignal")
 fun <T> MultiSelectComboBox<T>.items(signal: Signal<Set<T>>) {
     fun apply(items: Set<T>) {
         setItems(items)
@@ -106,6 +112,7 @@ fun <T> MultiSelectComboBox<T>.items(signal: Signal<Set<T>>) {
 /**
  * Two-way binding for MultiSelectComboBox selected items.
  */
+@JvmName("multiSelectComboBoxSelectedItemsMutableSignal")
 fun <T> MultiSelectComboBox<T>.selectedItems(signal: MutableSignal<Set<T>>) {
     fun apply(items: Set<T>) {
         value = items
@@ -123,6 +130,7 @@ fun <T> MultiSelectComboBox<T>.selectedItems(signal: MutableSignal<Set<T>>) {
 /**
  * Two-way binding for DatePicker.
  */
+@JvmName("datePickerSelectedDateMutableSignal")
 fun DatePicker.selectedDate(signal: MutableSignal<LocalDate?>) {
     value = signal.value
 
@@ -138,6 +146,7 @@ fun DatePicker.selectedDate(signal: MutableSignal<LocalDate?>) {
 /**
  * Two-way binding for TimePicker.
  */
+@JvmName("timePickerSelectedTimeMutableSignal")
 fun TimePicker.selectedTime(signal: MutableSignal<LocalTime?>) {
     value = signal.value
 
@@ -153,6 +162,7 @@ fun TimePicker.selectedTime(signal: MutableSignal<LocalTime?>) {
 /**
  * Two-way binding for DateTimePicker.
  */
+@JvmName("dateTimePickerSelectedDateTimeMutableSignal")
 fun DateTimePicker.selectedDateTime(signal: MutableSignal<LocalDateTime?>) {
     value = signal.value
 
@@ -168,6 +178,7 @@ fun DateTimePicker.selectedDateTime(signal: MutableSignal<LocalDateTime?>) {
 /**
  * Reactive label for components with labels.
  */
+@JvmName("hasLabelLabelSignal")
 fun <C> C.label(signal: Signal<String>): C
         where C : Component, C : HasLabel {
     fun apply(label: String) {
@@ -182,6 +193,7 @@ fun <C> C.label(signal: Signal<String>): C
 /**
  * Reactive placeholder for input components.
  */
+@JvmName("hasPlaceholderPlaceholderSignal")
 fun <C> C.placeholder(signal: Signal<String>): C
         where C : Component, C : HasPlaceholder {
     fun apply(placeholder: String) {
@@ -196,6 +208,7 @@ fun <C> C.placeholder(signal: Signal<String>): C
 /**
  * Reactive helper text for form components.
  */
+@JvmName("hasHelperHelperTextSignal")
 fun <C> C.helperText(signal: Signal<String>): C
         where C : Component, C : HasHelper {
     fun apply(text: String) {
@@ -210,6 +223,7 @@ fun <C> C.helperText(signal: Signal<String>): C
 /**
  * Reactive invalid state for form components.
  */
+@JvmName("hasValidationInvalidSignal")
 fun <C> C.invalid(signal: Signal<Boolean>): C
         where C : Component, C : HasValidation {
     fun apply(isInvalid: Boolean) {
@@ -224,6 +238,7 @@ fun <C> C.invalid(signal: Signal<Boolean>): C
 /**
  * Reactive error message for form components.
  */
+@JvmName("hasValidationErrorMessageSignal")
 fun <C> C.errorMessage(signal: Signal<String>): C
         where C : Component, C : HasValidation {
     fun apply(message: String) {

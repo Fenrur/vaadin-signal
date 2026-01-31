@@ -11,6 +11,7 @@ import com.vaadin.flow.component.messages.MessageListItem
 /**
  * Reactive items for MessageList.
  */
+@JvmName("messageListItemsSignal")
 fun MessageList.items(signal: Signal<List<MessageListItem>>) {
     fun apply(items: List<MessageListItem>) {
         setItems(items)

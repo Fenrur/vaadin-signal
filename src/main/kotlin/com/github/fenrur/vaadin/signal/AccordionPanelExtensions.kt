@@ -12,6 +12,7 @@ import com.vaadin.flow.component.accordion.AccordionPanel
  * Reactive opened state for AccordionPanel.
  * Note: This is a one-way binding (signal to component).
  */
+@JvmName("accordionPanelOpenedSignal")
 fun AccordionPanel.opened(signal: Signal<Boolean>) {
     fun apply(opened: Boolean) {
         isOpened = opened
@@ -24,7 +25,7 @@ fun AccordionPanel.opened(signal: Signal<Boolean>) {
 /**
  * Two-way binding for AccordionPanel opened state.
  */
-@JvmName("accordionPanelOpenedTwoWay")
+@JvmName("accordionPanelOpenedMutableSignal")
 fun AccordionPanel.opened(signal: MutableSignal<Boolean>) {
     isOpened = signal.value
 
@@ -40,6 +41,7 @@ fun AccordionPanel.opened(signal: MutableSignal<Boolean>) {
 /**
  * Reactive summary text for AccordionPanel.
  */
+@JvmName("accordionPanelSummaryTextSignal")
 fun AccordionPanel.summaryText(signal: Signal<String>) {
     fun apply(text: String) {
         setSummaryText(text)

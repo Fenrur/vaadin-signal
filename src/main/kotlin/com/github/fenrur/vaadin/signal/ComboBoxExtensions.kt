@@ -14,6 +14,7 @@ import com.vaadin.flow.component.combobox.MultiSelectComboBoxVariant
 /**
  * Reactive autofocus for ComboBoxBase.
  */
+@JvmName("comboBoxBaseAutofocusSignal")
 fun <T : ComboBoxBase<*, *, *>> T.autofocus(signal: Signal<Boolean>) {
     fun apply(autofocus: Boolean) {
         isAutofocus = autofocus
@@ -26,6 +27,7 @@ fun <T : ComboBoxBase<*, *, *>> T.autofocus(signal: Signal<Boolean>) {
 /**
  * Reactive page size for ComboBoxBase.
  */
+@JvmName("comboBoxBasePageSizeSignal")
 fun <T : ComboBoxBase<*, *, *>> T.pageSize(signal: Signal<Int>) {
     fun apply(pageSize: Int) {
         setPageSize(pageSize)
@@ -38,6 +40,7 @@ fun <T : ComboBoxBase<*, *, *>> T.pageSize(signal: Signal<Int>) {
 /**
  * Reactive opened state for ComboBoxBase.
  */
+@JvmName("comboBoxBaseOpenedSignal")
 fun <T : ComboBoxBase<*, *, *>> T.opened(signal: Signal<Boolean>) {
     fun apply(opened: Boolean) {
         isOpened = opened
@@ -50,6 +53,7 @@ fun <T : ComboBoxBase<*, *, *>> T.opened(signal: Signal<Boolean>) {
 /**
  * Reactive allow custom value for ComboBoxBase.
  */
+@JvmName("comboBoxBaseAllowCustomValueSignal")
 fun <T : ComboBoxBase<*, *, *>> T.allowCustomValue(signal: Signal<Boolean>) {
     fun apply(allow: Boolean) {
         isAllowCustomValue = allow
@@ -62,6 +66,7 @@ fun <T : ComboBoxBase<*, *, *>> T.allowCustomValue(signal: Signal<Boolean>) {
 /**
  * Reactive required indicator for ComboBoxBase.
  */
+@JvmName("comboBoxBaseRequiredSignal")
 fun <T : ComboBoxBase<*, *, *>> T.required(signal: Signal<Boolean>) {
     fun apply(required: Boolean) {
         isRequired = required
@@ -74,6 +79,7 @@ fun <T : ComboBoxBase<*, *, *>> T.required(signal: Signal<Boolean>) {
 /**
  * Reactive placeholder for ComboBoxBase.
  */
+@JvmName("comboBoxBasePlaceholderSignal")
 fun <T : ComboBoxBase<*, *, *>> T.placeholder(signal: Signal<String>) {
     fun apply(placeholder: String) {
         setPlaceholder(placeholder)
@@ -86,6 +92,7 @@ fun <T : ComboBoxBase<*, *, *>> T.placeholder(signal: Signal<String>) {
 /**
  * Reactive label for ComboBoxBase.
  */
+@JvmName("comboBoxBaseLabelSignal")
 fun <T : ComboBoxBase<*, *, *>> T.label(signal: Signal<String>) {
     fun apply(label: String) {
         setLabel(label)
@@ -98,6 +105,7 @@ fun <T : ComboBoxBase<*, *, *>> T.label(signal: Signal<String>) {
 /**
  * Reactive error message for ComboBoxBase.
  */
+@JvmName("comboBoxBaseErrorMessageSignal")
 fun <T : ComboBoxBase<*, *, *>> T.errorMessage(signal: Signal<String>) {
     fun apply(errorMessage: String) {
         setErrorMessage(errorMessage)
@@ -110,6 +118,7 @@ fun <T : ComboBoxBase<*, *, *>> T.errorMessage(signal: Signal<String>) {
 /**
  * Reactive invalid state for ComboBoxBase.
  */
+@JvmName("comboBoxBaseInvalidSignal")
 fun <T : ComboBoxBase<*, *, *>> T.invalid(signal: Signal<Boolean>) {
     fun apply(invalid: Boolean) {
         isInvalid = invalid
@@ -122,6 +131,7 @@ fun <T : ComboBoxBase<*, *, *>> T.invalid(signal: Signal<Boolean>) {
 /**
  * Reactive clear button visibility for ComboBoxBase.
  */
+@JvmName("comboBoxBaseClearButtonVisibleSignal")
 fun <T : ComboBoxBase<*, *, *>> T.clearButtonVisible(signal: Signal<Boolean>) {
     fun apply(visible: Boolean) {
         isClearButtonVisible = visible
@@ -134,6 +144,7 @@ fun <T : ComboBoxBase<*, *, *>> T.clearButtonVisible(signal: Signal<Boolean>) {
 /**
  * Reactive auto open for ComboBoxBase.
  */
+@JvmName("comboBoxBaseAutoOpenSignal")
 fun <T : ComboBoxBase<*, *, *>> T.autoOpen(signal: Signal<Boolean>) {
     fun apply(autoOpen: Boolean) {
         isAutoOpen = autoOpen
@@ -146,6 +157,7 @@ fun <T : ComboBoxBase<*, *, *>> T.autoOpen(signal: Signal<Boolean>) {
 /**
  * Reactive overlay class name for ComboBoxBase.
  */
+@JvmName("comboBoxBaseOverlayClassNameSignal")
 fun <T : ComboBoxBase<*, *, *>> T.overlayClassName(signal: Signal<String>) {
     fun apply(className: String) {
         overlayClassName = className
@@ -158,6 +170,7 @@ fun <T : ComboBoxBase<*, *, *>> T.overlayClassName(signal: Signal<String>) {
 /**
  * Reactive aria label for ComboBoxBase.
  */
+@JvmName("comboBoxBaseAriaLabelSignal")
 fun <T : ComboBoxBase<*, *, *>> T.ariaLabel(signal: Signal<String?>) {
     fun apply(ariaLabel: String?) {
         setAriaLabel(ariaLabel)
@@ -170,6 +183,7 @@ fun <T : ComboBoxBase<*, *, *>> T.ariaLabel(signal: Signal<String?>) {
 /**
  * Reactive aria labelled by for ComboBoxBase.
  */
+@JvmName("comboBoxBaseAriaLabelledBySignal")
 fun <T : ComboBoxBase<*, *, *>> T.ariaLabelledBy(signal: Signal<String?>) {
     fun apply(labelledBy: String?) {
         setAriaLabelledBy(labelledBy)
@@ -187,6 +201,7 @@ fun <T : ComboBoxBase<*, *, *>> T.ariaLabelledBy(signal: Signal<String?>) {
  * Reactive value for ComboBox.
  * Note: This is a one-way binding (signal to component).
  */
+@JvmName("comboBoxValueSignal")
 fun <TItem> ComboBox<TItem>.value(signal: Signal<TItem?>) {
     fun apply(value: TItem?) {
         setValue(value)
@@ -199,6 +214,7 @@ fun <TItem> ComboBox<TItem>.value(signal: Signal<TItem?>) {
 /**
  * Reactive pattern for ComboBox.
  */
+@JvmName("comboBoxPatternSignal")
 fun <TItem> ComboBox<TItem>.pattern(signal: Signal<String?>) {
     fun apply(pattern: String?) {
         setPattern(pattern)
@@ -211,6 +227,7 @@ fun <TItem> ComboBox<TItem>.pattern(signal: Signal<String?>) {
 /**
  * Reactive overlay width for ComboBox.
  */
+@JvmName("comboBoxOverlayWidthSignal")
 fun <TItem> ComboBox<TItem>.overlayWidth(signal: Signal<String?>) {
     fun apply(width: String?) {
         setOverlayWidth(width)
@@ -223,6 +240,7 @@ fun <TItem> ComboBox<TItem>.overlayWidth(signal: Signal<String?>) {
 /**
  * Reactive theme variants for ComboBox.
  */
+@JvmName("comboBoxThemeVariantsSignal")
 fun <TItem> ComboBox<TItem>.themeVariants(signal: Signal<Set<ComboBoxVariant>>) {
     var previousVariants = emptySet<ComboBoxVariant>()
 
@@ -239,6 +257,7 @@ fun <TItem> ComboBox<TItem>.themeVariants(signal: Signal<Set<ComboBoxVariant>>) 
 /**
  * Reactive single theme variant for ComboBox.
  */
+@JvmName("comboBoxThemeVariantSignal")
 fun <TItem> ComboBox<TItem>.themeVariant(signal: Signal<ComboBoxVariant?>) {
     var previousVariant: ComboBoxVariant? = null
 
@@ -255,6 +274,7 @@ fun <TItem> ComboBox<TItem>.themeVariant(signal: Signal<ComboBoxVariant?>) {
 /**
  * Reactive small size for ComboBox.
  */
+@JvmName("comboBoxSmallSignal")
 fun <TItem> ComboBox<TItem>.small(signal: Signal<Boolean>) {
     fun apply(isSmall: Boolean) {
         if (isSmall) {
@@ -271,6 +291,7 @@ fun <TItem> ComboBox<TItem>.small(signal: Signal<Boolean>) {
 /**
  * Reactive helper above field for ComboBox.
  */
+@JvmName("comboBoxHelperAboveFieldSignal")
 fun <TItem> ComboBox<TItem>.helperAboveField(signal: Signal<Boolean>) {
     fun apply(isAbove: Boolean) {
         if (isAbove) {
@@ -292,6 +313,7 @@ fun <TItem> ComboBox<TItem>.helperAboveField(signal: Signal<Boolean>) {
  * Reactive value for MultiSelectComboBox.
  * Note: This is a one-way binding (signal to component).
  */
+@JvmName("multiSelectComboBoxValueSignal")
 fun <TItem> MultiSelectComboBox<TItem>.value(signal: Signal<Set<TItem>>) {
     fun apply(value: Set<TItem>) {
         setValue(value)
@@ -304,6 +326,7 @@ fun <TItem> MultiSelectComboBox<TItem>.value(signal: Signal<Set<TItem>>) {
 /**
  * Reactive selected items on top for MultiSelectComboBox.
  */
+@JvmName("multiSelectComboBoxSelectedItemsOnTopSignal")
 fun <TItem> MultiSelectComboBox<TItem>.selectedItemsOnTop(signal: Signal<Boolean>) {
     fun apply(onTop: Boolean) {
         isSelectedItemsOnTop = onTop
@@ -316,6 +339,7 @@ fun <TItem> MultiSelectComboBox<TItem>.selectedItemsOnTop(signal: Signal<Boolean
 /**
  * Reactive keep filter for MultiSelectComboBox.
  */
+@JvmName("multiSelectComboBoxKeepFilterSignal")
 fun <TItem> MultiSelectComboBox<TItem>.keepFilter(signal: Signal<Boolean>) {
     fun apply(keep: Boolean) {
         isKeepFilter = keep
@@ -328,6 +352,7 @@ fun <TItem> MultiSelectComboBox<TItem>.keepFilter(signal: Signal<Boolean>) {
 /**
  * Reactive auto expand mode for MultiSelectComboBox.
  */
+@JvmName("multiSelectComboBoxAutoExpandSignal")
 fun <TItem> MultiSelectComboBox<TItem>.autoExpand(signal: Signal<MultiSelectComboBox.AutoExpandMode>) {
     fun apply(mode: MultiSelectComboBox.AutoExpandMode) {
         setAutoExpand(mode)
@@ -340,6 +365,7 @@ fun <TItem> MultiSelectComboBox<TItem>.autoExpand(signal: Signal<MultiSelectComb
 /**
  * Reactive overlay width for MultiSelectComboBox.
  */
+@JvmName("multiSelectComboBoxOverlayWidthSignal")
 fun <TItem> MultiSelectComboBox<TItem>.overlayWidth(signal: Signal<String?>) {
     fun apply(width: String?) {
         setOverlayWidth(width)
@@ -352,6 +378,7 @@ fun <TItem> MultiSelectComboBox<TItem>.overlayWidth(signal: Signal<String?>) {
 /**
  * Reactive theme variants for MultiSelectComboBox.
  */
+@JvmName("multiSelectComboBoxThemeVariantsSignal")
 fun <TItem> MultiSelectComboBox<TItem>.themeVariants(signal: Signal<Set<MultiSelectComboBoxVariant>>) {
     var previousVariants = emptySet<MultiSelectComboBoxVariant>()
 
@@ -368,6 +395,7 @@ fun <TItem> MultiSelectComboBox<TItem>.themeVariants(signal: Signal<Set<MultiSel
 /**
  * Reactive single theme variant for MultiSelectComboBox.
  */
+@JvmName("multiSelectComboBoxThemeVariantSignal")
 fun <TItem> MultiSelectComboBox<TItem>.themeVariant(signal: Signal<MultiSelectComboBoxVariant?>) {
     var previousVariant: MultiSelectComboBoxVariant? = null
 
@@ -384,6 +412,7 @@ fun <TItem> MultiSelectComboBox<TItem>.themeVariant(signal: Signal<MultiSelectCo
 /**
  * Reactive small size for MultiSelectComboBox.
  */
+@JvmName("multiSelectComboBoxSmallSignal")
 fun <TItem> MultiSelectComboBox<TItem>.small(signal: Signal<Boolean>) {
     fun apply(isSmall: Boolean) {
         if (isSmall) {
@@ -400,6 +429,7 @@ fun <TItem> MultiSelectComboBox<TItem>.small(signal: Signal<Boolean>) {
 /**
  * Reactive helper above field for MultiSelectComboBox.
  */
+@JvmName("multiSelectComboBoxHelperAboveFieldSignal")
 fun <TItem> MultiSelectComboBox<TItem>.helperAboveField(signal: Signal<Boolean>) {
     fun apply(isAbove: Boolean) {
         if (isAbove) {

@@ -12,6 +12,7 @@ import com.vaadin.flow.component.splitlayout.SplitLayoutVariant
 /**
  * Reactive orientation for SplitLayout.
  */
+@JvmName("splitLayoutOrientationSignal")
 fun SplitLayout.orientation(signal: Signal<SplitLayout.Orientation>) {
     fun apply(orientation: SplitLayout.Orientation) {
         setOrientation(orientation)
@@ -25,6 +26,7 @@ fun SplitLayout.orientation(signal: Signal<SplitLayout.Orientation>) {
  * Reactive splitter position for SplitLayout.
  * Note: This is a one-way binding (signal to component).
  */
+@JvmName("splitLayoutSplitterPositionSignal")
 fun SplitLayout.splitterPosition(signal: Signal<Double>) {
     fun apply(position: Double) {
         setSplitterPosition(position)
@@ -37,7 +39,7 @@ fun SplitLayout.splitterPosition(signal: Signal<Double>) {
 /**
  * Two-way binding for SplitLayout splitter position.
  */
-@JvmName("splitLayoutSplitterPositionTwoWay")
+@JvmName("splitLayoutSplitterPositionMutableSignal")
 fun SplitLayout.splitterPosition(signal: MutableSignal<Double>) {
     setSplitterPosition(signal.value)
 
@@ -57,6 +59,7 @@ fun SplitLayout.splitterPosition(signal: MutableSignal<Double>) {
 /**
  * Reactive theme variants for SplitLayout.
  */
+@JvmName("splitLayoutThemeVariantsSignal")
 fun SplitLayout.themeVariants(signal: Signal<Set<SplitLayoutVariant>>) {
     var previousVariants = emptySet<SplitLayoutVariant>()
 
@@ -73,6 +76,7 @@ fun SplitLayout.themeVariants(signal: Signal<Set<SplitLayoutVariant>>) {
 /**
  * Reactive single theme variant for SplitLayout.
  */
+@JvmName("splitLayoutThemeVariantSignal")
 fun SplitLayout.themeVariant(signal: Signal<SplitLayoutVariant?>) {
     var previousVariant: SplitLayoutVariant? = null
 
@@ -89,6 +93,7 @@ fun SplitLayout.themeVariant(signal: Signal<SplitLayoutVariant?>) {
 /**
  * Reactive minimal theme for SplitLayout.
  */
+@JvmName("splitLayoutMinimalSignal")
 fun SplitLayout.minimal(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         if (enabled) {
@@ -105,6 +110,7 @@ fun SplitLayout.minimal(signal: Signal<Boolean>) {
 /**
  * Reactive small theme for SplitLayout.
  */
+@JvmName("splitLayoutSmallSignal")
 fun SplitLayout.small(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         if (enabled) {

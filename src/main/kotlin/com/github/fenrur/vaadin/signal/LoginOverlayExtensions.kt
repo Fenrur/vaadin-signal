@@ -11,6 +11,7 @@ import com.vaadin.flow.component.login.LoginOverlay
 /**
  * Reactive opened state for LoginOverlay.
  */
+@JvmName("loginOverlayOpenedSignal")
 fun LoginOverlay.opened(signal: Signal<Boolean>) {
     fun apply(opened: Boolean) {
         isOpened = opened
@@ -23,6 +24,7 @@ fun LoginOverlay.opened(signal: Signal<Boolean>) {
 /**
  * Reactive error state for LoginOverlay.
  */
+@JvmName("loginOverlayErrorSignal")
 fun LoginOverlay.error(signal: Signal<Boolean>) {
     fun apply(error: Boolean) {
         isError = error
@@ -35,6 +37,7 @@ fun LoginOverlay.error(signal: Signal<Boolean>) {
 /**
  * Reactive title for LoginOverlay.
  */
+@JvmName("loginOverlayTitleSignal")
 fun LoginOverlay.title(signal: Signal<String>) {
     fun apply(title: String) {
         setTitle(title)
@@ -47,6 +50,7 @@ fun LoginOverlay.title(signal: Signal<String>) {
 /**
  * Reactive description for LoginOverlay.
  */
+@JvmName("loginOverlayDescriptionSignal")
 fun LoginOverlay.description(signal: Signal<String?>) {
     fun apply(description: String?) {
         setDescription(description)
@@ -59,6 +63,7 @@ fun LoginOverlay.description(signal: Signal<String?>) {
 /**
  * Reactive forgot password button visible for LoginOverlay.
  */
+@JvmName("loginOverlayForgotPasswordButtonVisibleSignal")
 fun LoginOverlay.forgotPasswordButtonVisible(signal: Signal<Boolean>) {
     fun apply(visible: Boolean) {
         isForgotPasswordButtonVisible = visible
@@ -71,6 +76,7 @@ fun LoginOverlay.forgotPasswordButtonVisible(signal: Signal<Boolean>) {
 /**
  * Reactive action for LoginOverlay.
  */
+@JvmName("loginOverlayActionSignal")
 fun LoginOverlay.action(signal: Signal<String?>) {
     fun apply(action: String?) {
         setAction(action)
@@ -83,6 +89,7 @@ fun LoginOverlay.action(signal: Signal<String?>) {
 /**
  * Reactive i18n for LoginOverlay.
  */
+@JvmName("loginOverlayI18nSignal")
 fun LoginOverlay.i18n(signal: Signal<LoginI18n>) {
     fun apply(i18n: LoginI18n) {
         setI18n(i18n)

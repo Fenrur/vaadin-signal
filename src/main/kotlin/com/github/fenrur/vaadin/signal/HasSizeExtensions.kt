@@ -11,6 +11,7 @@ import com.vaadin.flow.component.HasSize
 /**
  * Reactive width for any component implementing HasSize.
  */
+@JvmName("hasSizeWidthSignal")
 fun <C> C.width(signal: Signal<String>): C
         where C : Component, C : HasSize {
     fun apply(width: String) {
@@ -25,7 +26,7 @@ fun <C> C.width(signal: Signal<String>): C
 /**
  * Reactive nullable width for any component implementing HasSize.
  */
-@JvmName("widthNullable")
+@JvmName("hasSizeWidthNullableSignal")
 fun <C> C.width(signal: Signal<String?>): C
         where C : Component, C : HasSize {
     fun apply(width: String?) {
@@ -40,6 +41,7 @@ fun <C> C.width(signal: Signal<String?>): C
 /**
  * Reactive height for any component implementing HasSize.
  */
+@JvmName("hasSizeHeightSignal")
 fun <C> C.height(signal: Signal<String>): C
         where C : Component, C : HasSize {
     fun apply(height: String) {
@@ -54,7 +56,7 @@ fun <C> C.height(signal: Signal<String>): C
 /**
  * Reactive nullable height for any component implementing HasSize.
  */
-@JvmName("heightNullable")
+@JvmName("hasSizeHeightNullableSignal")
 fun <C> C.height(signal: Signal<String?>): C
         where C : Component, C : HasSize {
     fun apply(height: String?) {
@@ -69,6 +71,7 @@ fun <C> C.height(signal: Signal<String?>): C
 /**
  * Reactive min-width for any component implementing HasSize.
  */
+@JvmName("hasSizeMinWidthSignal")
 fun <C> C.minWidth(signal: Signal<String?>): C
         where C : Component, C : HasSize {
     fun apply(minWidth: String?) {
@@ -83,6 +86,7 @@ fun <C> C.minWidth(signal: Signal<String?>): C
 /**
  * Reactive max-width for any component implementing HasSize.
  */
+@JvmName("hasSizeMaxWidthSignal")
 fun <C> C.maxWidth(signal: Signal<String?>): C
         where C : Component, C : HasSize {
     fun apply(maxWidth: String?) {
@@ -97,6 +101,7 @@ fun <C> C.maxWidth(signal: Signal<String?>): C
 /**
  * Reactive min-height for any component implementing HasSize.
  */
+@JvmName("hasSizeMinHeightSignal")
 fun <C> C.minHeight(signal: Signal<String?>): C
         where C : Component, C : HasSize {
     fun apply(minHeight: String?) {
@@ -111,6 +116,7 @@ fun <C> C.minHeight(signal: Signal<String?>): C
 /**
  * Reactive max-height for any component implementing HasSize.
  */
+@JvmName("hasSizeMaxHeightSignal")
 fun <C> C.maxHeight(signal: Signal<String?>): C
         where C : Component, C : HasSize {
     fun apply(maxHeight: String?) {
@@ -125,6 +131,7 @@ fun <C> C.maxHeight(signal: Signal<String?>): C
 /**
  * Reactive size full for any component implementing HasSize.
  */
+@JvmName("hasSizeSizeFullSignal")
 fun <C> C.sizeFull(signal: Signal<Boolean>): C
         where C : Component, C : HasSize {
     fun apply(full: Boolean) {

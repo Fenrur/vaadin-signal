@@ -10,6 +10,7 @@ import com.vaadin.flow.component.html.NativeLabel
 /**
  * Reactive for attribute for NativeLabel.
  */
+@JvmName("nativeLabelForIdSignal")
 fun NativeLabel.forId(signal: Signal<String?>) {
     fun apply(forId: String?) {
         setFor(forId)

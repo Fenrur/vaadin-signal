@@ -11,6 +11,7 @@ import com.vaadin.flow.component.HasText
 /**
  * Reactive text for any component implementing HasText.
  */
+@JvmName("hasTextTextSignal")
 fun <C> C.text(signal: Signal<String>): C
         where C : Component, C : HasText {
     fun apply(text: String) {
@@ -25,7 +26,7 @@ fun <C> C.text(signal: Signal<String>): C
 /**
  * Reactive nullable text for any component implementing HasText.
  */
-@JvmName("textNullable")
+@JvmName("hasTextTextNullableSignal")
 fun <C> C.text(signal: Signal<String?>): C
         where C : Component, C : HasText {
     fun apply(text: String?) {

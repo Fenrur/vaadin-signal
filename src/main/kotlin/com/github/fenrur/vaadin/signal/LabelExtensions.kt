@@ -11,6 +11,7 @@ import com.vaadin.flow.component.html.Label
  * Reactive for attribute for Label.
  */
 @Suppress("DEPRECATION")
+@JvmName("labelForIdSignal")
 fun Label.forId(signal: Signal<String?>) {
     fun apply(forId: String?) {
         setFor(forId)

@@ -18,6 +18,7 @@ import com.vaadin.flow.component.html.Div
  * @param condition Signal controlling visibility
  * @param block Content to render when condition is true
  */
+@JvmName("hasComponentsWhenDivSignal")
 fun <A> A.whenDiv(
     condition: Signal<Boolean>,
     block: @VaadinDsl Div.() -> Unit,
@@ -38,6 +39,7 @@ fun <A> A.whenDiv(
 /**
  * Shows a component based on a condition signal.
  */
+@JvmName("hasComponentsShowSignal")
 fun <A> A.show(
     condition: Signal<Boolean>,
     block: @VaadinDsl A.() -> Component,
@@ -50,6 +52,7 @@ fun <A> A.show(
 /**
  * Creates a loading state with automatic visibility toggle.
  */
+@JvmName("hasComponentsLoadingSignal")
 fun <A> A.loading(
     isLoadingSignal: Signal<Boolean>,
     loadingComponent: () -> Component,
@@ -74,6 +77,7 @@ fun <A> A.loading(
 /**
  * Error boundary for handling signal errors gracefully.
  */
+@JvmName("hasComponentsErrorBoundarySignal")
 fun <A, T> A.errorBoundary(
     signal: Signal<T>,
     onError: (Throwable) -> Component = { error ->

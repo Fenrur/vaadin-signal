@@ -10,6 +10,7 @@ import com.vaadin.flow.component.HtmlComponent
 /**
  * Reactive title (tooltip) for any HtmlComponent.
  */
+@JvmName("htmlComponentTitleSignal")
 fun <C : HtmlComponent> C.title(signal: Signal<String>): C {
     fun apply(title: String) {
         setTitle(title)
@@ -23,7 +24,7 @@ fun <C : HtmlComponent> C.title(signal: Signal<String>): C {
 /**
  * Reactive nullable title (tooltip) for any HtmlComponent.
  */
-@JvmName("titleNullable")
+@JvmName("htmlComponentTitleNullableSignal")
 fun <C : HtmlComponent> C.title(signal: Signal<String?>): C {
     fun apply(title: String?) {
         setTitle(title)

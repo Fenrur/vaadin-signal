@@ -66,6 +66,7 @@ class UiMapContainer<T>(private val topContainer: HasComponents) {
  * @param overrideVisibleTopContainer If true, hides container when list is empty
  * @param block The rendering function for each item
  */
+@JvmName("hasComponentsMapSignal")
 fun <T, C : Component, A> A.map(
     signal: Signal<List<T>>,
     initialCall: Boolean = false,
@@ -85,6 +86,7 @@ fun <T, C : Component, A> A.map(
 /**
  * Indexed map for rendering lists with index access.
  */
+@JvmName("hasComponentsMapIndexedSignal")
 fun <T, C : Component, A> A.mapIndexed(
     signal: Signal<List<T>>,
     initialCall: Boolean = false,
