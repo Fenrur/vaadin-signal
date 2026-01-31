@@ -3,6 +3,10 @@ package com.github.fenrur.vaadin.signal
 import com.github.fenrur.signal.Signal
 import com.vaadin.flow.component.upload.Upload
 
+// ============================================
+// Upload extensions
+// ============================================
+
 /**
  * Reactive auto upload for Upload component.
  */

@@ -1,9 +1,13 @@
 package com.github.fenrur.vaadin.signal
 
 import com.github.fenrur.signal.Signal
+import com.vaadin.flow.component.orderedlayout.BoxSizing
 import com.vaadin.flow.component.orderedlayout.FlexComponent
-import com.vaadin.flow.component.orderedlayout.HorizontalLayout
 import com.vaadin.flow.component.orderedlayout.VerticalLayout
+
+// ============================================
+// VerticalLayout extensions
+// ============================================
 
 /**
  * Reactive spacing for VerticalLayout.
@@ -32,24 +36,11 @@ fun VerticalLayout.padding(signal: Signal<Boolean>): VerticalLayout {
 }
 
 /**
- * Reactive spacing for HorizontalLayout.
+ * Reactive margin for VerticalLayout.
  */
-fun HorizontalLayout.spacing(signal: Signal<Boolean>): HorizontalLayout {
-    fun apply(hasSpacing: Boolean) {
-        isSpacing = hasSpacing
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-    return this
-}
-
-/**
- * Reactive padding for HorizontalLayout.
- */
-fun HorizontalLayout.padding(signal: Signal<Boolean>): HorizontalLayout {
-    fun apply(hasPadding: Boolean) {
-        isPadding = hasPadding
+fun VerticalLayout.margin(signal: Signal<Boolean>): VerticalLayout {
+    fun apply(hasMargin: Boolean) {
+        isMargin = hasMargin
     }
 
     apply(signal.value)
@@ -82,25 +73,27 @@ fun VerticalLayout.alignItems(signal: Signal<FlexComponent.Alignment>) {
 }
 
 /**
- * Reactive justify content for HorizontalLayout.
+ * Reactive wrap for VerticalLayout.
  */
-fun HorizontalLayout.justifyContent(signal: Signal<FlexComponent.JustifyContentMode>) {
-    fun apply(mode: FlexComponent.JustifyContentMode) {
-        justifyContentMode = mode
+fun VerticalLayout.wrap(signal: Signal<Boolean>): VerticalLayout {
+    fun apply(wrap: Boolean) {
+        setWrap(wrap)
     }
 
     apply(signal.value)
     effect(signal) { apply(it) }
+    return this
 }
 
 /**
- * Reactive align items for HorizontalLayout.
+ * Reactive box sizing for VerticalLayout.
  */
-fun HorizontalLayout.alignItems(signal: Signal<FlexComponent.Alignment>) {
-    fun apply(alignment: FlexComponent.Alignment) {
-        setDefaultVerticalComponentAlignment(alignment)
+fun VerticalLayout.boxSizing(signal: Signal<BoxSizing?>): VerticalLayout {
+    fun apply(boxSizing: BoxSizing?) {
+        setBoxSizing(boxSizing)
     }
 
     apply(signal.value)
     effect(signal) { apply(it) }
+    return this
 }

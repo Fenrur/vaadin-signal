@@ -7,6 +7,10 @@ import com.vaadin.flow.component.DetachNotifier
 import com.vaadin.flow.component.HasComponents
 import com.vaadin.flow.component.html.Div
 
+// ============================================
+// Conditional extensions
+// ============================================
+
 /**
  * Conditional rendering that shows content when condition is true.
  * Similar to SolidJS Show component.

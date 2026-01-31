@@ -7,6 +7,10 @@ import com.vaadin.flow.component.grid.GridMultiSelectionModel
 import com.vaadin.flow.component.grid.GridVariant
 import com.vaadin.flow.data.provider.DataProvider
 
+// ============================================
+// Grid extensions
+// ============================================
+
 /**
  * Reactive items for Grid.
  */

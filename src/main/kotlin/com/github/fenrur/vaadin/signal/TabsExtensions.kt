@@ -2,14 +2,31 @@ package com.github.fenrur.vaadin.signal
 
 import com.github.fenrur.signal.MutableSignal
 import com.github.fenrur.signal.Signal
-import com.vaadin.flow.component.accordion.AccordionPanel
 import com.vaadin.flow.component.tabs.Tab
 import com.vaadin.flow.component.tabs.Tabs
 import com.vaadin.flow.component.tabs.TabsVariant
 
+// ============================================
+// Tabs extensions
+// ============================================
+
+/**
+ * Reactive selected index for Tabs.
+ * Note: This is a one-way binding (signal to component).
+ */
+fun Tabs.selectedIndex(signal: Signal<Int>) {
+    fun apply(index: Int) {
+        setSelectedIndex(index)
+    }
+
+    apply(signal.value)
+    effect(signal) { apply(it) }
+}
+
 /**
  * Two-way binding for Tabs selected index.
  */
+@JvmName("tabsSelectedIndexTwoWay")
 fun Tabs.selectedIndex(signal: MutableSignal<Int>) {
     selectedIndex = signal.value
 
@@ -40,7 +57,7 @@ fun Tabs.selectedTab(signal: MutableSignal<Tab?>) {
 /**
  * Reactive orientation for Tabs.
  */
-fun Tabs.tabsOrientation(signal: Signal<Tabs.Orientation>) {
+fun Tabs.orientation(signal: Signal<Tabs.Orientation>) {
     fun apply(orientation: Tabs.Orientation) {
         setOrientation(orientation)
     }
@@ -50,15 +67,43 @@ fun Tabs.tabsOrientation(signal: Signal<Tabs.Orientation>) {
 }
 
 /**
- * Reactive minimal theme for Tabs.
+ * Reactive autoselect for Tabs.
  */
-fun Tabs.minimal(signal: Signal<Boolean>) {
-    fun apply(enabled: Boolean) {
-        if (enabled) {
-            addThemeVariants(TabsVariant.LUMO_MINIMAL)
-        } else {
-            removeThemeVariants(TabsVariant.LUMO_MINIMAL)
-        }
+fun Tabs.autoselect(signal: Signal<Boolean>) {
+    fun apply(autoselect: Boolean) {
+        isAutoselect = autoselect
+    }
+
+    apply(signal.value)
+    effect(signal) { apply(it) }
+}
+
+/**
+ * Reactive theme variants for Tabs.
+ */
+fun Tabs.themeVariants(signal: Signal<Set<TabsVariant>>) {
+    var previousVariants = emptySet<TabsVariant>()
+
+    fun apply(variants: Set<TabsVariant>) {
+        previousVariants.forEach { removeThemeVariants(it) }
+        variants.forEach { addThemeVariants(it) }
+        previousVariants = variants
+    }
+
+    apply(signal.value)
+    effect(signal) { apply(it) }
+}
+
+/**
+ * Reactive single theme variant for Tabs.
+ */
+fun Tabs.themeVariant(signal: Signal<TabsVariant?>) {
+    var previousVariant: TabsVariant? = null
+
+    fun apply(variant: TabsVariant?) {
+        previousVariant?.let { removeThemeVariants(it) }
+        variant?.let { addThemeVariants(it) }
+        previousVariant = variant
     }
 
     apply(signal.value)
@@ -82,9 +127,41 @@ fun Tabs.centered(signal: Signal<Boolean>) {
 }
 
 /**
- * Reactive equal width tabs theme.
+ * Reactive small theme for Tabs.
  */
-fun Tabs.equalWidth(signal: Signal<Boolean>) {
+fun Tabs.small(signal: Signal<Boolean>) {
+    fun apply(enabled: Boolean) {
+        if (enabled) {
+            addThemeVariants(TabsVariant.LUMO_SMALL)
+        } else {
+            removeThemeVariants(TabsVariant.LUMO_SMALL)
+        }
+    }
+
+    apply(signal.value)
+    effect(signal) { apply(it) }
+}
+
+/**
+ * Reactive minimal theme for Tabs.
+ */
+fun Tabs.minimal(signal: Signal<Boolean>) {
+    fun apply(enabled: Boolean) {
+        if (enabled) {
+            addThemeVariants(TabsVariant.LUMO_MINIMAL)
+        } else {
+            removeThemeVariants(TabsVariant.LUMO_MINIMAL)
+        }
+    }
+
+    apply(signal.value)
+    effect(signal) { apply(it) }
+}
+
+/**
+ * Reactive equal width tabs theme for Tabs.
+ */
+fun Tabs.equalWidthTabs(signal: Signal<Boolean>) {
     fun apply(enabled: Boolean) {
         if (enabled) {
             addThemeVariants(TabsVariant.LUMO_EQUAL_WIDTH_TABS)
@@ -98,26 +175,15 @@ fun Tabs.equalWidth(signal: Signal<Boolean>) {
 }
 
 /**
- * Two-way binding for AccordionPanel opened state.
+ * Reactive hide scroll buttons theme for Tabs.
  */
-fun AccordionPanel.opened(signal: MutableSignal<Boolean>) {
-    isOpened = signal.value
-
-    addOpenedChangeListener { event ->
-        signal.value = event.isOpened
-    }
-
-    effect(signal) {
-        isOpened = it
-    }
-}
-
-/**
- * Reactive summary text for AccordionPanel.
- */
-fun AccordionPanel.summary(signal: Signal<String>) {
-    fun apply(summaryText: String) {
-        setSummaryText(summaryText)
+fun Tabs.hideScrollButtons(signal: Signal<Boolean>) {
+    fun apply(enabled: Boolean) {
+        if (enabled) {
+            addThemeVariants(TabsVariant.LUMO_HIDE_SCROLL_BUTTONS)
+        } else {
+            removeThemeVariants(TabsVariant.LUMO_HIDE_SCROLL_BUTTONS)
+        }
     }
 
     apply(signal.value)

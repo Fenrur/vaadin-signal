@@ -3,7 +3,11 @@ package com.github.fenrur.vaadin.signal
 import com.github.fenrur.signal.MutableSignal
 import com.github.fenrur.signal.Signal
 import com.vaadin.flow.component.listbox.ListBox
-import com.vaadin.flow.component.virtuallist.VirtualList
+import com.vaadin.flow.data.provider.DataProvider
+
+// ============================================
+// ListBox extensions
+// ============================================
 
 /**
  * Reactive items for ListBox.
@@ -35,11 +39,27 @@ fun <T> ListBox<T>.selectedItem(signal: MutableSignal<T?>) {
 }
 
 /**
- * Reactive items for VirtualList.
+ * Two-way binding for ListBox value.
  */
-fun <T> VirtualList<T>.items(signal: Signal<List<T>>) {
-    fun apply(items: List<T>) {
-        setItems(items)
+@JvmName("listBoxValueTwoWay")
+fun <T> ListBox<T>.value(signal: MutableSignal<T?>) {
+    value = signal.value
+
+    addValueChangeListener { event ->
+        signal.value = event.value
+    }
+
+    effect(signal) {
+        value = it
+    }
+}
+
+/**
+ * Reactive DataProvider for ListBox.
+ */
+fun <T> ListBox<T>.dataProvider(signal: Signal<DataProvider<T, *>>) {
+    fun apply(provider: DataProvider<T, *>) {
+        setDataProvider(provider)
     }
 
     apply(signal.value)

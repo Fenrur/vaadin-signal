@@ -4,6 +4,10 @@ import com.github.fenrur.signal.Signal
 import com.vaadin.flow.component.Component
 import com.vaadin.flow.component.HasEnabled
 
+// ============================================
+// Component extensions
+// ============================================
+
 /**
  * Reactively controls the visibility of a component.
  */
@@ -83,15 +87,3 @@ fun <C : Component> C.style(property: String, signal: Signal<String>): C {
     return this
 }
 
-/**
- * Reactively sets the title (tooltip) of a component.
- */
-fun <C : Component> C.title(signal: Signal<String>): C {
-    fun apply(title: String) {
-        element.setProperty("title", title)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-    return this
-}

@@ -13,42 +13,14 @@ import com.vaadin.flow.component.combobox.MultiSelectComboBox
 import com.vaadin.flow.component.datepicker.DatePicker
 import com.vaadin.flow.component.datetimepicker.DateTimePicker
 import com.vaadin.flow.component.select.Select
-import com.vaadin.flow.component.textfield.PasswordField
-import com.vaadin.flow.component.textfield.TextField
 import com.vaadin.flow.component.timepicker.TimePicker
 import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.LocalTime
 
-/**
- * Two-way binding for TextField value.
- */
-fun TextField.value(signal: MutableSignal<String>) {
-    value = signal.value
-
-    addValueChangeListener {
-        signal.value = it.value
-    }
-
-    effect(signal) {
-        value = it
-    }
-}
-
-/**
- * Two-way binding for PasswordField value.
- */
-fun PasswordField.value(signal: MutableSignal<String>) {
-    value = signal.value
-
-    addValueChangeListener {
-        signal.value = it.value
-    }
-
-    effect(signal) {
-        value = it
-    }
-}
+// ============================================
+// Form extensions
+// ============================================
 
 /**
  * Two-way binding for Checkbox checked state.

@@ -7,6 +7,10 @@ import com.vaadin.flow.component.DetachNotifier
 import com.vaadin.flow.component.notification.Notification
 import com.vaadin.flow.component.notification.NotificationVariant
 
+// ============================================
+// Notification extensions
+// ============================================
+
 /**
  * Two-way binding for Notification opened state.
  */

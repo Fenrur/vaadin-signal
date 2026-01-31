@@ -6,6 +6,10 @@ import com.vaadin.flow.component.Component
 import com.vaadin.flow.component.HasComponents
 import com.vaadin.flow.component.html.Div
 
+// ============================================
+// Map extensions
+// ============================================
+
 /**
  * Container for efficient list rendering with minimal DOM updates.
  */

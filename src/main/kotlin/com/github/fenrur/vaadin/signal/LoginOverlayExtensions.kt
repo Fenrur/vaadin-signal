@@ -1,0 +1,93 @@
+package com.github.fenrur.vaadin.signal
+
+import com.github.fenrur.signal.Signal
+import com.vaadin.flow.component.login.LoginI18n
+import com.vaadin.flow.component.login.LoginOverlay
+
+// ============================================
+// LoginOverlay extensions
+// ============================================
+
+/**
+ * Reactive opened state for LoginOverlay.
+ */
+fun LoginOverlay.opened(signal: Signal<Boolean>) {
+    fun apply(opened: Boolean) {
+        isOpened = opened
+    }
+
+    apply(signal.value)
+    effect(signal) { apply(it) }
+}
+
+/**
+ * Reactive error state for LoginOverlay.
+ */
+fun LoginOverlay.error(signal: Signal<Boolean>) {
+    fun apply(error: Boolean) {
+        isError = error
+    }
+
+    apply(signal.value)
+    effect(signal) { apply(it) }
+}
+
+/**
+ * Reactive title for LoginOverlay.
+ */
+fun LoginOverlay.title(signal: Signal<String>) {
+    fun apply(title: String) {
+        setTitle(title)
+    }
+
+    apply(signal.value)
+    effect(signal) { apply(it) }
+}
+
+/**
+ * Reactive description for LoginOverlay.
+ */
+fun LoginOverlay.description(signal: Signal<String?>) {
+    fun apply(description: String?) {
+        setDescription(description)
+    }
+
+    apply(signal.value)
+    effect(signal) { apply(it) }
+}
+
+/**
+ * Reactive forgot password button visible for LoginOverlay.
+ */
+fun LoginOverlay.forgotPasswordButtonVisible(signal: Signal<Boolean>) {
+    fun apply(visible: Boolean) {
+        isForgotPasswordButtonVisible = visible
+    }
+
+    apply(signal.value)
+    effect(signal) { apply(it) }
+}
+
+/**
+ * Reactive action for LoginOverlay.
+ */
+fun LoginOverlay.action(signal: Signal<String?>) {
+    fun apply(action: String?) {
+        setAction(action)
+    }
+
+    apply(signal.value)
+    effect(signal) { apply(it) }
+}
+
+/**
+ * Reactive i18n for LoginOverlay.
+ */
+fun LoginOverlay.i18n(signal: Signal<LoginI18n>) {
+    fun apply(i18n: LoginI18n) {
+        setI18n(i18n)
+    }
+
+    apply(signal.value)
+    effect(signal) { apply(it) }
+}
