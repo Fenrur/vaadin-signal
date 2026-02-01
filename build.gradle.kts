@@ -60,7 +60,7 @@ publishing {
             pom {
                 name.set("Vaadin Signal")
                 description.set("Vaadin integration for the Signal reactive library")
-                url.set("https://github.com/fenrur/vaadin-signal")
+                url.set("https://github.com/Fenrur/vaadin-signal")
 
                 licenses {
                     license {
@@ -77,9 +77,9 @@ publishing {
                 }
 
                 scm {
-                    url.set("https://github.com/fenrur/vaadin-signal")
-                    connection.set("scm:git:git://github.com/fenrur/vaadin-signal.git")
-                    developerConnection.set("scm:git:ssh://github.com/fenrur/vaadin-signal.git")
+                    url.set("https://github.com/Fenrur/vaadin-signal")
+                    connection.set("scm:git:git://github.com/Fenrur/vaadin-signal.git")
+                    developerConnection.set("scm:git:ssh://github.com/Fenrur/vaadin-signal.git")
                 }
             }
         }
