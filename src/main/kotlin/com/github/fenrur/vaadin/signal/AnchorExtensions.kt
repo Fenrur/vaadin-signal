@@ -11,12 +11,12 @@ import com.vaadin.flow.server.AbstractStreamResource
 // ============================================
 
 /**
- * Reactive stream resource href for Anchor.
+ * Reactive href for Anchor.
  */
-@JvmName("anchorHrefResourceSignal")
-fun Anchor.hrefResource(signal: Signal<AbstractStreamResource>) {
-    fun apply(resource: AbstractStreamResource) {
-        setHref(resource)
+@JvmName("anchorHrefSignal")
+fun Anchor.href(signal: Signal<String>) {
+    fun apply(href: String) {
+        setHref(href)
     }
 
     apply(signal.value)

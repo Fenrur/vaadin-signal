@@ -1,5 +1,6 @@
 package com.github.fenrur.vaadin.signal
 
+import com.github.fenrur.signal.MutableSignal
 import com.github.fenrur.signal.Signal
 import com.vaadin.flow.component.confirmdialog.ConfirmDialog
 
@@ -9,6 +10,7 @@ import com.vaadin.flow.component.confirmdialog.ConfirmDialog
 
 /**
  * Reactive opened state for ConfirmDialog.
+ * Note: This is a one-way binding (signal to component).
  */
 @JvmName("confirmDialogOpenedSignal")
 fun ConfirmDialog.opened(signal: Signal<Boolean>) {
@@ -18,6 +20,22 @@ fun ConfirmDialog.opened(signal: Signal<Boolean>) {
 
     apply(signal.value)
     effect(signal) { apply(it) }
+}
+
+/**
+ * Two-way binding for ConfirmDialog opened state.
+ */
+@JvmName("confirmDialogOpenedMutableSignal")
+fun ConfirmDialog.opened(signal: MutableSignal<Boolean>) {
+    isOpened = signal.value
+
+    element.addEventListener("opened-changed") {
+        signal.value = isOpened
+    }
+
+    effect(signal) {
+        isOpened = it
+    }
 }
 
 /**

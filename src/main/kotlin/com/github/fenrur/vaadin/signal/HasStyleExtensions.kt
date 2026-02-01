@@ -1,7 +1,9 @@
 package com.github.fenrur.vaadin.signal
 
 import com.github.fenrur.signal.Signal
+import com.vaadin.flow.component.AttachNotifier
 import com.vaadin.flow.component.Component
+import com.vaadin.flow.component.DetachNotifier
 import com.vaadin.flow.component.HasStyle
 
 // ============================================
@@ -12,8 +14,8 @@ import com.vaadin.flow.component.HasStyle
  * Reactively sets CSS class names on a component.
  */
 @JvmName("hasStyleClassNameSignal")
-fun <C> C.className(signal: Signal<String>): C
-        where C : Component, C : HasStyle {
+fun <C> C.className(signal: Signal<String>)
+        where C : HasStyle, C : AttachNotifier, C : DetachNotifier {
     var previousClasses = ""
 
     fun apply(newClasses: String) {
@@ -28,15 +30,14 @@ fun <C> C.className(signal: Signal<String>): C
 
     apply(signal.value)
     effect(signal) { apply(it) }
-    return this
 }
 
 /**
  * Reactively adds/removes a CSS class based on a boolean condition.
  */
 @JvmName("hasStyleClassNameWhenSignal")
-fun <C> C.classNameWhen(className: String, signal: Signal<Boolean>): C
-        where C : Component, C : HasStyle {
+fun <C> C.classNameWhen(className: String, signal: Signal<Boolean>)
+        where C : HasStyle, C : AttachNotifier, C : DetachNotifier {
     fun apply(hasClass: Boolean) {
         if (hasClass) {
             addClassName(className)
@@ -47,20 +48,18 @@ fun <C> C.classNameWhen(className: String, signal: Signal<Boolean>): C
 
     apply(signal.value)
     effect(signal) { apply(it) }
-    return this
 }
 
 /**
  * Reactively sets an inline CSS style property.
  */
 @JvmName("hasStyleStyleSignal")
-fun <C> C.style(property: String, signal: Signal<String>): C
-        where C : Component, C : HasStyle {
+fun <C> C.style(property: String, signal: Signal<String>)
+        where C : HasStyle, C : AttachNotifier, C : DetachNotifier {
     fun apply(value: String) {
         style.set(property, value)
     }
 
     apply(signal.value)
     effect(signal) { apply(it) }
-    return this
 }

@@ -159,6 +159,7 @@ fun DatePicker.autoOpen(signal: Signal<Boolean>) {
 
 /**
  * Reactive opened state for DatePicker.
+ * Note: This is a one-way binding (signal to component).
  */
 @JvmName("datePickerOpenedSignal")
 fun DatePicker.opened(signal: Signal<Boolean>) {
@@ -168,6 +169,22 @@ fun DatePicker.opened(signal: Signal<Boolean>) {
 
     apply(signal.value)
     effect(signal) { apply(it) }
+}
+
+/**
+ * Two-way binding for DatePicker opened state.
+ */
+@JvmName("datePickerOpenedMutableSignal")
+fun DatePicker.opened(signal: MutableSignal<Boolean>) {
+    setOpened(signal.value)
+
+    addOpenedChangeListener { event ->
+        signal.value = event.isOpened
+    }
+
+    effect(signal) {
+        setOpened(it)
+    }
 }
 
 /**
