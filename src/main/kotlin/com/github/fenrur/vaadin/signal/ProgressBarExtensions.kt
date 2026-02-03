@@ -9,19 +9,6 @@ import com.vaadin.flow.component.progressbar.ProgressBarVariant
 // ============================================
 
 /**
- * Reactive value for ProgressBar.
- */
-@JvmName("progressBarValueSignal")
-fun ProgressBar.value(signal: Signal<Double>) {
-    fun apply(value: Double) {
-        setValue(value)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
  * Reactive min for ProgressBar.
  */
 @JvmName("progressBarMinSignal")

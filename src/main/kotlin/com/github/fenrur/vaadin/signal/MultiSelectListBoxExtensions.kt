@@ -10,22 +10,6 @@ import com.vaadin.flow.data.provider.DataProvider
 // ============================================
 
 /**
- * Two-way binding for MultiSelectListBox value.
- */
-@JvmName("multiSelectListBoxValueMutableSignal")
-fun <T> MultiSelectListBox<T>.value(signal: MutableSignal<Set<T>>) {
-    value = signal.value
-
-    addValueChangeListener { event ->
-        signal.value = event.value
-    }
-
-    effect(signal) {
-        value = it
-    }
-}
-
-/**
  * Reactive items for MultiSelectListBox.
  */
 @JvmName("multiSelectListBoxItemsSignal")

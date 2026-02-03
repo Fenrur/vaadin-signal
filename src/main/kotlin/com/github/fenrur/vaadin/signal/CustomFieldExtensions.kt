@@ -10,22 +10,6 @@ import com.vaadin.flow.component.customfield.CustomFieldVariant
 // ============================================
 
 /**
- * Two-way binding for CustomField value.
- */
-@JvmName("customFieldValueMutableSignal")
-fun <T> CustomField<T>.value(signal: MutableSignal<T?>) {
-    value = signal.value
-
-    addValueChangeListener { event ->
-        signal.value = event.value
-    }
-
-    effect(signal) {
-        value = it
-    }
-}
-
-/**
  * Reactive theme variants for CustomField.
  */
 @JvmName("customFieldThemeVariantsSignal")

@@ -10,36 +10,6 @@ import com.vaadin.flow.component.radiobutton.RadioGroupVariant
 // ============================================
 
 /**
- * Reactive value for RadioButtonGroup.
- * Note: This is a one-way binding (signal to component).
- */
-@JvmName("radioButtonGroupValueSignal")
-fun <TItem> RadioButtonGroup<TItem>.value(signal: Signal<TItem?>) {
-    fun apply(value: TItem?) {
-        setValue(value)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Two-way binding for RadioButtonGroup selected item.
- */
-@JvmName("radioButtonGroupValueMutableSignal")
-fun <TItem> RadioButtonGroup<TItem>.value(signal: MutableSignal<TItem?>) {
-    value = signal.value
-
-    addValueChangeListener {
-        signal.value = it.value
-    }
-
-    effect(signal) {
-        value = it
-    }
-}
-
-/**
  * Reactive required indicator for RadioButtonGroup.
  */
 @JvmName("radioButtonGroupRequiredSignal")

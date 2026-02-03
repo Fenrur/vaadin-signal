@@ -11,36 +11,6 @@ import java.time.LocalDate
 // ============================================
 
 /**
- * Reactive value for DatePicker.
- * Note: This is a one-way binding (signal to component).
- */
-@JvmName("datePickerValueSignal")
-fun DatePicker.value(signal: Signal<LocalDate?>) {
-    fun apply(value: LocalDate?) {
-        setValue(value)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Two-way binding for DatePicker value.
- */
-@JvmName("datePickerValueMutableSignal")
-fun DatePicker.value(signal: MutableSignal<LocalDate?>) {
-    value = signal.value
-
-    addValueChangeListener {
-        signal.value = it.value
-    }
-
-    effect(signal) {
-        value = it
-    }
-}
-
-/**
  * Reactive min date for DatePicker.
  */
 @JvmName("datePickerMinSignal")

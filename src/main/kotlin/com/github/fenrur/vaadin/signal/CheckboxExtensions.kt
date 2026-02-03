@@ -9,22 +9,6 @@ import com.vaadin.flow.component.checkbox.Checkbox
 // ============================================
 
 /**
- * Two-way binding for Checkbox value (checked state).
- */
-@JvmName("checkboxValueMutableSignal")
-fun Checkbox.value(signal: MutableSignal<Boolean>) {
-    value = signal.value
-
-    addValueChangeListener {
-        signal.value = it.value
-    }
-
-    effect(signal) {
-        value = it
-    }
-}
-
-/**
  * Reactive checked state for Checkbox (one-way).
  */
 @JvmName("checkboxCheckedSignal")

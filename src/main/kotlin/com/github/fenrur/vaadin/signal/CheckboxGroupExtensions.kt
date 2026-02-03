@@ -10,36 +10,6 @@ import com.vaadin.flow.component.checkbox.CheckboxGroupVariant
 // ============================================
 
 /**
- * Reactive value for CheckboxGroup.
- * Note: This is a one-way binding (signal to component).
- */
-@JvmName("checkboxGroupValueSignal")
-fun <TItem> CheckboxGroup<TItem>.value(signal: Signal<Set<TItem>>) {
-    fun apply(value: Set<TItem>) {
-        setValue(value)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Two-way binding for CheckboxGroup selected items.
- */
-@JvmName("checkboxGroupValueMutableSignal")
-fun <TItem> CheckboxGroup<TItem>.value(signal: MutableSignal<Set<TItem>>) {
-    value = signal.value
-
-    addValueChangeListener {
-        signal.value = it.value
-    }
-
-    effect(signal) {
-        value = it
-    }
-}
-
-/**
  * Reactive required indicator for CheckboxGroup.
  */
 @JvmName("checkboxGroupRequiredSignal")

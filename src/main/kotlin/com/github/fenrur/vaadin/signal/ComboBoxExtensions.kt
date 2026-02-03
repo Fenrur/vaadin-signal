@@ -120,20 +120,6 @@ fun <T : ComboBoxBase<*, *, *>> T.overlayClassName(signal: Signal<String>) {
 // ============================================
 
 /**
- * Reactive value for ComboBox.
- * Note: This is a one-way binding (signal to component).
- */
-@JvmName("comboBoxValueSignal")
-fun <TItem> ComboBox<TItem>.value(signal: Signal<TItem?>) {
-    fun apply(value: TItem?) {
-        setValue(value)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
  * Reactive pattern for ComboBox.
  */
 @JvmName("comboBoxPatternSignal")
@@ -230,20 +216,6 @@ fun <TItem> ComboBox<TItem>.helperAboveField(signal: Signal<Boolean>) {
 // ============================================
 // MultiSelectComboBox-specific extensions
 // ============================================
-
-/**
- * Reactive value for MultiSelectComboBox.
- * Note: This is a one-way binding (signal to component).
- */
-@JvmName("multiSelectComboBoxValueSignal")
-fun <TItem> MultiSelectComboBox<TItem>.value(signal: Signal<Set<TItem>>) {
-    fun apply(value: Set<TItem>) {
-        setValue(value)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
 
 /**
  * Reactive selected items on top for MultiSelectComboBox.

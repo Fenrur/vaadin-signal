@@ -41,22 +41,6 @@ fun <T> ListBox<T>.selectedItem(signal: MutableSignal<T?>) {
 }
 
 /**
- * Two-way binding for ListBox value.
- */
-@JvmName("listBoxValueMutableSignal")
-fun <T> ListBox<T>.value(signal: MutableSignal<T?>) {
-    value = signal.value
-
-    addValueChangeListener { event ->
-        signal.value = event.value
-    }
-
-    effect(signal) {
-        value = it
-    }
-}
-
-/**
  * Reactive DataProvider for ListBox.
  */
 @JvmName("listBoxDataProviderSignal")

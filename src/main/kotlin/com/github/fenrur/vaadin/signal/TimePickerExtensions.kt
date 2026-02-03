@@ -12,36 +12,6 @@ import java.time.LocalTime
 // ============================================
 
 /**
- * Reactive value for TimePicker.
- * Note: This is a one-way binding (signal to component).
- */
-@JvmName("timePickerValueSignal")
-fun TimePicker.value(signal: Signal<LocalTime?>) {
-    fun apply(value: LocalTime?) {
-        setValue(value)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Two-way binding for TimePicker value.
- */
-@JvmName("timePickerValueMutableSignal")
-fun TimePicker.value(signal: MutableSignal<LocalTime?>) {
-    value = signal.value
-
-    addValueChangeListener {
-        signal.value = it.value
-    }
-
-    effect(signal) {
-        value = it
-    }
-}
-
-/**
  * Reactive min time for TimePicker.
  */
 @JvmName("timePickerMinSignal")

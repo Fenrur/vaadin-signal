@@ -9,20 +9,6 @@ import com.vaadin.flow.component.select.SelectVariant
 // ============================================
 
 /**
- * Reactive value for Select.
- * Note: This is a one-way binding (signal to component).
- */
-@JvmName("selectValueSignal")
-fun <TItem> Select<TItem>.value(signal: Signal<TItem?>) {
-    fun apply(value: TItem?) {
-        setValue(value)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
  * Reactive autofocus for Select.
  */
 @JvmName("selectAutofocusSignal")
