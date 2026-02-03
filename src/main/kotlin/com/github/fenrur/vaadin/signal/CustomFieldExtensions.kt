@@ -26,58 +26,6 @@ fun <T> CustomField<T>.value(signal: MutableSignal<T?>) {
 }
 
 /**
- * Reactive label for CustomField.
- */
-@JvmName("customFieldLabelSignal")
-fun <T> CustomField<T>.label(signal: Signal<String?>) {
-    fun apply(label: String?) {
-        setLabel(label)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive invalid state for CustomField.
- */
-@JvmName("customFieldInvalidSignal")
-fun <T> CustomField<T>.invalid(signal: Signal<Boolean>) {
-    fun apply(invalid: Boolean) {
-        isInvalid = invalid
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive error message for CustomField.
- */
-@JvmName("customFieldErrorMessageSignal")
-fun <T> CustomField<T>.errorMessage(signal: Signal<String?>) {
-    fun apply(message: String?) {
-        setErrorMessage(message)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive helper text for CustomField.
- */
-@JvmName("customFieldHelperTextSignal")
-fun <T> CustomField<T>.helperText(signal: Signal<String?>) {
-    fun apply(text: String?) {
-        setHelperText(text)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
  * Reactive theme variants for CustomField.
  */
 @JvmName("customFieldThemeVariantsSignal")

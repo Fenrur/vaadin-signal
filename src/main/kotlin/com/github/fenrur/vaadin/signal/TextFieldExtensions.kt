@@ -26,32 +26,6 @@ fun TextField.value(signal: MutableSignal<String>) {
 }
 
 /**
- * Reactive label for TextField.
- */
-@JvmName("textFieldLabelSignal")
-fun TextField.label(signal: Signal<String>) {
-    fun apply(label: String) {
-        setLabel(label)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive placeholder for TextField.
- */
-@JvmName("textFieldPlaceholderSignal")
-fun TextField.placeholder(signal: Signal<String>) {
-    fun apply(placeholder: String) {
-        setPlaceholder(placeholder)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
  * Reactive autofocus for TextField.
  */
 @JvmName("textFieldAutofocusSignal")
@@ -143,32 +117,6 @@ fun TextField.pattern(signal: Signal<String>) {
 }
 
 /**
- * Reactive invalid state for TextField.
- */
-@JvmName("textFieldInvalidSignal")
-fun TextField.invalid(signal: Signal<Boolean>) {
-    fun apply(invalid: Boolean) {
-        setInvalid(invalid)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive error message for TextField.
- */
-@JvmName("textFieldErrorMessageSignal")
-fun TextField.errorMessage(signal: Signal<String>) {
-    fun apply(message: String) {
-        setErrorMessage(message)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
  * Reactive readonly for TextField.
  */
 @JvmName("textFieldReadonlySignal")
@@ -219,32 +167,6 @@ fun TextArea.value(signal: MutableSignal<String>) {
 }
 
 /**
- * Reactive label for TextArea.
- */
-@JvmName("textAreaLabelSignal")
-fun TextArea.label(signal: Signal<String>) {
-    fun apply(label: String) {
-        setLabel(label)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive placeholder for TextArea.
- */
-@JvmName("textAreaPlaceholderSignal")
-fun TextArea.placeholder(signal: Signal<String>) {
-    fun apply(placeholder: String) {
-        setPlaceholder(placeholder)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
  * Reactive required for TextArea.
  */
 @JvmName("textAreaRequiredSignal")
@@ -290,32 +212,6 @@ fun TextArea.minLength(signal: Signal<Int>) {
 fun TextArea.maxLength(signal: Signal<Int>) {
     fun apply(maxLength: Int) {
         setMaxLength(maxLength)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive invalid state for TextArea.
- */
-@JvmName("textAreaInvalidSignal")
-fun TextArea.invalid(signal: Signal<Boolean>) {
-    fun apply(invalid: Boolean) {
-        setInvalid(invalid)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive error message for TextArea.
- */
-@JvmName("textAreaErrorMessageSignal")
-fun TextArea.errorMessage(signal: Signal<String>) {
-    fun apply(message: String) {
-        setErrorMessage(message)
     }
 
     apply(signal.value)
@@ -373,32 +269,6 @@ fun PasswordField.value(signal: MutableSignal<String>) {
 }
 
 /**
- * Reactive label for PasswordField.
- */
-@JvmName("passwordFieldLabelSignal")
-fun PasswordField.label(signal: Signal<String>) {
-    fun apply(label: String) {
-        setLabel(label)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive placeholder for PasswordField.
- */
-@JvmName("passwordFieldPlaceholderSignal")
-fun PasswordField.placeholder(signal: Signal<String>) {
-    fun apply(placeholder: String) {
-        setPlaceholder(placeholder)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
  * Reactive required for PasswordField.
  */
 @JvmName("passwordFieldRequiredSignal")
@@ -431,32 +301,6 @@ fun PasswordField.clearButtonVisible(signal: Signal<Boolean>) {
 fun PasswordField.revealButtonVisible(signal: Signal<Boolean>) {
     fun apply(visible: Boolean) {
         isRevealButtonVisible = visible
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive invalid state for PasswordField.
- */
-@JvmName("passwordFieldInvalidSignal")
-fun PasswordField.invalid(signal: Signal<Boolean>) {
-    fun apply(invalid: Boolean) {
-        setInvalid(invalid)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive error message for PasswordField.
- */
-@JvmName("passwordFieldErrorMessageSignal")
-fun PasswordField.errorMessage(signal: Signal<String>) {
-    fun apply(message: String) {
-        setErrorMessage(message)
     }
 
     apply(signal.value)
@@ -497,32 +341,6 @@ fun EmailField.value(signal: MutableSignal<String>) {
 }
 
 /**
- * Reactive label for EmailField.
- */
-@JvmName("emailFieldLabelSignal")
-fun EmailField.label(signal: Signal<String>) {
-    fun apply(label: String) {
-        setLabel(label)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive placeholder for EmailField.
- */
-@JvmName("emailFieldPlaceholderSignal")
-fun EmailField.placeholder(signal: Signal<String>) {
-    fun apply(placeholder: String) {
-        setPlaceholder(placeholder)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
  * Reactive required for EmailField.
  */
 @JvmName("emailFieldRequiredSignal")
@@ -548,32 +366,6 @@ fun EmailField.clearButtonVisible(signal: Signal<Boolean>) {
     effect(signal) { apply(it) }
 }
 
-/**
- * Reactive invalid state for EmailField.
- */
-@JvmName("emailFieldInvalidSignal")
-fun EmailField.invalid(signal: Signal<Boolean>) {
-    fun apply(invalid: Boolean) {
-        setInvalid(invalid)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive error message for EmailField.
- */
-@JvmName("emailFieldErrorMessageSignal")
-fun EmailField.errorMessage(signal: Signal<String>) {
-    fun apply(message: String) {
-        setErrorMessage(message)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
 // =============================================================================
 // NUMBERFIELD EXTENSIONS
 // =============================================================================
@@ -592,32 +384,6 @@ fun NumberField.value(signal: MutableSignal<Double?>) {
     effect(signal) {
         value = it
     }
-}
-
-/**
- * Reactive label for NumberField.
- */
-@JvmName("numberFieldLabelSignal")
-fun NumberField.label(signal: Signal<String>) {
-    fun apply(label: String) {
-        setLabel(label)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive placeholder for NumberField.
- */
-@JvmName("numberFieldPlaceholderSignal")
-fun NumberField.placeholder(signal: Signal<String>) {
-    fun apply(placeholder: String) {
-        setPlaceholder(placeholder)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
 }
 
 /**
@@ -685,32 +451,6 @@ fun NumberField.stepButtonsVisible(signal: Signal<Boolean>) {
     effect(signal) { apply(it) }
 }
 
-/**
- * Reactive invalid state for NumberField.
- */
-@JvmName("numberFieldInvalidSignal")
-fun NumberField.invalid(signal: Signal<Boolean>) {
-    fun apply(invalid: Boolean) {
-        setInvalid(invalid)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive error message for NumberField.
- */
-@JvmName("numberFieldErrorMessageSignal")
-fun NumberField.errorMessage(signal: Signal<String>) {
-    fun apply(message: String) {
-        setErrorMessage(message)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
 // =============================================================================
 // INTEGERFIELD EXTENSIONS
 // =============================================================================
@@ -729,32 +469,6 @@ fun IntegerField.value(signal: MutableSignal<Int?>) {
     effect(signal) {
         value = it
     }
-}
-
-/**
- * Reactive label for IntegerField.
- */
-@JvmName("integerFieldLabelSignal")
-fun IntegerField.label(signal: Signal<String>) {
-    fun apply(label: String) {
-        setLabel(label)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive placeholder for IntegerField.
- */
-@JvmName("integerFieldPlaceholderSignal")
-fun IntegerField.placeholder(signal: Signal<String>) {
-    fun apply(placeholder: String) {
-        setPlaceholder(placeholder)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
 }
 
 /**
@@ -809,32 +523,6 @@ fun IntegerField.stepButtonsVisible(signal: Signal<Boolean>) {
     effect(signal) { apply(it) }
 }
 
-/**
- * Reactive invalid state for IntegerField.
- */
-@JvmName("integerFieldInvalidSignal")
-fun IntegerField.invalid(signal: Signal<Boolean>) {
-    fun apply(invalid: Boolean) {
-        setInvalid(invalid)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive error message for IntegerField.
- */
-@JvmName("integerFieldErrorMessageSignal")
-fun IntegerField.errorMessage(signal: Signal<String>) {
-    fun apply(message: String) {
-        setErrorMessage(message)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
 // =============================================================================
 // BIGDECIMALFIELD EXTENSIONS
 // =============================================================================
@@ -855,54 +543,3 @@ fun BigDecimalField.value(signal: MutableSignal<java.math.BigDecimal?>) {
     }
 }
 
-/**
- * Reactive label for BigDecimalField.
- */
-@JvmName("bigDecimalFieldLabelSignal")
-fun BigDecimalField.label(signal: Signal<String>) {
-    fun apply(label: String) {
-        setLabel(label)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive placeholder for BigDecimalField.
- */
-@JvmName("bigDecimalFieldPlaceholderSignal")
-fun BigDecimalField.placeholder(signal: Signal<String>) {
-    fun apply(placeholder: String) {
-        setPlaceholder(placeholder)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive invalid state for BigDecimalField.
- */
-@JvmName("bigDecimalFieldInvalidSignal")
-fun BigDecimalField.invalid(signal: Signal<Boolean>) {
-    fun apply(invalid: Boolean) {
-        setInvalid(invalid)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive error message for BigDecimalField.
- */
-@JvmName("bigDecimalFieldErrorMessageSignal")
-fun BigDecimalField.errorMessage(signal: Signal<String>) {
-    fun apply(message: String) {
-        setErrorMessage(message)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}

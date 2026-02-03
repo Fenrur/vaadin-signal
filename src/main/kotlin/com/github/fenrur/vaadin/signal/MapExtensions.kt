@@ -67,12 +67,12 @@ class UiMapContainer<T>(private val topContainer: HasComponents) {
  * @param block The rendering function for each item
  */
 @JvmName("hasComponentsMapSignal")
-fun <T, C : Component, A> A.map(
+fun <T, MAPPED_COMP, PARENT> PARENT.map(
     signal: Signal<List<T>>,
     initialCall: Boolean = false,
     overrideVisibleTopContainer: Boolean = true,
-    block: @VaadinDsl HasComponents.(T) -> C,
-) where A : HasComponents, A : Component {
+    block: @VaadinDsl HasComponents.(T) -> MAPPED_COMP,
+) where PARENT : HasComponents, PARENT : Component, MAPPED_COMP : Component {
     if (overrideVisibleTopContainer) {
         visible(signal.map { it.isNotEmpty() })
     }
@@ -87,12 +87,12 @@ fun <T, C : Component, A> A.map(
  * Indexed map for rendering lists with index access.
  */
 @JvmName("hasComponentsMapIndexedSignal")
-fun <T, C : Component, A> A.mapIndexed(
+fun <T, MAPPED_COMP, PARENT> PARENT.mapIndexed(
     signal: Signal<List<T>>,
     initialCall: Boolean = false,
     overrideVisibleTopContainer: Boolean = true,
-    block: @VaadinDsl HasComponents.(index: Int, item: T) -> C,
-) where A : HasComponents, A : Component {
+    block: @VaadinDsl HasComponents.(index: Int, item: T) -> MAPPED_COMP,
+) where PARENT : HasComponents, PARENT : Component, MAPPED_COMP : Component {
     map(signal, initialCall, overrideVisibleTopContainer) { item ->
         val index = signal.value.indexOf(item)
         block(index, item)

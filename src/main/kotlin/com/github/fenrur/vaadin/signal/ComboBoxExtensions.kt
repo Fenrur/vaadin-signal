@@ -77,58 +77,6 @@ fun <T : ComboBoxBase<*, *, *>> T.required(signal: Signal<Boolean>) {
 }
 
 /**
- * Reactive placeholder for ComboBoxBase.
- */
-@JvmName("comboBoxBasePlaceholderSignal")
-fun <T : ComboBoxBase<*, *, *>> T.placeholder(signal: Signal<String>) {
-    fun apply(placeholder: String) {
-        setPlaceholder(placeholder)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive label for ComboBoxBase.
- */
-@JvmName("comboBoxBaseLabelSignal")
-fun <T : ComboBoxBase<*, *, *>> T.label(signal: Signal<String>) {
-    fun apply(label: String) {
-        setLabel(label)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive error message for ComboBoxBase.
- */
-@JvmName("comboBoxBaseErrorMessageSignal")
-fun <T : ComboBoxBase<*, *, *>> T.errorMessage(signal: Signal<String>) {
-    fun apply(errorMessage: String) {
-        setErrorMessage(errorMessage)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive invalid state for ComboBoxBase.
- */
-@JvmName("comboBoxBaseInvalidSignal")
-fun <T : ComboBoxBase<*, *, *>> T.invalid(signal: Signal<Boolean>) {
-    fun apply(invalid: Boolean) {
-        isInvalid = invalid
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
  * Reactive clear button visibility for ComboBoxBase.
  */
 @JvmName("comboBoxBaseClearButtonVisibleSignal")
@@ -161,32 +109,6 @@ fun <T : ComboBoxBase<*, *, *>> T.autoOpen(signal: Signal<Boolean>) {
 fun <T : ComboBoxBase<*, *, *>> T.overlayClassName(signal: Signal<String>) {
     fun apply(className: String) {
         overlayClassName = className
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive aria label for ComboBoxBase.
- */
-@JvmName("comboBoxBaseAriaLabelSignal")
-fun <T : ComboBoxBase<*, *, *>> T.ariaLabel(signal: Signal<String?>) {
-    fun apply(ariaLabel: String?) {
-        setAriaLabel(ariaLabel)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive aria labelled by for ComboBoxBase.
- */
-@JvmName("comboBoxBaseAriaLabelledBySignal")
-fun <T : ComboBoxBase<*, *, *>> T.ariaLabelledBy(signal: Signal<String?>) {
-    fun apply(labelledBy: String?) {
-        setAriaLabelledBy(labelledBy)
     }
 
     apply(signal.value)

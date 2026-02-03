@@ -41,32 +41,6 @@ fun DatePicker.value(signal: MutableSignal<LocalDate?>) {
 }
 
 /**
- * Reactive label for DatePicker.
- */
-@JvmName("datePickerLabelSignal")
-fun DatePicker.label(signal: Signal<String>) {
-    fun apply(label: String) {
-        setLabel(label)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive placeholder for DatePicker.
- */
-@JvmName("datePickerPlaceholderSignal")
-fun DatePicker.placeholder(signal: Signal<String>) {
-    fun apply(placeholder: String) {
-        setPlaceholder(placeholder)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
  * Reactive min date for DatePicker.
  */
 @JvmName("datePickerMinSignal")
@@ -99,32 +73,6 @@ fun DatePicker.max(signal: Signal<LocalDate?>) {
 fun DatePicker.required(signal: Signal<Boolean>) {
     fun apply(required: Boolean) {
         isRequired = required
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive invalid state for DatePicker.
- */
-@JvmName("datePickerInvalidSignal")
-fun DatePicker.invalid(signal: Signal<Boolean>) {
-    fun apply(invalid: Boolean) {
-        isInvalid = invalid
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive error message for DatePicker.
- */
-@JvmName("datePickerErrorMessageSignal")
-fun DatePicker.errorMessage(signal: Signal<String>) {
-    fun apply(message: String) {
-        setErrorMessage(message)
     }
 
     apply(signal.value)
@@ -194,32 +142,6 @@ fun DatePicker.opened(signal: MutableSignal<Boolean>) {
 fun DatePicker.overlayClassName(signal: Signal<String>) {
     fun apply(className: String) {
         overlayClassName = className
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive aria label for DatePicker.
- */
-@JvmName("datePickerAriaLabelSignal")
-fun DatePicker.ariaLabel(signal: Signal<String?>) {
-    fun apply(ariaLabel: String?) {
-        setAriaLabel(ariaLabel)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive aria labelled by for DatePicker.
- */
-@JvmName("datePickerAriaLabelledBySignal")
-fun DatePicker.ariaLabelledBy(signal: Signal<String?>) {
-    fun apply(labelledBy: String?) {
-        setAriaLabelledBy(labelledBy)
     }
 
     apply(signal.value)

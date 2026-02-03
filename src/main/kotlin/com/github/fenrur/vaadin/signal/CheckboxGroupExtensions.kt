@@ -40,77 +40,12 @@ fun <TItem> CheckboxGroup<TItem>.value(signal: MutableSignal<Set<TItem>>) {
 }
 
 /**
- * Reactive label for CheckboxGroup.
- */
-@JvmName("checkboxGroupLabelSignal")
-fun <TItem> CheckboxGroup<TItem>.label(signal: Signal<String>) {
-    fun apply(label: String) {
-        setLabel(label)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
  * Reactive required indicator for CheckboxGroup.
  */
 @JvmName("checkboxGroupRequiredSignal")
 fun <TItem> CheckboxGroup<TItem>.required(signal: Signal<Boolean>) {
     fun apply(required: Boolean) {
         isRequired = required
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive invalid state for CheckboxGroup.
- */
-@JvmName("checkboxGroupInvalidSignal")
-fun <TItem> CheckboxGroup<TItem>.invalid(signal: Signal<Boolean>) {
-    fun apply(invalid: Boolean) {
-        isInvalid = invalid
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive error message for CheckboxGroup.
- */
-@JvmName("checkboxGroupErrorMessageSignal")
-fun <TItem> CheckboxGroup<TItem>.errorMessage(signal: Signal<String>) {
-    fun apply(message: String) {
-        setErrorMessage(message)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive aria label for CheckboxGroup.
- */
-@JvmName("checkboxGroupAriaLabelSignal")
-fun <TItem> CheckboxGroup<TItem>.ariaLabel(signal: Signal<String?>) {
-    fun apply(ariaLabel: String?) {
-        setAriaLabel(ariaLabel)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive aria labelled by for CheckboxGroup.
- */
-@JvmName("checkboxGroupAriaLabelledBySignal")
-fun <TItem> CheckboxGroup<TItem>.ariaLabelledBy(signal: Signal<String?>) {
-    fun apply(labelledBy: String?) {
-        setAriaLabelledBy(labelledBy)
     }
 
     apply(signal.value)

@@ -38,19 +38,6 @@ fun Checkbox.checked(signal: Signal<Boolean>) {
 }
 
 /**
- * Reactive label for Checkbox.
- */
-@JvmName("checkboxLabelSignal")
-fun Checkbox.label(signal: Signal<String>) {
-    fun apply(label: String) {
-        setLabel(label)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
  * Reactive autofocus for Checkbox.
  */
 @JvmName("checkboxAutofocusSignal")
@@ -89,54 +76,3 @@ fun Checkbox.required(signal: Signal<Boolean>) {
     effect(signal) { apply(it) }
 }
 
-/**
- * Reactive invalid state for Checkbox.
- */
-@JvmName("checkboxInvalidSignal")
-fun Checkbox.invalid(signal: Signal<Boolean>) {
-    fun apply(invalid: Boolean) {
-        isInvalid = invalid
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive error message for Checkbox.
- */
-@JvmName("checkboxErrorMessageSignal")
-fun Checkbox.errorMessage(signal: Signal<String>) {
-    fun apply(message: String) {
-        setErrorMessage(message)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive aria label for Checkbox.
- */
-@JvmName("checkboxAriaLabelSignal")
-fun Checkbox.ariaLabel(signal: Signal<String?>) {
-    fun apply(ariaLabel: String?) {
-        setAriaLabel(ariaLabel)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive aria labelled by for Checkbox.
- */
-@JvmName("checkboxAriaLabelledBySignal")
-fun Checkbox.ariaLabelledBy(signal: Signal<String?>) {
-    fun apply(labelledBy: String?) {
-        setAriaLabelledBy(labelledBy)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}

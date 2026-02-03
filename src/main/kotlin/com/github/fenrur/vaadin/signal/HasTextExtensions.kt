@@ -2,7 +2,6 @@ package com.github.fenrur.vaadin.signal
 
 import com.github.fenrur.signal.Signal
 import com.vaadin.flow.component.AttachNotifier
-import com.vaadin.flow.component.Component
 import com.vaadin.flow.component.DetachNotifier
 import com.vaadin.flow.component.HasText
 
@@ -14,9 +13,9 @@ import com.vaadin.flow.component.HasText
  * Reactive text for any component implementing HasText.
  */
 @JvmName("hasTextTextSignal")
-fun <C> C.text(signal: Signal<String>)
+fun <C> C.text(signal: Signal<String?>)
         where C : HasText, C : AttachNotifier, C : DetachNotifier {
-    fun apply(text: String) {
+    fun apply(text: String?) {
         setText(text)
     }
 
@@ -25,13 +24,13 @@ fun <C> C.text(signal: Signal<String>)
 }
 
 /**
- * Reactive nullable text for any component implementing HasText.
+ * Reactive whitespace mode for any component implementing HasText.
  */
-@JvmName("hasTextTextNullableSignal")
-fun <C> C.text(signal: Signal<String?>)
+@JvmName("hasTextWhitespaceSignal")
+fun <C> C.whitespace(signal: Signal<HasText.WhiteSpace?>)
         where C : HasText, C : AttachNotifier, C : DetachNotifier {
-    fun apply(text: String?) {
-        setText(text ?: "")
+    fun apply(whitespace: HasText.WhiteSpace?) {
+        setWhiteSpace(whitespace)
     }
 
     apply(signal.value)

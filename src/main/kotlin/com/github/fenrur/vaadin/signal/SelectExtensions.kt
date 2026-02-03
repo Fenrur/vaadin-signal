@@ -23,32 +23,6 @@ fun <TItem> Select<TItem>.value(signal: Signal<TItem?>) {
 }
 
 /**
- * Reactive label for Select.
- */
-@JvmName("selectLabelSignal")
-fun <TItem> Select<TItem>.label(signal: Signal<String>) {
-    fun apply(label: String) {
-        setLabel(label)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive placeholder for Select.
- */
-@JvmName("selectPlaceholderSignal")
-fun <TItem> Select<TItem>.placeholder(signal: Signal<String>) {
-    fun apply(placeholder: String) {
-        setPlaceholder(placeholder)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
  * Reactive autofocus for Select.
  */
 @JvmName("selectAutofocusSignal")
@@ -68,32 +42,6 @@ fun <TItem> Select<TItem>.autofocus(signal: Signal<Boolean>) {
 fun <TItem> Select<TItem>.required(signal: Signal<Boolean>) {
     fun apply(required: Boolean) {
         isRequiredIndicatorVisible = required
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive invalid state for Select.
- */
-@JvmName("selectInvalidSignal")
-fun <TItem> Select<TItem>.invalid(signal: Signal<Boolean>) {
-    fun apply(invalid: Boolean) {
-        isInvalid = invalid
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive error message for Select.
- */
-@JvmName("selectErrorMessageSignal")
-fun <TItem> Select<TItem>.errorMessage(signal: Signal<String>) {
-    fun apply(message: String) {
-        setErrorMessage(message)
     }
 
     apply(signal.value)
@@ -159,32 +107,6 @@ fun <TItem> Select<TItem>.overlayWidth(signal: Signal<String?>) {
 fun <TItem> Select<TItem>.overlayClassName(signal: Signal<String>) {
     fun apply(className: String) {
         overlayClassName = className
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive aria label for Select.
- */
-@JvmName("selectAriaLabelSignal")
-fun <TItem> Select<TItem>.ariaLabel(signal: Signal<String?>) {
-    fun apply(ariaLabel: String?) {
-        setAriaLabel(ariaLabel)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive aria labelled by for Select.
- */
-@JvmName("selectAriaLabelledBySignal")
-fun <TItem> Select<TItem>.ariaLabelledBy(signal: Signal<String?>) {
-    fun apply(labelledBy: String?) {
-        setAriaLabelledBy(labelledBy)
     }
 
     apply(signal.value)

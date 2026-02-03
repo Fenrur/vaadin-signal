@@ -42,32 +42,6 @@ fun TimePicker.value(signal: MutableSignal<LocalTime?>) {
 }
 
 /**
- * Reactive label for TimePicker.
- */
-@JvmName("timePickerLabelSignal")
-fun TimePicker.label(signal: Signal<String>) {
-    fun apply(label: String) {
-        setLabel(label)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive placeholder for TimePicker.
- */
-@JvmName("timePickerPlaceholderSignal")
-fun TimePicker.placeholder(signal: Signal<String>) {
-    fun apply(placeholder: String) {
-        setPlaceholder(placeholder)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
  * Reactive min time for TimePicker.
  */
 @JvmName("timePickerMinSignal")
@@ -120,32 +94,6 @@ fun TimePicker.required(signal: Signal<Boolean>) {
 }
 
 /**
- * Reactive invalid state for TimePicker.
- */
-@JvmName("timePickerInvalidSignal")
-fun TimePicker.invalid(signal: Signal<Boolean>) {
-    fun apply(invalid: Boolean) {
-        isInvalid = invalid
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive error message for TimePicker.
- */
-@JvmName("timePickerErrorMessageSignal")
-fun TimePicker.errorMessage(signal: Signal<String>) {
-    fun apply(message: String) {
-        setErrorMessage(message)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
  * Reactive clear button visibility for TimePicker.
  */
 @JvmName("timePickerClearButtonVisibleSignal")
@@ -178,32 +126,6 @@ fun TimePicker.autoOpen(signal: Signal<Boolean>) {
 fun TimePicker.overlayClassName(signal: Signal<String>) {
     fun apply(className: String) {
         overlayClassName = className
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive aria label for TimePicker.
- */
-@JvmName("timePickerAriaLabelSignal")
-fun TimePicker.ariaLabel(signal: Signal<String?>) {
-    fun apply(ariaLabel: String?) {
-        setAriaLabel(ariaLabel)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive aria labelled by for TimePicker.
- */
-@JvmName("timePickerAriaLabelledBySignal")
-fun TimePicker.ariaLabelledBy(signal: Signal<String?>) {
-    fun apply(labelledBy: String?) {
-        setAriaLabelledBy(labelledBy)
     }
 
     apply(signal.value)

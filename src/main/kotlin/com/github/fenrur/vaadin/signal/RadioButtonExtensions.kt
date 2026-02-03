@@ -40,77 +40,12 @@ fun <TItem> RadioButtonGroup<TItem>.value(signal: MutableSignal<TItem?>) {
 }
 
 /**
- * Reactive label for RadioButtonGroup.
- */
-@JvmName("radioButtonGroupLabelSignal")
-fun <TItem> RadioButtonGroup<TItem>.label(signal: Signal<String>) {
-    fun apply(label: String) {
-        setLabel(label)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
  * Reactive required indicator for RadioButtonGroup.
  */
 @JvmName("radioButtonGroupRequiredSignal")
 fun <TItem> RadioButtonGroup<TItem>.required(signal: Signal<Boolean>) {
     fun apply(required: Boolean) {
         isRequiredIndicatorVisible = required
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive invalid state for RadioButtonGroup.
- */
-@JvmName("radioButtonGroupInvalidSignal")
-fun <TItem> RadioButtonGroup<TItem>.invalid(signal: Signal<Boolean>) {
-    fun apply(invalid: Boolean) {
-        isInvalid = invalid
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive error message for RadioButtonGroup.
- */
-@JvmName("radioButtonGroupErrorMessageSignal")
-fun <TItem> RadioButtonGroup<TItem>.errorMessage(signal: Signal<String>) {
-    fun apply(message: String) {
-        setErrorMessage(message)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive aria label for RadioButtonGroup.
- */
-@JvmName("radioButtonGroupAriaLabelSignal")
-fun <TItem> RadioButtonGroup<TItem>.ariaLabel(signal: Signal<String?>) {
-    fun apply(ariaLabel: String?) {
-        setAriaLabel(ariaLabel)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive aria labelled by for RadioButtonGroup.
- */
-@JvmName("radioButtonGroupAriaLabelledBySignal")
-fun <TItem> RadioButtonGroup<TItem>.ariaLabelledBy(signal: Signal<String?>) {
-    fun apply(labelledBy: String?) {
-        setAriaLabelledBy(labelledBy)
     }
 
     apply(signal.value)

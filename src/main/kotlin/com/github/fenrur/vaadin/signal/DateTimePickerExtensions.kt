@@ -42,19 +42,6 @@ fun DateTimePicker.value(signal: MutableSignal<LocalDateTime?>) {
 }
 
 /**
- * Reactive label for DateTimePicker.
- */
-@JvmName("dateTimePickerLabelSignal")
-fun DateTimePicker.label(signal: Signal<String>) {
-    fun apply(label: String) {
-        setLabel(label)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
  * Reactive min date time for DateTimePicker.
  */
 @JvmName("dateTimePickerMinSignal")
@@ -100,32 +87,6 @@ fun DateTimePicker.step(signal: Signal<Duration?>) {
 fun DateTimePicker.required(signal: Signal<Boolean>) {
     fun apply(required: Boolean) {
         isRequiredIndicatorVisible = required
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive invalid state for DateTimePicker.
- */
-@JvmName("dateTimePickerInvalidSignal")
-fun DateTimePicker.invalid(signal: Signal<Boolean>) {
-    fun apply(invalid: Boolean) {
-        isInvalid = invalid
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive error message for DateTimePicker.
- */
-@JvmName("dateTimePickerErrorMessageSignal")
-fun DateTimePicker.errorMessage(signal: Signal<String>) {
-    fun apply(message: String) {
-        setErrorMessage(message)
     }
 
     apply(signal.value)

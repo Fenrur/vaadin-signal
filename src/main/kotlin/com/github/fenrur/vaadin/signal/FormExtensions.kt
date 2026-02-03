@@ -2,11 +2,6 @@ package com.github.fenrur.vaadin.signal
 
 import com.github.fenrur.signal.MutableSignal
 import com.github.fenrur.signal.Signal
-import com.vaadin.flow.component.Component
-import com.vaadin.flow.component.HasHelper
-import com.vaadin.flow.component.HasLabel
-import com.vaadin.flow.component.HasPlaceholder
-import com.vaadin.flow.component.HasValidation
 import com.vaadin.flow.component.checkbox.Checkbox
 import com.vaadin.flow.component.combobox.ComboBox
 import com.vaadin.flow.component.combobox.MultiSelectComboBox
@@ -175,77 +170,3 @@ fun DateTimePicker.selectedDateTime(signal: MutableSignal<LocalDateTime?>) {
     }
 }
 
-/**
- * Reactive label for components with labels.
- */
-@JvmName("hasLabelLabelSignal")
-fun <C> C.label(signal: Signal<String>): C
-        where C : Component, C : HasLabel {
-    fun apply(label: String) {
-        setLabel(label)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-    return this
-}
-
-/**
- * Reactive placeholder for input components.
- */
-@JvmName("hasPlaceholderPlaceholderSignal")
-fun <C> C.placeholder(signal: Signal<String>): C
-        where C : Component, C : HasPlaceholder {
-    fun apply(placeholder: String) {
-        setPlaceholder(placeholder)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-    return this
-}
-
-/**
- * Reactive helper text for form components.
- */
-@JvmName("hasHelperHelperTextSignal")
-fun <C> C.helperText(signal: Signal<String>): C
-        where C : Component, C : HasHelper {
-    fun apply(text: String) {
-        helperText = text
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-    return this
-}
-
-/**
- * Reactive invalid state for form components.
- */
-@JvmName("hasValidationInvalidSignal")
-fun <C> C.invalid(signal: Signal<Boolean>): C
-        where C : Component, C : HasValidation {
-    fun apply(isInvalid: Boolean) {
-        setInvalid(isInvalid)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-    return this
-}
-
-/**
- * Reactive error message for form components.
- */
-@JvmName("hasValidationErrorMessageSignal")
-fun <C> C.errorMessage(signal: Signal<String>): C
-        where C : Component, C : HasValidation {
-    fun apply(message: String) {
-        errorMessage = message
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-    return this
-}

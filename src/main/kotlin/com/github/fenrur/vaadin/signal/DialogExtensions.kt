@@ -105,58 +105,6 @@ fun Dialog.dialogHeight(signal: Signal<String?>) {
 }
 
 /**
- * Reactive min width for Dialog.
- */
-@JvmName("dialogMinWidthSignal")
-fun Dialog.minWidth(signal: Signal<String?>) {
-    fun apply(minWidth: String?) {
-        setMinWidth(minWidth)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive max width for Dialog.
- */
-@JvmName("dialogMaxWidthSignal")
-fun Dialog.maxWidth(signal: Signal<String?>) {
-    fun apply(maxWidth: String?) {
-        setMaxWidth(maxWidth)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive min height for Dialog.
- */
-@JvmName("dialogMinHeightSignal")
-fun Dialog.minHeight(signal: Signal<String?>) {
-    fun apply(minHeight: String?) {
-        setMinHeight(minHeight)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive max height for Dialog.
- */
-@JvmName("dialogMaxHeightSignal")
-fun Dialog.maxHeight(signal: Signal<String?>) {
-    fun apply(maxHeight: String?) {
-        setMaxHeight(maxHeight)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
  * Reactive top position for Dialog.
  */
 @JvmName("dialogTopSignal")
