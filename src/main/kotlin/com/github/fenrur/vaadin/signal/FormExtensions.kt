@@ -1,7 +1,6 @@
 package com.github.fenrur.vaadin.signal
 
 import com.github.fenrur.signal.MutableSignal
-import com.github.fenrur.signal.Signal
 import com.vaadin.flow.component.checkbox.Checkbox
 import com.vaadin.flow.component.combobox.ComboBox
 import com.vaadin.flow.component.combobox.MultiSelectComboBox
@@ -63,45 +62,6 @@ fun <T> ComboBox<T>.selectedItem(signal: MutableSignal<T?>) {
     effect(signal) {
         value = it
     }
-}
-
-/**
- * Reactive items for Select.
- */
-@JvmName("selectItemsSignal")
-fun <T> Select<T>.items(signal: Signal<List<T>>) {
-    fun apply(items: List<T>) {
-        setItems(items)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive items for ComboBox.
- */
-@JvmName("comboBoxItemsSignal")
-fun <T> ComboBox<T>.items(signal: Signal<List<T>>) {
-    fun apply(items: List<T>) {
-        setItems(items)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
- * Reactive items for MultiSelectComboBox.
- */
-@JvmName("multiSelectComboBoxItemsSignal")
-fun <T> MultiSelectComboBox<T>.items(signal: Signal<Set<T>>) {
-    fun apply(items: Set<T>) {
-        setItems(items)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
 }
 
 /**

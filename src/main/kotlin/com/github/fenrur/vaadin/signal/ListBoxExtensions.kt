@@ -10,19 +10,6 @@ import com.vaadin.flow.data.provider.DataProvider
 // ============================================
 
 /**
- * Reactive items for ListBox.
- */
-@JvmName("listBoxItemsSignal")
-fun <T> ListBox<T>.items(signal: Signal<List<T>>) {
-    fun apply(items: List<T>) {
-        setItems(items)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
  * Two-way binding for ListBox selection.
  */
 @JvmName("listBoxSelectedItemMutableSignal")

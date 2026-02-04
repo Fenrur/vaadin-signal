@@ -12,19 +12,6 @@ import com.vaadin.flow.data.provider.DataProvider
 // ============================================
 
 /**
- * Reactive items for Grid.
- */
-@JvmName("gridItemsSignal")
-fun <T> Grid<T>.items(signal: Signal<List<T>>) {
-    fun apply(items: List<T>) {
-        setItems(items)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
-
-/**
  * Reactive DataProvider for Grid.
  */
 @JvmName("gridDataProviderSignal")

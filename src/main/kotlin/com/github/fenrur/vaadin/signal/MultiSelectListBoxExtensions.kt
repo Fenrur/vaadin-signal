@@ -1,6 +1,5 @@
 package com.github.fenrur.vaadin.signal
 
-import com.github.fenrur.signal.MutableSignal
 import com.github.fenrur.signal.Signal
 import com.vaadin.flow.component.listbox.MultiSelectListBox
 import com.vaadin.flow.data.provider.DataProvider
@@ -8,19 +7,6 @@ import com.vaadin.flow.data.provider.DataProvider
 // ============================================
 // MultiSelectListBox extensions
 // ============================================
-
-/**
- * Reactive items for MultiSelectListBox.
- */
-@JvmName("multiSelectListBoxItemsSignal")
-fun <T> MultiSelectListBox<T>.items(signal: Signal<List<T>>) {
-    fun apply(items: List<T>) {
-        setItems(items)
-    }
-
-    apply(signal.value)
-    effect(signal) { apply(it) }
-}
 
 /**
  * Reactive DataProvider for MultiSelectListBox.
