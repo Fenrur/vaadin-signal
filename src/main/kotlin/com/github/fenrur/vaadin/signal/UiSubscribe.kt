@@ -1,11 +1,11 @@
 package com.github.fenrur.vaadin.signal
 
-import com.github.fenrur.signal.Either
 import com.github.fenrur.signal.Signal
 import com.github.fenrur.signal.UnSubscriber
 import com.vaadin.flow.component.AttachNotifier
 import com.vaadin.flow.component.DetachNotifier
 import com.vaadin.flow.component.UI
+import java.util.concurrent.atomic.AtomicReference
 
 /**
  * Subscribes to a signal and executes the block on the UI thread.
@@ -18,21 +18,23 @@ import com.vaadin.flow.component.UI
 fun <T, A> A.uiSubscribe(
     signal: Signal<T>,
     initialCall: Boolean = false,
-    block: (Either<Throwable, T>) -> Unit,
+    block: (Result<T>) -> Unit,
 ) where A : AttachNotifier, A : DetachNotifier {
     val ui = UI.getCurrent()
     if (initialCall) {
-        block(Either.right(signal.value))
+        block(Result.success(signal.value))
     }
-    lateinit var unsubscribe: UnSubscriber
+    val unsubscribeRef = AtomicReference<UnSubscriber> {}
     addAttachListener {
-        unsubscribe = signal.subscribe { either ->
+        unsubscribeRef.set(signal.subscribe { result ->
             if (ui.isAttached) ui.immediateOrAccess {
-                block(either)
+                block(result)
             }
-        }
+        })
     }
-    addDetachListener { unsubscribe() }
+    addDetachListener {
+        unsubscribeRef.getAndSet {}.invoke()
+    }
 }
 
 /**
@@ -62,20 +64,20 @@ class UiSubscriptionBuilder<T, A>(
 ) where A : AttachNotifier, A : DetachNotifier {
 
     /**
-     * Executes only on successful values (Right), ignores errors.
+     * Executes only on successful values, ignores errors.
      */
     fun onSuccess(block: (T) -> Unit) {
-        target.uiSubscribe(signal, initialCall) { either ->
-            either.onRight { value -> block(value) }
+        target.uiSubscribe(signal, initialCall) { result ->
+            result.onSuccess { value -> block(value) }
         }
     }
 
     /**
-     * Executes only on errors (Left), ignores successful values.
+     * Executes only on errors, ignores successful values.
      */
     fun onFailure(block: (Throwable) -> Unit) {
-        target.uiSubscribe(signal, initialCall) { either ->
-            either.onLeft { error -> block(error) }
+        target.uiSubscribe(signal, initialCall) { result ->
+            result.onFailure { error -> block(error) }
         }
     }
 }

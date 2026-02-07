@@ -88,11 +88,11 @@ fun <A, T> A.errorBoundary(
     },
     onSuccess: A.(T) -> Unit,
 ) where A : HasComponents, A : AttachNotifier, A : DetachNotifier {
-    uiSubscribe(signal, true) { either ->
+    uiSubscribe(signal, true) { result ->
         removeAll()
-        either.fold(
-            { error -> add(onError(error)) },
-            { value -> onSuccess(value) }
+        result.fold(
+            onSuccess = { value -> onSuccess(value) },
+            onFailure = { error -> add(onError(error)) }
         )
     }
 }
