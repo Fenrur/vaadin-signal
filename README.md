@@ -53,7 +53,7 @@ dependencies {
 }
 ```
 
-> 📚 This library includes [Signal](https://github.com/fenrur/signal) as a dependency. Make sure to read its documentation to discover all available operators (`map`, `filter`, `combineWith`, `debounce`, etc.).
+> 📚 This library includes [Signal](https://github.com/fenrur/signal) as a dependency. Make sure to read its documentation to discover all available operators (`map`, `filter`, `combine`, `debounce`, etc.).
 
 > 💡 **Recommended**: Use with [Karibu-DSL](https://github.com/mvysny/karibu-dsl) for a fluent, type-safe Kotlin DSL experience. All examples below use Karibu-DSL syntax.
 
@@ -307,7 +307,7 @@ val tasks = mutableSignalOf(listOf<Task>())
 val filter = mutableSignalOf(Filter.ALL)
 
 // Derived signal: automatically updates when tasks or filter changes
-val filteredTasks = tasks.combineWith(filter) { taskList, f ->
+val filteredTasks = combine(tasks, filter) { taskList, f ->
     when (f) {
         Filter.ALL -> taskList
         Filter.ACTIVE -> taskList.filter { !it.completed }
@@ -335,6 +335,70 @@ verticalLayout {
             taskRow(task)
         }
     }
+}
+```
+
+### Side-effects with `effect`
+
+`effect` is the way to subscribe to one or more signals inside a Vaadin component. It's similar to React's `useEffect`: a function that re-runs every time the signals it observes change value.
+
+The main purpose is to react to a state change to execute an action that isn't a simple attribute binding (text, visibility, enabled…). For example: calling a service, displaying a notification, logging something, updating a third-party component, etc.
+
+```kotlin
+val selectedUser = mutableSignalOf<User?>(null)
+val searchQuery = mutableSignalOf("")
+val users = mutableSignalOf(listOf<User>())
+
+verticalLayout {
+    textField("Search") {
+        value(searchQuery)
+    }
+
+    grid<User> {
+        items(users)
+        selectedItem(selectedUser)
+        columnFor(User::name)
+        columnFor(User::email)
+    }
+
+    // Effect: react to user selection
+    effect(selectedUser) { user ->
+        user?.let { showUserDetails(it) }
+    }
+
+    // Effect: react to search changes to call a service
+    effect(searchQuery) { query ->
+        if (query.length >= 3) {
+            val results = userService.search(query)
+            users.value = results
+        }
+    }
+}
+```
+
+The difference from a simple listener is that `effect` automatically unsubscribes when the component is detached from the DOM, and resubscribes when it's reattached. No need to manually manage the lifecycle.
+
+#### Multiple signals
+
+You can observe up to 3 signals at once:
+
+```kotlin
+val filter = mutableSignalOf(Filter.ALL)
+val sortOrder = mutableSignalOf(SortOrder.ASC)
+
+effect(filter, sortOrder) { f, sort ->
+    refreshData(f, sort)
+}
+```
+
+#### Initial call
+
+By default, `effect` only runs when signals change after subscription. Use `initialCall = true` to also execute immediately with the current values:
+
+```kotlin
+effect(searchQuery, initialCall = true) { query ->
+    // Runs immediately with current value, then on every change
+    updateSearchResults(query)
 }
 ```
 
