@@ -49,7 +49,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.github.fenrur:vaadin-signal:1.0.0")
+    implementation("com.github.fenrur:vaadin-signal:2.0.0")
 }
 ```
 
@@ -59,7 +59,7 @@ dependencies {
 
 ```kotlin
 dependencies {
-    implementation("com.github.fenrur:vaadin-signal:1.0.0")
+    implementation("com.github.fenrur:vaadin-signal:2.0.0")
     implementation("com.github.mvysny.karibudsl:karibu-dsl:2.2.0")
 }
 ```
@@ -112,7 +112,7 @@ formLayout {
 
     button("Login") {
         // Button enabled only when both fields are filled
-        enabled(username.combineWith(password) { u, p ->
+        enabled(combine(username, password) { u, p ->
             u.isNotBlank() && p.isNotBlank()
         })
         onClick { login(username.value, password.value) }
