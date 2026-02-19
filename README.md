@@ -5,6 +5,9 @@
 Make Vaadin **declarative** like TSX/JSX. Describe your UI as code, and let signals handle the reactivity automatically.
 
 [![Maven Central](https://img.shields.io/maven-central/v/io.github.fenrur/vaadin-signal)](https://central.sonatype.com/artifact/io.github.fenrur/vaadin-signal)
+[![Build](https://github.com/Fenrur/vaadin-signal/actions/workflows/ci.yml/badge.svg)](https://github.com/Fenrur/vaadin-signal/actions/workflows/ci.yml)
+[![Kotlin](https://img.shields.io/badge/kotlin-2.1.20-blue.svg?logo=kotlin)](http://kotlinlang.org)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 ## Why?
 
