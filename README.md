@@ -4,7 +4,7 @@
 
 Make Vaadin **declarative** like TSX/JSX. Describe your UI as code, and let signals handle the reactivity automatically.
 
-[![](https://jitpack.io/v/fenrur/vaadin-signal.svg)](https://jitpack.io/#fenrur/vaadin-signal)
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.fenrur/vaadin-signal)](https://central.sonatype.com/artifact/io.github.fenrur/vaadin-signal)
 
 ## Why?
 
@@ -45,11 +45,10 @@ span {
 ```kotlin
 repositories {
     mavenCentral()
-    maven { url = uri("https://jitpack.io") }
 }
 
 dependencies {
-    implementation("com.github.fenrur:vaadin-signal:2.0.0")
+    implementation("io.github.fenrur:vaadin-signal:2.0.0")
 }
 ```
 
@@ -59,7 +58,7 @@ dependencies {
 
 ```kotlin
 dependencies {
-    implementation("com.github.fenrur:vaadin-signal:2.0.0")
+    implementation("io.github.fenrur:vaadin-signal:2.0.0")
     implementation("com.github.mvysny.karibudsl:karibu-dsl:2.2.0")
 }
 ```

@@ -1,25 +1,23 @@
 plugins {
-    kotlin("jvm") version "2.1.0"
+    kotlin("jvm") version "2.1.20"
     `java-library`
-    `maven-publish`
+    id("org.jetbrains.dokka") version "2.1.0"
+    id("com.vanniktech.maven.publish") version "0.34.0"
 }
 
-group = "com.github.fenrur"
-version = System.getenv("VERSION") ?: "1.0.0"
-
-val signalVersion = System.getenv("VERSION") ?: "1.0.0"
+group = "io.github.fenrur"
+version = System.getenv("VERSION") ?: "2.0.0"
 
 repositories {
     mavenCentral()
     maven { url = uri("https://maven.vaadin.com/vaadin-prereleases") }
-    maven { url = uri("https://jitpack.io") }
 }
 
 val vaadinVersion = "24.6.3"
 
 dependencies {
     // Signal library
-    api("com.github.fenrur:signal:$signalVersion")
+    api("io.github.fenrur:signal:3.0.0")
 
     // Vaadin
     compileOnly("com.vaadin:vaadin:$vaadinVersion")
@@ -36,8 +34,6 @@ java {
     toolchain {
         languageVersion.set(JavaLanguageVersion.of(17))
     }
-    withSourcesJar()
-    withJavadocJar()
 }
 
 kotlin {
@@ -50,40 +46,35 @@ tasks.test {
     useJUnitPlatform()
 }
 
-publishing {
-    publications {
-        create<MavenPublication>("maven") {
-            groupId = project.group.toString()
-            artifactId = "vaadin-signal"
-            version = project.version.toString()
+mavenPublishing {
+    publishToMavenCentral()
+    signAllPublications()
+    coordinates("io.github.fenrur", "vaadin-signal", version.toString())
 
-            from(components["java"])
+    pom {
+        name.set("Vaadin Signal")
+        description.set("Vaadin integration for the Signal reactive library")
+        url.set("https://github.com/fenrur/vaadin-signal")
+        inceptionYear.set("2025")
 
-            pom {
-                name.set("Vaadin Signal")
-                description.set("Vaadin integration for the Signal reactive library")
-                url.set("https://github.com/Fenrur/vaadin-signal")
-
-                licenses {
-                    license {
-                        name.set("MIT License")
-                        url.set("https://opensource.org/licenses/MIT")
-                    }
-                }
-
-                developers {
-                    developer {
-                        id.set("fenrur")
-                        name.set("Livio TINNIRELLO")
-                    }
-                }
-
-                scm {
-                    url.set("https://github.com/Fenrur/vaadin-signal")
-                    connection.set("scm:git:git://github.com/Fenrur/vaadin-signal.git")
-                    developerConnection.set("scm:git:ssh://github.com/Fenrur/vaadin-signal.git")
-                }
+        licenses {
+            license {
+                name.set("MIT License")
+                url.set("https://opensource.org/licenses/MIT")
             }
+        }
+
+        developers {
+            developer {
+                id.set("fenrur")
+                name.set("Livio TINNIRELLO")
+            }
+        }
+
+        scm {
+            url.set("https://github.com/fenrur/vaadin-signal")
+            connection.set("scm:git:git://github.com/fenrur/vaadin-signal.git")
+            developerConnection.set("scm:git:ssh://github.com/fenrur/vaadin-signal.git")
         }
     }
 }
