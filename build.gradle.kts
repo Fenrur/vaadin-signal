@@ -13,7 +13,7 @@ repositories {
     maven { url = uri("https://maven.vaadin.com/vaadin-prereleases") }
 }
 
-val vaadinVersion = "24.6.3"
+val vaadinVersion = "24.8.14"
 
 dependencies {
     // Signal library
